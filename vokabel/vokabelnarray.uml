@@ -1,0 +1,48 @@
+[Files]
+File0=vokabel.java
+File1=vokabelnarray.java
+
+[Box:  - vokabel]
+X=61
+Y=35
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - vokabelnarray]
+X=20
+Y=265
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Diagram]
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+ShowConnections=0
+Fontname=MS Sans Serif
+Fontsize=10
+ShowObjectDiagram=0
+
+[Connections]
+V0=vokabel#vokabelnarray#AssociationDirected####0#0#0
+
+[Interactive]
+I0=
+
+[Window]
+Left=182
+Top=182
+Width=1472
+Height=469
+
