@@ -23,9 +23,14 @@ import javax.swing.SwingConstants;
 
 public class easy extends JFrame {
   // Anfang Attribute
-  private JLabel jLabel1 = new JLabel();
+  vokabelnarray easyy= new vokabelnarray();
+  vokabel f = new vokabel("F", "t");
+
+  
+  public JLabel jLabel1 = new JLabel();
   private JButton jButton1 = new JButton();
-  int secondsPassed=0;
+  Timerclass tt;
+  /*int secondsPassed=0;
   Timer t=new Timer();
   TimerTask task = new TimerTask() {
           public void run(){
@@ -39,7 +44,7 @@ public class easy extends JFrame {
             };
   public void start(){
     t.scheduleAtFixedRate(task, 1000, 1000);
-  }
+  }*/
   private JLabel lEnglish = new JLabel();
   private JTextField jTextField1 = new JTextField();
   private JTextField jTextField2 = new JTextField();
@@ -72,8 +77,10 @@ public class easy extends JFrame {
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton1_ActionPerformed(evt);
-        easy e=new easy();
-        e.start();
+          Timerclass gg= new Timerclass();
+        easyy.fuegevokabelnhinzu(f);
+        jTextField1.setText(easyy.getVokabelnA(0).getDeutsch());
+        gg.start();
         
         
         

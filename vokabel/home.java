@@ -52,6 +52,8 @@ public class home extends JFrame {
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton2_ActionPerformed(evt);
+        normal level2=new normal();
+         level2.setVisible(true);
       }
     });
     cp.add(jButton2);
@@ -61,6 +63,8 @@ public class home extends JFrame {
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton3_ActionPerformed(evt);
+        hard level3=new hard();
+         level3.setVisible(true);
       }
     });
     cp.add(jButton3);
