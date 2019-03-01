@@ -45,6 +45,7 @@ public class easy extends JFrame {
   public void start(){
     t.scheduleAtFixedRate(task, 1000, 1000);
   }*/
+  
   private JLabel lEnglish = new JLabel();
   private JTextField jTextField1 = new JTextField();
   private JTextField jTextField2 = new JTextField();
@@ -76,7 +77,7 @@ public class easy extends JFrame {
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        jButton1_ActionPerformed(evt);
+        
           Timerclass gg= new Timerclass();
         easyy.fuegevokabelnhinzu(f);
         jTextField1.setText(easyy.getVokabelnA(0).getDeutsch());
