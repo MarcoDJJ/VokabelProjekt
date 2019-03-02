@@ -25,7 +25,7 @@ public class easy extends JFrame {
   // Anfang Attribute
   vokabelnarray easyy= new vokabelnarray();
   vokabel f = new vokabel("F", "t");
-
+  
   
   public JLabel jLabel1 = new JLabel();
   private JButton jButton1 = new JButton();
@@ -51,7 +51,7 @@ public class easy extends JFrame {
   private JTextField jTextField2 = new JTextField();
   private JLabel lDeutsch = new JLabel();
     // Ende Attribute
-    
+  Timerclass timer =new Timerclass(jLabel1);
   public easy() { 
     // Frame-Initialisierung
     super();
@@ -77,11 +77,12 @@ public class easy extends JFrame {
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
+         
+        //Timerclass gg= new Timerclass();
+        //easyy.fuegevokabelnhinzu(f);
+        //jTextField1.setText(easyy.getVokabelnA(0).getDeutsch());
         
-          Timerclass gg= new Timerclass();
-        easyy.fuegevokabelnhinzu(f);
-        jTextField1.setText(easyy.getVokabelnA(0).getDeutsch());
-        gg.start();
+        timer.start();
         
         
         

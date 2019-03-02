@@ -16,6 +16,7 @@ public class home extends JFrame {
   private JButton jButton1 = new JButton();
   private JButton jButton2 = new JButton();
   private JButton jButton3 = new JButton();
+  private JButton jButton4 = new JButton();
   // Ende Attribute
   
   public home() { 
@@ -35,7 +36,7 @@ public class home extends JFrame {
     cp.setLayout(null);
     // Anfang Komponenten
     
-    jButton1.setBounds(80, 40, 121, 41);
+    jButton1.setBounds(80, 16, 113, 41);
     jButton1.setText("Easy");
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton1.addActionListener(new ActionListener() { 
@@ -46,7 +47,7 @@ public class home extends JFrame {
       }
     });
     cp.add(jButton1);
-    jButton2.setBounds(80, 112, 113, 41);
+    jButton2.setBounds(80, 64, 113, 41);
     jButton2.setText("Normal");
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     jButton2.addActionListener(new ActionListener() { 
@@ -57,7 +58,7 @@ public class home extends JFrame {
       }
     });
     cp.add(jButton2);
-    jButton3.setBounds(80, 176, 105, 41);
+    jButton3.setBounds(80, 112, 113, 41);
     jButton3.setText("Hard");
     jButton3.setMargin(new Insets(2, 2, 2, 2));
     jButton3.addActionListener(new ActionListener() { 
@@ -68,6 +69,17 @@ public class home extends JFrame {
       }
     });
     cp.add(jButton3);
+    jButton4.setBounds(83, 168, 107, 41);
+    jButton4.setText("Personalized");
+    jButton4.setMargin(new Insets(2, 2, 2, 2));
+    jButton4.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        jButton4_ActionPerformed(evt);
+        personalized level4= new personalized();
+         level4.setVisible(true);
+      }
+    });
+    cp.add(jButton4);
     // Ende Komponenten
     
     setVisible(true);
@@ -93,6 +105,11 @@ public class home extends JFrame {
     // TODO hier Quelltext einfügen
     
   } // end of jButton3_ActionPerformed
+
+  public void jButton4_ActionPerformed(ActionEvent evt) {
+    // TODO hier Quelltext einfügen
+    
+  } // end of jButton4_ActionPerformed
 
   // Ende Methoden
 } // end of class home

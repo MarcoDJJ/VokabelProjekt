@@ -11,10 +11,13 @@ import javax.swing.*;
 import javax.swing.event.*;
 import java.util.Timer;
 import java.util.TimerTask;
-public class Timerclass extends easy {
+public class Timerclass{
   int secondsPassed=0;
-  Timer t=new Timer();
-  JLabel j=new JLabel();
+  JLabel j;
+  Timer t=new Timer(); 
+  public Timerclass(JLabel jj){
+     this.j=jj;
+    }
   TimerTask task = new TimerTask() {
     public void run(){
       if(secondsPassed<60){
@@ -23,14 +26,14 @@ public class Timerclass extends easy {
       
       
     }
-    
-  };
+  
+    };
   public void start(){
-    t.scheduleAtFixedRate(task, 1000, 1000);
-  }
+  t.scheduleAtFixedRate(task, 1000, 1000);
+    }
   public static void main(String[] args) {
-    
-  } // end of main
+     
+} // end of main
   
 } // end of class Timerclass
 
