@@ -12,7 +12,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.event.*;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
-
+import java.util.Random;
+import java.util.ArrayList;
 /**
  *
  * Beschreibung
@@ -23,28 +24,15 @@ import javax.swing.SwingConstants;
 
 public class easy extends JFrame {
   // Anfang Attribute
-  vokabelnarray easyy= new vokabelnarray();
+  vokabelnarray easyy1= new vokabelnarray();
   vokabel f = new vokabel("F", "t");
-  
+  vokabelnarray easyy2= new vokabelnarray();
+  vokabel f1 = new vokabel("g", "d");
+  zufalleasyy zufalleasy= new zufalleasyy();
   
   public JLabel jLabel1 = new JLabel();
   private JButton jButton1 = new JButton();
   Timerclass tt;
-  /*int secondsPassed=0;
-  Timer t=new Timer();
-  TimerTask task = new TimerTask() {
-          public void run(){
-        if(secondsPassed<60){
-          secondsPassed++;}
-        jLabel1.setText(secondsPassed + " ");
-            
-  
-    }
-  
-            };
-  public void start(){
-    t.scheduleAtFixedRate(task, 1000, 1000);
-  }*/
   
   private JLabel lEnglish = new JLabel();
   private JTextField jTextField1 = new JTextField();
@@ -78,11 +66,14 @@ public class easy extends JFrame {
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
          
-        //Timerclass gg= new Timerclass();
-        //easyy.fuegevokabelnhinzu(f);
-        //jTextField1.setText(easyy.getVokabelnA(0).getDeutsch());
         
+        easyy1.fuegevokabelnhinzu(f);
+        easyy2.fuegevokabelnhinzu(f1);
+        zufalleasy.fuegevoccnhinzu(easyy1);
+        zufalleasy.fuegevoccnhinzu(easyy2);
+        jTextField1.setText(zufalleasy.getVocc().getVokabelnA(0).getDeutsch());
         timer.start();
+        
         
         
         
