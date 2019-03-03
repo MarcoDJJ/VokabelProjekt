@@ -25,9 +25,9 @@ import java.util.ArrayList;
 public class easy extends JFrame {
   // Anfang Attribute
   vokabelnarray easyy1= new vokabelnarray();
-  vokabel f = new vokabel("F", "t");
+  vokabel f = new vokabel("f", "ff");
   vokabelnarray easyy2= new vokabelnarray();
-  vokabel f1 = new vokabel("g", "d");
+  vokabel f1 = new vokabel("g", "gg");
   zufalleasyy zufalleasy= new zufalleasyy();
   
   public JLabel jLabel1 = new JLabel();
