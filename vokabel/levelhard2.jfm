@@ -1,8 +1,8 @@
-object leveleasy1: TFGUIForm
-  Left = 129
-  Top = 235
+object levelhard2: TFGUIForm
+  Left = 779
+  Top = 649
   BorderIcons = [biSystemMenu]
-  Caption = 'leveleasy1'
+  Caption = 'levelhard2'
   ClientHeight = 261
   ClientWidth = 284
   Color = clBtnFace
@@ -10,7 +10,6 @@ object leveleasy1: TFGUIForm
   FormStyle = fsStayOnTop
   OldCreateOrder = True
   Position = poDesigned
-  ShowHint = True
   Visible = True
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
@@ -23,10 +22,10 @@ object leveleasy1: TFGUIForm
   TextHeight = 13
   object jLabel1: TJLabel
     Tag = 1
-    Left = 8
-    Top = 8
+    Left = 0
+    Top = 0
     Width = 81
-    Height = 17
+    Height = 41
     Hint = 'jLabel1'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -46,10 +45,10 @@ object leveleasy1: TFGUIForm
   end
   object jLabel2: TJLabel
     Tag = 1
-    Left = 8
-    Top = 96
+    Left = 16
+    Top = 104
     Width = 57
-    Height = 49
+    Height = 33
     Hint = 'jLabel2'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -69,10 +68,10 @@ object leveleasy1: TFGUIForm
   end
   object jLabel3: TJLabel
     Tag = 1
-    Left = 0
+    Left = 8
     Top = 168
-    Width = 65
-    Height = 41
+    Width = 57
+    Height = 33
     Hint = 'jLabel3'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -93,9 +92,9 @@ object leveleasy1: TFGUIForm
   object jButton1: TJButton
     Tag = 4
     Left = 0
-    Top = 40
-    Width = 73
-    Height = 33
+    Top = 48
+    Width = 97
+    Height = 41
     Hint = 'jButton1'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -136,10 +135,10 @@ object leveleasy1: TFGUIForm
   end
   object jTextField1: TJTextField
     Tag = 2
-    Left = 96
-    Top = 96
-    Width = 121
-    Height = 33
+    Left = 88
+    Top = 104
+    Width = 81
+    Height = 25
     Cursor = crIBeam
     Hint = 'jTextField1'
     Font.Charset = DEFAULT_CHARSET
@@ -155,10 +154,10 @@ object leveleasy1: TFGUIForm
   end
   object jTextField2: TJTextField
     Tag = 2
-    Left = 96
-    Top = 160
-    Width = 113
-    Height = 33
+    Left = 80
+    Top = 176
+    Width = 81
+    Height = 25
     Cursor = crIBeam
     Hint = 'jTextField2'
     Font.Charset = DEFAULT_CHARSET

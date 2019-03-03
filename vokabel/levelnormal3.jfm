@@ -1,8 +1,8 @@
-object leveleasy1: TFGUIForm
-  Left = 129
-  Top = 235
+object levelnormal3: TFGUIForm
+  Left = 708
+  Top = 44
   BorderIcons = [biSystemMenu]
-  Caption = 'leveleasy1'
+  Caption = 'levelnormal3'
   ClientHeight = 261
   ClientWidth = 284
   Color = clBtnFace
@@ -10,7 +10,6 @@ object leveleasy1: TFGUIForm
   FormStyle = fsStayOnTop
   OldCreateOrder = True
   Position = poDesigned
-  ShowHint = True
   Visible = True
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
@@ -24,9 +23,9 @@ object leveleasy1: TFGUIForm
   object jLabel1: TJLabel
     Tag = 1
     Left = 8
-    Top = 8
-    Width = 81
-    Height = 17
+    Top = 16
+    Width = 65
+    Height = 25
     Hint = 'jLabel1'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -47,9 +46,9 @@ object leveleasy1: TFGUIForm
   object jLabel2: TJLabel
     Tag = 1
     Left = 8
-    Top = 96
-    Width = 57
-    Height = 49
+    Top = 120
+    Width = 65
+    Height = 25
     Hint = 'jLabel2'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -69,10 +68,10 @@ object leveleasy1: TFGUIForm
   end
   object jLabel3: TJLabel
     Tag = 1
-    Left = 0
-    Top = 168
-    Width = 65
-    Height = 41
+    Left = 8
+    Top = 176
+    Width = 57
+    Height = 33
     Hint = 'jLabel3'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -93,8 +92,8 @@ object leveleasy1: TFGUIForm
   object jButton1: TJButton
     Tag = 4
     Left = 0
-    Top = 40
-    Width = 73
+    Top = 56
+    Width = 57
     Height = 33
     Hint = 'jButton1'
     Font.Charset = DEFAULT_CHARSET
@@ -136,10 +135,10 @@ object leveleasy1: TFGUIForm
   end
   object jTextField1: TJTextField
     Tag = 2
-    Left = 96
-    Top = 96
+    Left = 104
+    Top = 128
     Width = 121
-    Height = 33
+    Height = 17
     Cursor = crIBeam
     Hint = 'jTextField1'
     Font.Charset = DEFAULT_CHARSET
@@ -155,9 +154,9 @@ object leveleasy1: TFGUIForm
   end
   object jTextField2: TJTextField
     Tag = 2
-    Left = 96
-    Top = 160
-    Width = 113
+    Left = 88
+    Top = 176
+    Width = 89
     Height = 33
     Cursor = crIBeam
     Hint = 'jTextField2'
