@@ -42,8 +42,8 @@ public class home extends JFrame {
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton1_ActionPerformed(evt);
-        easy level1=new easy();
-         level1.setVisible(true);
+        easy easy1=new easy();
+         easy1.setVisible(true);
       }
     });
     cp.add(jButton1);

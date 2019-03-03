@@ -1,51 +1,29 @@
 import java.awt.*;
-import java.awt.Color;
 import java.awt.event.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.Font;
-import java.text.*;
-import java.util.Timer;
-import java.util.TimerTask;
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import javax.swing.event.*;
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
-import java.util.Random;
-import java.util.ArrayList;
+
 /**
  *
  * Beschreibung
  *
- * @version 1.0 vom 15/02/2019
+ * @version 1.0 vom 03/03/2019
  * @author 
  */
 
 public class easy extends JFrame {
   // Anfang Attribute
-  vokabelnarray easyy1= new vokabelnarray();
-  vokabel f = new vokabel("f", "ff");
-  vokabelnarray easyy2= new vokabelnarray();
-  vokabel f1 = new vokabel("g", "gg");
-  zufalleasyy zufalleasy= new zufalleasyy();
-  
-  public JLabel jLabel1 = new JLabel();
   private JButton jButton1 = new JButton();
-  Timerclass tt;
+  private JButton jButton2 = new JButton();
+  private JButton jButton3 = new JButton();
+  // Ende Attribute
   
-  private JLabel lEnglish = new JLabel();
-  private JTextField jTextField1 = new JTextField();
-  private JTextField jTextField2 = new JTextField();
-  private JLabel lDeutsch = new JLabel();
-    // Ende Attribute
-  Timerclass timer =new Timerclass(jLabel1);
   public easy() { 
     // Frame-Initialisierung
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 300; 
-    int frameHeight = 302;
+    int frameWidth = 300;
+    int frameHeight = 300;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -57,44 +35,45 @@ public class easy extends JFrame {
     cp.setLayout(null);
     // Anfang Komponenten
     
-    jLabel1.setBounds(72, 0, 153, 41);
-    jLabel1.setText("");
-    cp.add(jLabel1);
-    jButton1.setBounds(24, 56, 65, 33);
-    jButton1.setText("Start");
+    jButton1.setBounds(80, 96, 113, 41);
+    jButton1.setText("leveleasy1");
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-         
-        
-        easyy1.fuegevokabelnhinzu(f);
-        easyy2.fuegevokabelnhinzu(f1);
-        zufalleasy.fuegevoccnhinzu(easyy1);
-        zufalleasy.fuegevoccnhinzu(easyy2);
-        jTextField1.setText(zufalleasy.getVocc().getVokabelnA(0).getDeutsch());
-        timer.start();
-        
-        
-        
-        
+        jButton1_ActionPerformed(evt);
+        leveleasy1 level1=new leveleasy1();
+        level1.setVisible(true);
       }
     });
     cp.add(jButton1);
-    lEnglish.setBounds(0, 104, 89, 41);
-    lEnglish.setText("English");
-    cp.add(lEnglish);
-    jTextField1.setBounds(96, 112, 145, 33);
-    cp.add(jTextField1);
-    jTextField2.setBounds(96, 160, 142, 36);
-    cp.add(jTextField2);
-    lDeutsch.setBounds(0, 168, 89, 25);
-    lDeutsch.setText("Deutsch");
-    cp.add(lDeutsch);
+    jButton2.setBounds(80, 144, 113, 41);
+    jButton2.setText("leveleasy2");
+    jButton2.setMargin(new Insets(2, 2, 2, 2));
+    jButton2.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        jButton2_ActionPerformed(evt);
+        leveleasy2 level2=new leveleasy2();
+        level2.setVisible(true);
+      }
+    });
+    cp.add(jButton2);
+    jButton3.setBounds(80, 192, 113, 41);
+    jButton3.setText("leveleasy3");
+    jButton3.setMargin(new Insets(2, 2, 2, 2));
+    jButton3.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        jButton3_ActionPerformed(evt);
+       
+        leveleasy3 level3=new leveleasy3();
+        level3.setVisible(true);
+      }
+    });
+    cp.add(jButton3);
     // Ende Komponenten
     
     setVisible(true);
   } // end of public easy
-    
+  
   // Anfang Methoden
   
   public static void main(String[] args) {
@@ -102,9 +81,19 @@ public class easy extends JFrame {
   } // end of main
   
   public void jButton1_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einfügen
+    
     
   } // end of jButton1_ActionPerformed
+
+  public void jButton2_ActionPerformed(ActionEvent evt) {
+    // TODO hier Quelltext einfügen
+    
+  } // end of jButton2_ActionPerformed
+
+  public void jButton3_ActionPerformed(ActionEvent evt) {
+    // TODO hier Quelltext einfügen
+    
+  } // end of jButton3_ActionPerformed
 
   // Ende Methoden
 } // end of class easy
