@@ -35,6 +35,7 @@ public class leveleasy1 extends JFrame {
   private JTextField jTextField2 = new JTextField();
   private JButton jButton2 = new JButton();
   private JLabel jLabel4 = new JLabel();
+  private JLabel jLabel5 = new JLabel();
   // Ende Attribute
   vokabelnarray vlevel11= new vokabelnarray();
   vokabel f1 = new vokabel("v", "vv");
@@ -43,7 +44,7 @@ public class leveleasy1 extends JFrame {
   zufalleasyy zlevel1= new zufalleasyy();
   Timerclass tt;
   Timerclass timerlevel1 =new Timerclass(jLabel1);
- 
+  points pointslevel1=new points(0, 0, 0);
    /*public void keyPressed(KeyEvent e) {
 
     int key = e.getKeyCode();
@@ -58,8 +59,8 @@ public class leveleasy1 extends JFrame {
     // Frame-Initialisierung
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 300;
-    int frameHeight = 300;
+    int frameWidth = 701; 
+    int frameHeight = 290;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -83,12 +84,15 @@ public class leveleasy1 extends JFrame {
     jButton1.setBounds(0, 40, 73, 33);
     jButton1.setText("Start");
     jButton1.setMargin(new Insets(2, 2, 2, 2));
-    jButton1.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
+    
         vlevel12.fuegevokabelnhinzu(f1);
         vlevel11.fuegevokabelnhinzu(f);
         zlevel1.fuegevoccnhinzu(vlevel12);
         zlevel1.fuegevoccnhinzu(vlevel11);
+        
+    jButton1.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        
         
         
         jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
@@ -112,12 +116,16 @@ public class leveleasy1 extends JFrame {
           
           jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
           jTextField2.setText(null);
+          pointslevel1.addppoint();
+          jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answers and "+pointslevel1.getNegativepoints()+ " wrong answers");
         }
         
           else{ 
           jLabel4.setText("Falsch");
           
           jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
+          pointslevel1.addnpoint();
+          jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
           jTextField2.setText(null); 
         
         }
@@ -128,6 +136,9 @@ public class leveleasy1 extends JFrame {
     jLabel4.setBounds(96, 216, 113, 33);
     jLabel4.setText("");
     cp.add(jLabel4);
+    jLabel5.setBounds(256, 200, 417, 49);
+    jLabel5.setText("You scored 0 correct answers and 0 wrong answers");
+    cp.add(jLabel5);
     // Ende Komponenten
     
   setVisible(true);
@@ -137,6 +148,7 @@ public class leveleasy1 extends JFrame {
   
     public static void main(String[] args) {
       new leveleasy1();
+  
   } // end of main
   
     public void jButton1_ActionPerformed(ActionEvent evt) {
