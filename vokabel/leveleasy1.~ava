@@ -70,6 +70,9 @@ public class leveleasy1 extends JFrame {
   vokabelnarray vlevel40 = new vokabelnarray();
   vokabelnarray vlevel41 = new vokabelnarray();
   
+  // forzanapolisempre
+  //juve merda
+  
   vokabel f = new vokabel("g", "gg");
   vokabel fd = new vokabel("apple", "apfel");
   vokabel fd1 = new vokabel("pear", "birne");
