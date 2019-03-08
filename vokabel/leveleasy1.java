@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.util.Scanner;
 /**
  *
  * Beschreibung
@@ -37,9 +38,8 @@ public class leveleasy1 extends JFrame {
   private JLabel jLabel4 = new JLabel();
   private JLabel jLabel5 = new JLabel();
   // Ende Attribute
-  vokabelnarray vlevel11= new vokabelnarray();
-  vokabel f1 = new vokabel("v", "vv");
-  vokabelnarray vlevel12 = new vokabelnarray();
+  
+  
   vokabelnarray vlevel13 = new vokabelnarray();
   vokabelnarray vlevel14 = new vokabelnarray();
   vokabelnarray vlevel15 = new vokabelnarray();
@@ -70,7 +70,8 @@ public class leveleasy1 extends JFrame {
   vokabelnarray vlevel40 = new vokabelnarray();
   vokabelnarray vlevel41 = new vokabelnarray();
   
-  vokabel f = new vokabel("g", "gg");
+  
+ 
   vokabel fd = new vokabel("apple", "apfel");
   vokabel fd1 = new vokabel("pear", "birne");
   vokabel fd2 = new vokabel("water", "wasser");
@@ -102,6 +103,7 @@ public class leveleasy1 extends JFrame {
   vokabel fd28 = new vokabel("tea", "tee");
   vokabel fd29 = new vokabel("soup", "suppe");
   
+
   zufalleasyy zlevel1= new zufalleasyy();
   Timerclass tt;
   Timerclass timerlevel1 =new Timerclass(jLabel1);
@@ -146,21 +148,20 @@ public class leveleasy1 extends JFrame {
     jButton1.setText("Start");
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     
-        vlevel12.fuegevokabelnhinzu(f1);
-        vlevel11.fuegevokabelnhinzu(f);
-        vlevel13.fuegevokabelnhinzu(fd);
-        vlevel14.fuegevokabelnhinzu(fd1);
-        vlevel15.fuegevokabelnhinzu(fd2);
-        vlevel16.fuegevokabelnhinzu(fd3);
-        vlevel17.fuegevokabelnhinzu(fd4);
-        vlevel18.fuegevokabelnhinzu(fd5);
-        vlevel19.fuegevokabelnhinzu(fd6);
-        vlevel20.fuegevokabelnhinzu(fd7);
-        vlevel21.fuegevokabelnhinzu(fd8);
-        vlevel22.fuegevokabelnhinzu(fd9);
-        vlevel23.fuegevokabelnhinzu(fd10);
-        vlevel24.fuegevokabelnhinzu(fd11);
-        vlevel24.fuegevokabelnhinzu(fd11);
+    
+    vlevel13.fuegevokabelnhinzu(fd);
+    vlevel14.fuegevokabelnhinzu(fd1);
+    vlevel15.fuegevokabelnhinzu(fd2);
+    vlevel16.fuegevokabelnhinzu(fd3);
+    vlevel17.fuegevokabelnhinzu(fd4);
+    vlevel18.fuegevokabelnhinzu(fd5);
+    vlevel19.fuegevokabelnhinzu(fd6);
+    vlevel20.fuegevokabelnhinzu(fd7);
+    vlevel21.fuegevokabelnhinzu(fd8);
+    vlevel22.fuegevokabelnhinzu(fd9);
+    vlevel23.fuegevokabelnhinzu(fd10);
+    vlevel24.fuegevokabelnhinzu(fd11);
+    vlevel24.fuegevokabelnhinzu(fd11);
     vlevel25.fuegevokabelnhinzu(fd13);
     vlevel26.fuegevokabelnhinzu(fd14);
     vlevel27.fuegevokabelnhinzu(fd15);
@@ -180,23 +181,23 @@ public class leveleasy1 extends JFrame {
     vlevel41.fuegevokabelnhinzu(fd29);
     
     
-     // lol marco è scemo :^)
-     // pure fede :^)
     
-        zlevel1.fuegevoccnhinzu(vlevel12);
-        zlevel1.fuegevoccnhinzu(vlevel11);
-        zlevel1.fuegevoccnhinzu(vlevel13);
-        zlevel1.fuegevoccnhinzu(vlevel14);
-        zlevel1.fuegevoccnhinzu(vlevel15);
-        zlevel1.fuegevoccnhinzu(vlevel16);
-        zlevel1.fuegevoccnhinzu(vlevel17);
-        zlevel1.fuegevoccnhinzu(vlevel18);
-        zlevel1.fuegevoccnhinzu(vlevel19);
-        zlevel1.fuegevoccnhinzu(vlevel20);
-        zlevel1.fuegevoccnhinzu(vlevel21);
-        zlevel1.fuegevoccnhinzu(vlevel22);
-        zlevel1.fuegevoccnhinzu(vlevel23);
-        zlevel1.fuegevoccnhinzu(vlevel24);
+    
+    
+    
+    
+    zlevel1.fuegevoccnhinzu(vlevel13);
+    zlevel1.fuegevoccnhinzu(vlevel14);
+    zlevel1.fuegevoccnhinzu(vlevel15);
+    zlevel1.fuegevoccnhinzu(vlevel16);
+    zlevel1.fuegevoccnhinzu(vlevel17);
+    zlevel1.fuegevoccnhinzu(vlevel18);
+    zlevel1.fuegevoccnhinzu(vlevel19);
+    zlevel1.fuegevoccnhinzu(vlevel20);
+    zlevel1.fuegevoccnhinzu(vlevel21);
+    zlevel1.fuegevoccnhinzu(vlevel22);
+    zlevel1.fuegevoccnhinzu(vlevel23);
+    zlevel1.fuegevoccnhinzu(vlevel24);
     zlevel1.fuegevoccnhinzu(vlevel25);
     zlevel1.fuegevoccnhinzu(vlevel26);
     zlevel1.fuegevoccnhinzu(vlevel27);
@@ -215,8 +216,7 @@ public class leveleasy1 extends JFrame {
     zlevel1.fuegevoccnhinzu(vlevel40);
     zlevel1.fuegevoccnhinzu(vlevel41);  
     
-    // chi legge è scemo 
-    // hehe
+    
     
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
@@ -241,54 +241,54 @@ public class leveleasy1 extends JFrame {
       public void actionPerformed(ActionEvent evt) { 
         if(jTextField2.getText().equals(zlevel1.ynow().getVokabelnA(0).getDeutsch())){
           jLabel4.setText("Gut Gemacht!");
+            
+              jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
+                jTextField2.setText(null);
+              pointslevel1.addppoint();
+            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answers and "+pointslevel1.getNegativepoints()+ " wrong answers");
+          }
           
-          jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
-          jTextField2.setText(null);
-          pointslevel1.addppoint();
-          jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answers and "+pointslevel1.getNegativepoints()+ " wrong answers");
-        }
-        
           else{ 
           jLabel4.setText("Falsch");
           
-          jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
-          pointslevel1.addnpoint();
-          jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
+        jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
+        pointslevel1.addnpoint();
+        jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
           jTextField2.setText(null); 
-        
-        }
-      
-    }
-    });
-    cp.add(jButton2);
-    jLabel4.setBounds(96, 216, 113, 33);
-    jLabel4.setText("");
-    cp.add(jLabel4);
+          
+          }
+          zlevel1.removeelement();
+          }
+          });
+          cp.add(jButton2);
+        jLabel4.setBounds(96, 216, 113, 33);
+        jLabel4.setText("");
+      cp.add(jLabel4);
     jLabel5.setBounds(256, 200, 417, 49);
     jLabel5.setText("You scored 0 correct answers and 0 wrong answers");
     cp.add(jLabel5);
     // Ende Komponenten
     
-  setVisible(true);
-  } // end of public leveleasy1
-  
-  // Anfang Methoden
-  
+    setVisible(true);
+    } // end of public leveleasy1
+    
+    // Anfang Methoden
+    
     public static void main(String[] args) {
-      new leveleasy1();
-  
+  new leveleasy1();
+    
   } // end of main
   
-    public void jButton1_ActionPerformed(ActionEvent evt) {
+  public void jButton1_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
-  
+    
   } // end of jButton1_ActionPerformed
   
-    public void jButton2_ActionPerformed(ActionEvent evt) {
+  public void jButton2_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
-  
+    
   } // end of jButton2_ActionPerformed
 
-// Ende Methoden
-} // end of class leveleasy1
-
+  // Ende Methoden
+    } // end of class leveleasy1
+    
