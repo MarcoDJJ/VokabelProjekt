@@ -7,20 +7,23 @@
  */
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.event.*;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.*;
+import javax.swing.event.*;
 public class Timerclass{
-  int secondsPassed=0;
+  // Anfang Attribute
+  int secondsPassed = 0;
   JLabel j;
-  Timer t=new Timer(); 
+  Timer t=new Timer();
+  int v = 60;
   public Timerclass(JLabel jj){
      this.j=jj;
     }
+  // Anfang Methoden
   TimerTask task = new TimerTask() {
     public void run(){
-      if(secondsPassed<60){
+      if(secondsPassed<v){
       secondsPassed++;}
       j.setText(secondsPassed + " ");
       
@@ -28,12 +31,28 @@ public class Timerclass{
     }
   
     };
+  // Ende Attribute
   public void start(){
   t.scheduleAtFixedRate(task, 1000, 1000);
     }
   public static void main(String[] args) {
      
 } // end of main
+
+  public void setV(int vNeu) {
+    v = vNeu;
+  }
+
+  public int getV() {
+    return v;
+  }
+
+  public int getSecondsPassed() {
+    return secondsPassed;
+  }
+ 
+      
+  // Ende Methoden
   
 } // end of class Timerclass
 

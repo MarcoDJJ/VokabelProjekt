@@ -14,8 +14,11 @@ import javax.swing.event.*;
 public class settings extends JFrame {
   // Anfang Attribute
   private JButton jButton1 = new JButton();
+  private JNumberField jNumberField1 = new JNumberField();
+  private JSlider jSlider1 = new JSlider();
+  private JLabel jLabel1 = new JLabel();
   // Ende Attribute
-  
+   Timerclass stimer=new Timerclass(jLabel1);
   public settings() { 
     // Frame-Initialisierung
     super();
@@ -33,15 +36,28 @@ public class settings extends JFrame {
     cp.setLayout(null);
     // Anfang Komponenten
     
-    jButton1.setBounds(24, 16, 153, 33);
+    jButton1.setBounds(16, 24, 65, 33);
     jButton1.setText("jButton1");
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton1_ActionPerformed(evt);
+        stimer.setV(jSlider1.getBounds());
       }
     });
     cp.add(jButton1);
+    jNumberField1.setBounds(104, 16, 129, 41);
+    jNumberField1.setText("");
+    cp.add(jNumberField1);
+    jSlider1.setBounds(96, 64, 153, 57);
+    jSlider1.setMinorTickSpacing(10);
+    jSlider1.setMajorTickSpacing(50);
+    jSlider1.setPaintTicks(true);
+    jSlider1.setPaintLabels(true);
+    cp.add(jSlider1);
+    jLabel1.setBounds(24, 40, 9, 9);
+    jLabel1.setText("text");
+    cp.add(jLabel1);
     // Ende Komponenten
     
     setVisible(true);

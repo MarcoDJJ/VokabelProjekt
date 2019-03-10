@@ -1,6 +1,6 @@
 object leveleasy1: TFGUIForm
-  Left = 266
-  Top = 556
+  Left = 693
+  Top = 227
   BorderIcons = [biSystemMenu]
   Caption = 'leveleasy1'
   ClientHeight = 251
