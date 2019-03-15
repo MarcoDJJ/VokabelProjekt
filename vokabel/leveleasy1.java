@@ -71,7 +71,7 @@ public class leveleasy1 extends JFrame {
   vokabelnarray vlevel41 = new vokabelnarray();
   
   
- 
+  
   vokabel fd = new vokabel("apple", "apfel");
   vokabel fd1 = new vokabel("pear", "birne");
   vokabel fd2 = new vokabel("water", "wasser");
@@ -103,20 +103,22 @@ public class leveleasy1 extends JFrame {
   vokabel fd28 = new vokabel("tea", "tee");
   vokabel fd29 = new vokabel("soup", "suppe");
   
-
+  
   zufalleasyy zlevel1= new zufalleasyy();
- 
+  
   Timerclass timerlevel1 =new Timerclass(jLabel1);
   points pointslevel1=new points(0, 0, 0);
-   /*public void keyPressed(KeyEvent e) {
-
-    int key = e.getKeyCode();
-
-    if(key == KeyEvent.VK_D){
-
-        stop();
-    }
-}*/
+  
+  
+  /*public void keyPressed(KeyEvent e) {
+  
+  int key = e.getKeyCode();
+  
+  if(key == KeyEvent.VK_D){
+  
+  stop();
+  }
+  }*/
   
   public leveleasy1() { 
     // Frame-Initialisierung
@@ -215,14 +217,15 @@ public class leveleasy1 extends JFrame {
     zlevel1.fuegevoccnhinzu(vlevel39);
     zlevel1.fuegevoccnhinzu(vlevel40);
     zlevel1.fuegevoccnhinzu(vlevel41);  
-    
+     //indexof
+     //remove(Object o)
     
     
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
         timerlevel1.start();
-        
+        //zlevel1.getVoccc().remove(zlevel1.getK());
       }
     });
     
@@ -234,29 +237,29 @@ public class leveleasy1 extends JFrame {
     jButton2.setBounds(96, 40, 65, 33);
     jButton2.setText("Verify");
     jButton2.setMargin(new Insets(2, 2, 2, 2));
-   
-      jButton2.addActionListener(new ActionListener() { 
-        public void actionPerformed(ActionEvent evt) { 
-          if(jTextField2.getText().equals(zlevel1.ynow().getVokabelnA(0).getDeutsch())){
-            jLabel4.setText("Gut Gemacht!");
-            jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
-            jTextField2.setText(null);
-            pointslevel1.addppoint();
-            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answers and "+pointslevel1.getNegativepoints()+ " wrong answers");
-            //zlevel1.getVoccc().remove(zlevel1.getK());
-          }
-          
-          else{ 
-            jLabel4.setText("Falsch");
-            jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
-            pointslevel1.addnpoint();
-            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
-            jTextField2.setText(null); 
-            //zlevel1.getVoccc().remove(zlevel1.getK());
-          }
-          
+    
+    jButton2.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        if(jTextField2.getText().equals(zlevel1.ynow().getVokabelnA(0).getDeutsch())){
+          jLabel4.setText("Gut Gemacht!");
+          jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
+          jTextField2.setText(null);
+          pointslevel1.addppoint();
+          jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answers and "+pointslevel1.getNegativepoints()+ " wrong answers");
+          //zlevel1.getVoccc().remove(zlevel1.getK());
         }
-      });
+        
+        else{ 
+          jLabel4.setText("Falsch");
+          jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
+          pointslevel1.addnpoint();
+          jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
+          jTextField2.setText(null); 
+          //zlevel1.getVoccc().remove(zlevel1.getK());
+        }
+        
+      }
+    });
     
     cp.add(jButton2);
     jLabel4.setBounds(96, 216, 113, 33);
@@ -269,9 +272,9 @@ public class leveleasy1 extends JFrame {
     
     setVisible(true);
   } // end of public leveleasy1
-    
-    // Anfang Methoden
-    
+  
+  // Anfang Methoden
+  
   public static void main(String[] args) {
     new leveleasy1();
     
@@ -286,7 +289,7 @@ public class leveleasy1 extends JFrame {
     // TODO hier Quelltext einfügen
     
   } // end of jButton2_ActionPerformed
-
+  
   // Ende Methoden
 } // end of class leveleasy1
     
