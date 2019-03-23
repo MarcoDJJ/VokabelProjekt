@@ -217,61 +217,41 @@ public class leveleasy1 extends JFrame {
     zlevel1.fuegevoccnhinzu(vlevel39);
     zlevel1.fuegevoccnhinzu(vlevel40);
     zlevel1.fuegevoccnhinzu(vlevel41);  
-     //indexof
-     //remove(Object o)
+    //indexof
+    //remove(Object o)
     
-    
-    jButton1.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
-        jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
-        timerlevel1.start();
-        //zlevel1.getVoccc().remove(zlevel1.getK());
-      }
-    });
-    
-    cp.add(jButton1);
-    jTextField1.setBounds(96, 96, 121, 33);
-    cp.add(jTextField1);
-    jTextField2.setBounds(96, 160, 113, 33);
-    cp.add(jTextField2);
-    jButton2.setBounds(96, 40, 65, 33);
-    jButton2.setText("Verify");
-    jButton2.setMargin(new Insets(2, 2, 2, 2));
-    
-    jButton2.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
-        if(jTextField2.getText().equals(zlevel1.ynow().getVokabelnA(0).getDeutsch())){
-          jLabel4.setText("Gut Gemacht!");
-          jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
-          jTextField2.setText(null);
-          pointslevel1.addppoint();
-          jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answers and "+pointslevel1.getNegativepoints()+ " wrong answers");
-          //zlevel1.getVoccc().remove(zlevel1.getK());
-        }
-        
-        else{ 
-          jLabel4.setText("Falsch");
-          jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
-          pointslevel1.addnpoint();
-          jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
-          jTextField2.setText(null); 
-          //zlevel1.getVoccc().remove(zlevel1.getK());
-        }
-        
-      }
-    });
-    
-    cp.add(jButton2);
-    jLabel4.setBounds(96, 216, 113, 33);
-    jLabel4.setText("");
-    cp.add(jLabel4);
-    jLabel5.setBounds(256, 200, 417, 49);
-    jLabel5.setText("You scored 0 correct answers and 0 wrong answers");
-    cp.add(jLabel5);
-    // Ende Komponenten
-    
-    setVisible(true);
-  } // end of public leveleasy1
+    //if(timerlevel1.getSecondsPassed()<60){
+      jButton1.addActionListener(new startbutton(jTextField1, timerlevel1, zlevel1));
+      
+      cp.add(jButton1);
+      jTextField1.setBounds(96, 96, 121, 33);
+      cp.add(jTextField1);
+      jTextField2.setBounds(96, 160, 113, 33);
+      cp.add(jTextField2);
+      jButton2.setBounds(96, 40, 65, 33);
+      jButton2.setText("Verify");
+      jButton2.setMargin(new Insets(2, 2, 2, 2));
+      
+      jButton2.addActionListener(new newbutton(zlevel1, jLabel4, jTextField1, jTextField2, pointslevel1, jLabel5));
+      
+      
+      cp.add(jButton2);
+      jLabel4.setBounds(96, 216, 113, 33);
+      jLabel4.setText("");
+      cp.add(jLabel4);
+      jLabel5.setBounds(256, 200, 417, 49);
+      jLabel5.setText("You scored 0 correct answers and 0 wrong answers");
+      cp.add(jLabel5);
+      // Ende Komponenten
+      
+      setVisible(true);
+    //}
+    /*else{
+      jButton1.setVisible(false);
+      jButton2.setVisible(false);
+    } */
+  }
+   // end of public leveleasy1
   
   // Anfang Methoden
   

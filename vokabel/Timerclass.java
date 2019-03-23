@@ -32,6 +32,9 @@ public class Timerclass{
   
     };
   // Ende Attribute
+  public int getTimerNow(){
+    return secondsPassed;
+    }
   public void start(){
   t.scheduleAtFixedRate(task, 1000, 1000);
     }
