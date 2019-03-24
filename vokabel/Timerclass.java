@@ -17,18 +17,23 @@ public class Timerclass{
   JLabel j;
   Timer t=new Timer();
   int v = 60;
-  
-  public Timerclass(JLabel jj){
+  JButton jButton3;
+  JTextField jTextField3;
+  public Timerclass(JLabel jj, JButton jButton3, JTextField jTextField3){
      this.j=jj;
+     this.jButton3=jButton3;
+    this.jTextField3=jTextField3;
     }
   // Anfang Methoden
   TimerTask task = new TimerTask() {
     public void run(){
       if(secondsPassed<v){
       secondsPassed++;}
+      else {
+        jButton3.setVisible(true);
+        jTextField3.setVisible(true);
+      } 
       j.setText(secondsPassed + " ");
-      
-      
     }
   
     };

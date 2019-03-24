@@ -13,13 +13,16 @@ public class startbutton implements ActionListener {
   JTextField t;
   Timerclass timerlevel1;
   zufalleasyy zlevel1;
-   public startbutton(JTextField tf, Timerclass timerlevel2, zufalleasyy zlevel2){ 
+  JButton jButton1;
+   public startbutton(JTextField tf, Timerclass timerlevel2, zufalleasyy zlevel2, JButton jButton1){ 
+   this.jButton1=jButton1;
    t= tf;
    timerlevel1=timerlevel2;
    zlevel1=zlevel2; }
    public void actionPerformed(ActionEvent e){
     t.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
           timerlevel1.start();
+    jButton1.setVisible(false);
  }
 
   public static void main(String[] args) {

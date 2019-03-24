@@ -37,6 +37,10 @@ public class leveleasy1 extends JFrame {
   private JButton jButton2 = new JButton();
   private JLabel jLabel4 = new JLabel();
   private JLabel jLabel5 = new JLabel();
+  private JButton jButton3 = new JButton();
+  private JTextField jTextField3 = new JTextField();
+  private JButton jButton4 = new JButton();
+  private JButton jButton5 = new JButton();
   // Ende Attribute
   
   
@@ -106,9 +110,9 @@ public class leveleasy1 extends JFrame {
   
   zufalleasyy zlevel1= new zufalleasyy();
   
-  Timerclass timerlevel1 =new Timerclass(jLabel1);
+  Timerclass timerlevel1 =new Timerclass(jLabel1,jButton3,jTextField3);
   points pointslevel1=new points(0, 0, 0);
-  
+  savefiles s= new savefiles(); 
   
   /*public void keyPressed(KeyEvent e) {
   
@@ -123,9 +127,10 @@ public class leveleasy1 extends JFrame {
   public leveleasy1() { 
     // Frame-Initialisierung
     super();
+    s.setVisible(false);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 701; 
-    int frameHeight = 290;
+    int frameWidth = 1056; 
+    int frameHeight = 287;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -149,7 +154,7 @@ public class leveleasy1 extends JFrame {
     jButton1.setBounds(0, 40, 73, 33);
     jButton1.setText("Start");
     jButton1.setMargin(new Insets(2, 2, 2, 2));
-    
+     
     
     vlevel13.fuegevokabelnhinzu(fd);
     vlevel14.fuegevokabelnhinzu(fd1);
@@ -216,7 +221,7 @@ public class leveleasy1 extends JFrame {
     zlevel1.fuegevoccnhinzu(vlevel38);
     zlevel1.fuegevoccnhinzu(vlevel39);
     zlevel1.fuegevoccnhinzu(vlevel40);
-    zlevel1.fuegevoccnhinzu(vlevel41);  
+    zlevel1.fuegevoccnhinzu(vlevel41);   
     //indexof
     //remove(Object o)
     
@@ -232,9 +237,9 @@ public class leveleasy1 extends JFrame {
     jButton2.setText("Verify");
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     
-      
-      jButton1.addActionListener(new startbutton(jTextField1, timerlevel1, zlevel1));
-      jButton2.addActionListener(new newbutton(zlevel1, jLabel4, jTextField1, jTextField2, pointslevel1, jLabel5, timerlevel1,jButton1,jButton2));
+       //jButton4.addActionListener(new newbutton(zlevel1,fd,fd1,fd2,fd3,fd4,fd5,fd6,fd7,fd8,fd9,fd10,fd11,fd12,fd13,fd14,fd15,fd16,fd17,fd18,fd19,fd20,fd21,fd22,fd23,fd24,fd25,fd26,fd27,fd28,fd29));
+       jButton1.addActionListener(new startbutton(jTextField1, timerlevel1, zlevel1,jButton1));
+       jButton2.addActionListener(new verifybutton(zlevel1, jLabel4, jTextField1, jTextField2, pointslevel1, jLabel5, timerlevel1,jButton1,jButton2));
        /*jButton1.addActionListener(new ActionListener() { 
     public void actionPerformed(ActionEvent evt) { 
         jButton2_ActionPerformed(evt);
@@ -252,6 +257,44 @@ public class leveleasy1 extends JFrame {
     jLabel5.setBounds(256, 200, 417, 49);
     jLabel5.setText("You scored 0 correct answers and 0 wrong answers");
     cp.add(jLabel5);
+    jButton3.setBounds(280, 160, 185, 33);
+    jButton3.setText("save your results");
+    jButton3.setMargin(new Insets(2, 2, 2, 2));
+    jTextField3.setText("write a title for your save file");
+    jTextField3.setVisible(false);
+    jButton3.setVisible(false);
+    jButton4.setVisible(false);
+    jButton3.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) {
+        s.addsave(jLabel5.getText());
+        jButton3.setVisible(false);
+      jButton4.setVisible(true);
+        jButton5.setVisible(true);
+      }
+    });
+    cp.add(jButton3);
+    jTextField3.setBounds(704, 200, 225, 41);
+    cp.add(jTextField3);
+    jButton4.setBounds(616, 152, 145, 33);
+    jButton4.setText("go to your save files");
+    jButton4.setMargin(new Insets(2, 2, 2, 2));
+    jButton4.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        s.setjlabel1text(s.getSavefiless()+"");
+        s.setVisible(true);
+      }
+    });
+    cp.add(jButton4);
+    jButton5.setBounds(248, 40, 105, 33);
+    jButton5.setText("New");
+    jButton5.setVisible(false);
+    jButton5.setMargin(new Insets(2, 2, 2, 2));
+    jButton5.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        jButton5_ActionPerformed(evt);
+      }
+    });
+    cp.add(jButton5);
     // Ende Komponenten
     
     setVisible(true);
@@ -280,6 +323,21 @@ public class leveleasy1 extends JFrame {
     
   } // end of jButton2_ActionPerformed
   
+  public void jButton3_ActionPerformed(ActionEvent evt) {
+    // TODO hier Quelltext einfügen
+    
+  } // end of jButton3_ActionPerformed
+
+  public void jButton4_ActionPerformed(ActionEvent evt) {
+    // TODO hier Quelltext einfügen
+    
+  } // end of jButton4_ActionPerformed
+
+  public void jButton5_ActionPerformed(ActionEvent evt) {
+    // TODO hier Quelltext einfügen
+    
+  } // end of jButton5_ActionPerformed
+
   // Ende Methoden
 } // end of class leveleasy1
     
