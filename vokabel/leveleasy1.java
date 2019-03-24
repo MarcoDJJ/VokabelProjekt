@@ -221,34 +221,41 @@ public class leveleasy1 extends JFrame {
     //remove(Object o)
     
     //if(timerlevel1.getSecondsPassed()<60){
+    
+    
+    cp.add(jButton1);
+    jTextField1.setBounds(96, 96, 121, 33);
+    cp.add(jTextField1);
+    jTextField2.setBounds(96, 160, 113, 33);
+    cp.add(jTextField2);
+    jButton2.setBounds(96, 40, 65, 33);
+    jButton2.setText("Verify");
+    jButton2.setMargin(new Insets(2, 2, 2, 2));
+    if(timerlevel1.getTimerNow()<58){
+      
       jButton1.addActionListener(new startbutton(jTextField1, timerlevel1, zlevel1));
-      
-      cp.add(jButton1);
-      jTextField1.setBounds(96, 96, 121, 33);
-      cp.add(jTextField1);
-      jTextField2.setBounds(96, 160, 113, 33);
-      cp.add(jTextField2);
-      jButton2.setBounds(96, 40, 65, 33);
-      jButton2.setText("Verify");
-      jButton2.setMargin(new Insets(2, 2, 2, 2));
-      
-      jButton2.addActionListener(new newbutton(zlevel1, jLabel4, jTextField1, jTextField2, pointslevel1, jLabel5));
-      
-      
-      cp.add(jButton2);
-      jLabel4.setBounds(96, 216, 113, 33);
-      jLabel4.setText("");
-      cp.add(jLabel4);
-      jLabel5.setBounds(256, 200, 417, 49);
-      jLabel5.setText("You scored 0 correct answers and 0 wrong answers");
-      cp.add(jLabel5);
-      // Ende Komponenten
-      
-      setVisible(true);
-    //}
-    /*else{
+      jButton2.addActionListener(new newbutton(zlevel1, jLabel4, jTextField1, jTextField2, pointslevel1, jLabel5, timerlevel1,jButton1,jButton2));
+    }
+    else{ 
       jButton1.setVisible(false);
       jButton2.setVisible(false);
+    }
+    
+    
+    cp.add(jButton2);
+    jLabel4.setBounds(96, 216, 113, 33);
+    jLabel4.setText("");
+    cp.add(jLabel4);
+    jLabel5.setBounds(256, 200, 417, 49);
+    jLabel5.setText("You scored 0 correct answers and 0 wrong answers");
+    cp.add(jLabel5);
+    // Ende Komponenten
+    
+    setVisible(true);
+    //}
+    /*else{
+    jButton1.setVisible(false);
+    jButton2.setVisible(false);
     } */
   }
    // end of public leveleasy1

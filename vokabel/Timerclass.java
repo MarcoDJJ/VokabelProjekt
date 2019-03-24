@@ -17,6 +17,7 @@ public class Timerclass{
   JLabel j;
   Timer t=new Timer();
   int v = 60;
+  
   public Timerclass(JLabel jj){
      this.j=jj;
     }
