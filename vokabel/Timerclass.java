@@ -43,8 +43,9 @@ public class Timerclass{
      
 } // end of main
 
-  public void setV(int vNeu) {
+  public int setV(int vNeu) {
     v = vNeu;
+    return v;
   }
 
   public int getV() {

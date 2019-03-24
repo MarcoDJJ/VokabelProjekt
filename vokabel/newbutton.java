@@ -50,7 +50,7 @@ public class newbutton implements ActionListener {
     
   }                
   public void actionPerformed(ActionEvent e){
-    if(timerlevel1.getTimerNow()<60){
+    if(timerlevel1.getTimerNow()<timerlevel1.getV()){
       if(jTextField2.getText().equals(zlevel1.ynow().getVokabelnA(0).getDeutsch())){
         jLabel4.setText("Gut Gemacht!");
         zlevel1.getVoccc().remove(zlevel1.getK());

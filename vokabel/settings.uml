@@ -1,8 +1,8 @@
 ﻿[Files]
-File0=C:\Users\mrcdi\Desktop\Scuola\Informatica\2. Semester\VokabelProjekt.git\trunk\vokabel\Timerclass.java
+File0=C:\Users\mrcdi\Desktop\Scuola\Informatica\2. Semester\VokabelProjekt.git\trunk\vokabel\settings.java
 
-[Box:  - Timerclass]
-X=20
+[Box:  - settings]
+X=244
 Y=40
 MinVis=0
 ShowParameter=4
@@ -28,8 +28,8 @@ ShowObjectDiagram=0
 I0=
 
 [Window]
-Left=104
-Top=104
-Width=1271
+Left=52
+Top=52
+Width=1209
 Height=308
 
