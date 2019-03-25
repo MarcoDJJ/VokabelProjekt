@@ -71,7 +71,13 @@ public class newbutton implements ActionListener {
   vokabel fd27;
   vokabel fd28;
   vokabel fd29;
-  public newbutton(zufalleasyy zlevel1,vokabel fd,vokabel fd1,vokabel fd2,vokabel fd3,vokabel fd4,vokabel fd5,vokabel fd6,vokabel fd7,vokabel fd8,vokabel fd9,vokabel fd10,vokabel fd11,vokabel fd12,vokabel fd13,vokabel fd14,vokabel fd15,vokabel fd16,vokabel fd17,vokabel fd18,vokabel fd19,vokabel fd20,vokabel fd21,vokabel fd22,vokabel fd23,vokabel fd24,vokabel fd25,vokabel fd26,vokabel fd27,vokabel fd28,vokabel fd29){
+  JButton jButton1;
+  points pointslevel1;
+  JLabel jLabel5;
+  public newbutton(JLabel jLabel5,points pointslevel1,JButton jButton1,zufalleasyy zlevel1,vokabel fd,vokabel fd1,vokabel fd2,vokabel fd3,vokabel fd4,vokabel fd5,vokabel fd6,vokabel fd7,vokabel fd8,vokabel fd9,vokabel fd10,vokabel fd11,vokabel fd12,vokabel fd13,vokabel fd14,vokabel fd15,vokabel fd16,vokabel fd17,vokabel fd18,vokabel fd19,vokabel fd20,vokabel fd21,vokabel fd22,vokabel fd23,vokabel fd24,vokabel fd25,vokabel fd26,vokabel fd27,vokabel fd28,vokabel fd29){
+    this.jLabel5=jLabel5;
+    this.pointslevel1=pointslevel1;
+    this.jButton1=jButton1;
     this.zlevel1=zlevel1;
     this.fd=fd;
     this.fd1=fd1;
@@ -103,8 +109,8 @@ public class newbutton implements ActionListener {
     this.fd27=fd27;
     this.fd28=fd28;
     this.fd29=fd29;
-     }
-    public void actionPerformed(ActionEvent r){
+  }
+  public void actionPerformed(ActionEvent r){
     
     vlevel13.fuegevokabelnhinzu(fd);
     vlevel14.fuegevokabelnhinzu(fd1);
@@ -166,12 +172,17 @@ public class newbutton implements ActionListener {
     zlevel1.fuegevoccnhinzu(vlevel38);
     zlevel1.fuegevoccnhinzu(vlevel39);
     zlevel1.fuegevoccnhinzu(vlevel40);
-    zlevel1.fuegevoccnhinzu(vlevel41);   
-    }
+    zlevel1.fuegevoccnhinzu(vlevel41);
+    jButton1.setVisible(true);
+    pointslevel1.setpp(0);
+    pointslevel1.setpn(0);
+    jLabel5.setText("You scored " +pointslevel1.getPositivepoints()+ " correct answers and " +pointslevel1.getNegativepoints()+" wrong answers");
     
-    public static void main(String[] args) {
+  }
+  
+  public static void main(String[] args) {
     
   } // end of main
-
+  
 } // end of class newbutton
 
