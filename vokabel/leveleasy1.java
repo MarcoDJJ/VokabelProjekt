@@ -237,7 +237,7 @@ public class leveleasy1 extends JFrame {
     jButton2.setText("Verify");
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     
-    jButton4.addActionListener(new newbutton(jLabel5,pointslevel1,jButton1,zlevel1,fd,fd1,fd2,fd3,fd4,fd5,fd6,fd7,fd8,fd9,fd10,fd11,fd12,fd13,fd14,fd15,fd16,fd17,fd18,fd19,fd20,fd21,fd22,fd23,fd24,fd25,fd26,fd27,fd28,fd29));
+    jButton5.addActionListener(new newbutton(jLabel1,timerlevel1,jLabel5,pointslevel1,jButton1,zlevel1,fd,fd1,fd2,fd3,fd4,fd5,fd6,fd7,fd8,fd9,fd10,fd11,fd12,fd13,fd14,fd15,fd16,fd17,fd18,fd19,fd20,fd21,fd22,fd23,fd24,fd25,fd26,fd27,fd28,fd29));
     jButton1.addActionListener(new startbutton(jTextField1, timerlevel1, zlevel1,jButton1));
     jButton2.addActionListener(new verifybutton(zlevel1, jLabel4, jTextField1, jTextField2, pointslevel1, jLabel5, timerlevel1,jButton1,jButton2));
     /*jButton1.addActionListener(new ActionListener() { 
