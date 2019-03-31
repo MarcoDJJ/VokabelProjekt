@@ -76,7 +76,17 @@ public class newbutton implements ActionListener {
   JLabel jLabel5;
   Timerclass timerlevel1;
   JLabel jLabel1;
-  public newbutton(JLabel jLabel1,Timerclass timerlevel1,JLabel jLabel5,points pointslevel1,JButton jButton1,zufalleasyy zlevel1,vokabel fd,vokabel fd1,vokabel fd2,vokabel fd3,vokabel fd4,vokabel fd5,vokabel fd6,vokabel fd7,vokabel fd8,vokabel fd9,vokabel fd10,vokabel fd11,vokabel fd12,vokabel fd13,vokabel fd14,vokabel fd15,vokabel fd16,vokabel fd17,vokabel fd18,vokabel fd19,vokabel fd20,vokabel fd21,vokabel fd22,vokabel fd23,vokabel fd24,vokabel fd25,vokabel fd26,vokabel fd27,vokabel fd28,vokabel fd29){
+  JButton jButton5;
+  JButton jButton3;
+    
+    JButton jButton4;
+    JTextField jTextField3;
+  public newbutton( JTextField jTextField3,JButton jButton4,JButton jButton3,JButton jButton5,JLabel jLabel1,Timerclass timerlevel1,JLabel jLabel5,points pointslevel1,JButton jButton1,zufalleasyy zlevel1,vokabel fd,vokabel fd1,vokabel fd2,vokabel fd3,vokabel fd4,vokabel fd5,vokabel fd6,vokabel fd7,vokabel fd8,vokabel fd9,vokabel fd10,vokabel fd11,vokabel fd12,vokabel fd13,vokabel fd14,vokabel fd15,vokabel fd16,vokabel fd17,vokabel fd18,vokabel fd19,vokabel fd20,vokabel fd21,vokabel fd22,vokabel fd23,vokabel fd24,vokabel fd25,vokabel fd26,vokabel fd27,vokabel fd28,vokabel fd29){
+    this.jButton3=jButton3;
+    this.jLabel5=jLabel5;
+    this.jButton4=jButton4;
+    this.jTextField3=jTextField3;
+    this.jButton5=jButton5;
     this.jLabel1=jLabel1;
     this.timerlevel1=timerlevel1;
     this.jLabel5=jLabel5;
@@ -115,9 +125,13 @@ public class newbutton implements ActionListener {
     this.fd29=fd29;
   }
   public void actionPerformed(ActionEvent r){
-    jButton1.setVisible(true);
+    jButton5.setVisible(false);
     timerlevel1.setsp(0);
     jLabel1.setText("");
+    jButton3.setVisible(false);
+    jButton4.setVisible(false);
+    jLabel5.setVisible(false);
+    jTextField3.setVisible(false);
     vlevel13.fuegevokabelnhinzu(fd);
     vlevel14.fuegevokabelnhinzu(fd1);
     vlevel15.fuegevokabelnhinzu(fd2);

@@ -20,7 +20,13 @@ public class Timerclass{
   JButton jButton3;
   JTextField jTextField3;
   int i=0;
-  public Timerclass(JLabel jj, JButton jButton3, JTextField jTextField3){
+  JButton jButton5;
+  JTextField jTextField1;
+    JTextField jTextField2;
+  public Timerclass(JTextField jTextField1,JTextField jTextField2,JButton jButton5,JLabel jj, JButton jButton3, JTextField jTextField3){
+    this.jTextField1=jTextField1;
+    this.jTextField2=jTextField2;
+    this.jButton5=jButton5;
      this.j=jj;
      this.jButton3=jButton3;
     this.jTextField3=jTextField3;
@@ -28,12 +34,14 @@ public class Timerclass{
   // Anfang Methoden
   TimerTask task = new TimerTask() {
     public void run(){
-      if(secondsPassed<v && i==0){
+      if(secondsPassed<v){
       secondsPassed++;}
       else {
         jButton3.setVisible(true);
         jTextField3.setVisible(true);
-        i=1;
+        jButton5.setVisible(true);
+        jTextField1.setText(null);
+        jTextField2.setText(null);
       } 
       j.setText(secondsPassed + " ");
     }
