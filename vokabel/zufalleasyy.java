@@ -13,13 +13,13 @@ public class zufalleasyy {
   int c=1;
   int y= voc.nextInt(c);
   int k=y;
-  ArrayList<vokabelnarray> vocc = new ArrayList<>();
+  ArrayList<vokabel> vocc = new ArrayList<>();
   // Ende Attribute
   // Anfang Methoden
-  public void fuegevoccnhinzu(vokabelnarray neu){
+  public void fuegevoccnhinzu(vokabel neu){
     vocc.add(neu);
   }
-  public vokabelnarray getVocc() {      
+  public vokabel getVocc() {      
     y= voc.nextInt(c++);
     this.k=y;
     return vocc.get(y);  
@@ -27,7 +27,7 @@ public class zufalleasyy {
  
   
     
-  public vokabelnarray ynow(){
+  public vokabel ynow(){
   return vocc.get(k);
     }
   /*public vokabelnarray getallvocc(){
@@ -52,7 +52,7 @@ public class zufalleasyy {
   return k;
   }
   
-  public ArrayList<vokabelnarray> getVoccc() {
+  public ArrayList<vokabel> getVoccc() {
     return vocc;
   }
     

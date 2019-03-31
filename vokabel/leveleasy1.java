@@ -42,39 +42,7 @@ public class leveleasy1 extends JFrame {
   private JButton jButton4 = new JButton();
   private JButton jButton5 = new JButton();
   // Ende Attribute
-  
-  
-  vokabelnarray vlevel13 = new vokabelnarray();
-  vokabelnarray vlevel14 = new vokabelnarray();
-  vokabelnarray vlevel15 = new vokabelnarray();
-  vokabelnarray vlevel16 = new vokabelnarray();
-  vokabelnarray vlevel17 = new vokabelnarray();
-  vokabelnarray vlevel18 = new vokabelnarray();
-  vokabelnarray vlevel19 = new vokabelnarray();
-  vokabelnarray vlevel20 = new vokabelnarray();
-  vokabelnarray vlevel21 = new vokabelnarray();
-  vokabelnarray vlevel22 = new vokabelnarray();
-  vokabelnarray vlevel23 = new vokabelnarray();
-  vokabelnarray vlevel24 = new vokabelnarray();
-  vokabelnarray vlevel25 = new vokabelnarray();
-  vokabelnarray vlevel26 = new vokabelnarray();
-  vokabelnarray vlevel27 = new vokabelnarray();
-  vokabelnarray vlevel28 = new vokabelnarray();
-  vokabelnarray vlevel29 = new vokabelnarray();
-  vokabelnarray vlevel30 = new vokabelnarray();
-  vokabelnarray vlevel31 = new vokabelnarray();
-  vokabelnarray vlevel32 = new vokabelnarray();
-  vokabelnarray vlevel33 = new vokabelnarray();
-  vokabelnarray vlevel34 = new vokabelnarray();
-  vokabelnarray vlevel35 = new vokabelnarray();
-  vokabelnarray vlevel36 = new vokabelnarray();
-  vokabelnarray vlevel37 = new vokabelnarray();
-  vokabelnarray vlevel38 = new vokabelnarray();
-  vokabelnarray vlevel39 = new vokabelnarray();
-  vokabelnarray vlevel40 = new vokabelnarray();
-  vokabelnarray vlevel41 = new vokabelnarray();
-  
-  
+
   
   vokabel fd = new vokabel("apple", "apfel");
   vokabel fd1 = new vokabel("pear", "birne");
@@ -156,36 +124,6 @@ public class leveleasy1 extends JFrame {
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     
     
-    vlevel13.fuegevokabelnhinzu(fd);
-    vlevel14.fuegevokabelnhinzu(fd1);
-    vlevel15.fuegevokabelnhinzu(fd2);
-    vlevel16.fuegevokabelnhinzu(fd3);
-    vlevel17.fuegevokabelnhinzu(fd4);
-    vlevel18.fuegevokabelnhinzu(fd5);
-    vlevel19.fuegevokabelnhinzu(fd6);
-    vlevel20.fuegevokabelnhinzu(fd7);
-    vlevel21.fuegevokabelnhinzu(fd8);
-    vlevel22.fuegevokabelnhinzu(fd9);
-    vlevel23.fuegevokabelnhinzu(fd10);
-    vlevel24.fuegevokabelnhinzu(fd11);
-    vlevel24.fuegevokabelnhinzu(fd11);
-    vlevel25.fuegevokabelnhinzu(fd13);
-    vlevel26.fuegevokabelnhinzu(fd14);
-    vlevel27.fuegevokabelnhinzu(fd15);
-    vlevel28.fuegevokabelnhinzu(fd16);
-    vlevel29.fuegevokabelnhinzu(fd17);
-    vlevel30.fuegevokabelnhinzu(fd18);
-    vlevel31.fuegevokabelnhinzu(fd19);
-    vlevel32.fuegevokabelnhinzu(fd20);
-    vlevel33.fuegevokabelnhinzu(fd21);
-    vlevel34.fuegevokabelnhinzu(fd22);
-    vlevel35.fuegevokabelnhinzu(fd23);
-    vlevel36.fuegevokabelnhinzu(fd24);
-    vlevel37.fuegevokabelnhinzu(fd25);
-    vlevel38.fuegevokabelnhinzu(fd26);
-    vlevel39.fuegevokabelnhinzu(fd27);
-    vlevel40.fuegevokabelnhinzu(fd28);
-    vlevel41.fuegevokabelnhinzu(fd29);
     
     
     
@@ -193,35 +131,36 @@ public class leveleasy1 extends JFrame {
     
     
     
-    zlevel1.fuegevoccnhinzu(vlevel13);
-    zlevel1.fuegevoccnhinzu(vlevel14);
-    zlevel1.fuegevoccnhinzu(vlevel15);
-    zlevel1.fuegevoccnhinzu(vlevel16);
-    zlevel1.fuegevoccnhinzu(vlevel17);
-    zlevel1.fuegevoccnhinzu(vlevel18);
-    zlevel1.fuegevoccnhinzu(vlevel19);
-    zlevel1.fuegevoccnhinzu(vlevel20);
-    zlevel1.fuegevoccnhinzu(vlevel21);
-    zlevel1.fuegevoccnhinzu(vlevel22);
-    zlevel1.fuegevoccnhinzu(vlevel23);
-    zlevel1.fuegevoccnhinzu(vlevel24);
-    zlevel1.fuegevoccnhinzu(vlevel25);
-    zlevel1.fuegevoccnhinzu(vlevel26);
-    zlevel1.fuegevoccnhinzu(vlevel27);
-    zlevel1.fuegevoccnhinzu(vlevel28);
-    zlevel1.fuegevoccnhinzu(vlevel29);
-    zlevel1.fuegevoccnhinzu(vlevel30);
-    zlevel1.fuegevoccnhinzu(vlevel31);
-    zlevel1.fuegevoccnhinzu(vlevel32);
-    zlevel1.fuegevoccnhinzu(vlevel33);
-    zlevel1.fuegevoccnhinzu(vlevel34);
-    zlevel1.fuegevoccnhinzu(vlevel35);
-    zlevel1.fuegevoccnhinzu(vlevel36);
-    zlevel1.fuegevoccnhinzu(vlevel37);
-    zlevel1.fuegevoccnhinzu(vlevel38);
-    zlevel1.fuegevoccnhinzu(vlevel39);
-    zlevel1.fuegevoccnhinzu(vlevel40);
-    zlevel1.fuegevoccnhinzu(vlevel41);   
+    
+    zlevel1.fuegevoccnhinzu(fd);
+    zlevel1.fuegevoccnhinzu(fd1);
+    zlevel1.fuegevoccnhinzu(fd2);
+    zlevel1.fuegevoccnhinzu(fd3);
+    zlevel1.fuegevoccnhinzu(fd4);
+    zlevel1.fuegevoccnhinzu(fd5);
+    zlevel1.fuegevoccnhinzu(fd6);
+    zlevel1.fuegevoccnhinzu(fd7);
+    zlevel1.fuegevoccnhinzu(fd8);
+    zlevel1.fuegevoccnhinzu(fd9);
+    zlevel1.fuegevoccnhinzu(fd10);
+    zlevel1.fuegevoccnhinzu(fd11);
+    zlevel1.fuegevoccnhinzu(fd12);
+    zlevel1.fuegevoccnhinzu(fd13);
+    zlevel1.fuegevoccnhinzu(fd14);
+    zlevel1.fuegevoccnhinzu(fd15);
+    zlevel1.fuegevoccnhinzu(fd16);
+    zlevel1.fuegevoccnhinzu(fd17);
+    zlevel1.fuegevoccnhinzu(fd18);
+    zlevel1.fuegevoccnhinzu(fd19);
+    zlevel1.fuegevoccnhinzu(fd20);
+    zlevel1.fuegevoccnhinzu(fd21);
+    zlevel1.fuegevoccnhinzu(fd22);
+    zlevel1.fuegevoccnhinzu(fd23);
+    zlevel1.fuegevoccnhinzu(fd24);
+    zlevel1.fuegevoccnhinzu(fd25);
+    zlevel1.fuegevoccnhinzu(fd26);
+    zlevel1.fuegevoccnhinzu(fd27);
+    zlevel1.fuegevoccnhinzu(fd28);   
     //indexof
     //remove(Object o)
     

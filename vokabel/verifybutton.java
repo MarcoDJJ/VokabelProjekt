@@ -51,10 +51,10 @@ public class verifybutton implements ActionListener {
   }                
   public void actionPerformed(ActionEvent e){
     if(timerlevel1.getTimerNow()<timerlevel1.getV()){
-      if(jTextField2.getText().equals(zlevel1.ynow().getVokabelnA(0).getDeutsch())){
+      if(jTextField2.getText().equals(zlevel1.ynow().getDeutsch())){
         jLabel4.setText("Gut Gemacht!");
         zlevel1.getVoccc().remove(zlevel1.getK());
-        jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
+        jTextField1.setText(zlevel1.getVocc().getEnglish());
         jTextField2.setText(null);
         pointslevel1.addppoint();
         jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answers and "+pointslevel1.getNegativepoints()+ " wrong answers");
@@ -64,7 +64,7 @@ public class verifybutton implements ActionListener {
       else{ 
         jLabel4.setText("Falsch");
         zlevel1.getVoccc().remove(zlevel1.getK());
-        jTextField1.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
+        jTextField1.setText(zlevel1.getVocc().getEnglish());
         pointslevel1.addnpoint();
         jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
         jTextField2.setText(null); 

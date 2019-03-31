@@ -21,7 +21,7 @@ public class startbutton implements ActionListener {
     timerlevel1=timerlevel2;
    zlevel1=zlevel2; }
    public void actionPerformed(ActionEvent e){
-    t.setText(zlevel1.getVocc().getVokabelnA(0).getEnglish());
+    t.setText(zlevel1.getVocc().getEnglish());
           timerlevel1.start();
     jButton1.setVisible(false);
     timerlevel1.setI();
