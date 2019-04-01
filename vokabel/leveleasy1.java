@@ -41,6 +41,9 @@ public class leveleasy1 extends JFrame {
   private JTextField jTextField3 = new JTextField();
   private JButton jButton4 = new JButton();
   private JButton jButton5 = new JButton();
+  private JList jList1 = new JList();
+    private DefaultListModel jList1Model = new DefaultListModel();
+    private JScrollPane jList1ScrollPane = new JScrollPane(jList1);
   // Ende Attribute
 
   
@@ -176,7 +179,7 @@ public class leveleasy1 extends JFrame {
     jButton2.setText("Verify");
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     
-    jButton5.addActionListener(new newbutton(jTextField3,jButton4,jButton3,jButton5,jLabel1,timerlevel1,jLabel5,pointslevel1,jButton1,zlevel1,fd,fd1,fd2,fd3,fd4,fd5,fd6,fd7,fd8,fd9,fd10,fd11,fd12,fd13,fd14,fd15,fd16,fd17,fd18,fd19,fd20,fd21,fd22,fd23,fd24,fd25,fd26,fd27,fd28,fd29));
+    jButton5.addActionListener(new newbutton(jTextField1,jTextField3,jButton4,jButton3,jButton5,jLabel1,timerlevel1,jLabel5,pointslevel1,jButton1,zlevel1,fd,fd1,fd2,fd3,fd4,fd5,fd6,fd7,fd8,fd9,fd10,fd11,fd12,fd13,fd14,fd15,fd16,fd17,fd18,fd19,fd20,fd21,fd22,fd23,fd24,fd25,fd26,fd27,fd28,fd29));
     jButton1.addActionListener(new startbutton(jTextField1, timerlevel1, zlevel1,jButton1));
     jButton2.addActionListener(new verifybutton(zlevel1, jLabel4, jTextField1, jTextField2, pointslevel1, jLabel5, timerlevel1,jButton1,jButton2));
     /*jButton1.addActionListener(new ActionListener() { 
@@ -219,8 +222,9 @@ public class leveleasy1 extends JFrame {
     jButton4.setMargin(new Insets(2, 2, 2, 2));
     jButton4.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        s.setjlabel1text(s.getSavefiless()+"");
+        s.addsave(jTextField3.getText()+" =  "+ jLabel5.getText());
         s.setVisible(true);
+        jButton4.setVisible(false);
       }
     });
     cp.add(jButton4);
@@ -234,6 +238,9 @@ public class leveleasy1 extends JFrame {
       }
     });
     cp.add(jButton5);
+    jList1.setModel(jList1Model);
+    jList1ScrollPane.setBounds(224, 240, 9, 9);
+    cp.add(jList1ScrollPane);
     // Ende Komponenten
     
     setVisible(true);
