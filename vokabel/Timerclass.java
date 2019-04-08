@@ -23,7 +23,8 @@ public class Timerclass{
   JButton jButton5;
   JTextField jTextField1;
     JTextField jTextField2;
-  public Timerclass(JTextField jTextField1,JTextField jTextField2,JButton jButton5,JLabel jj, JButton jButton3, JTextField jTextField3){
+  public Timerclass(int v,JTextField jTextField1,JTextField jTextField2,JButton jButton5,JLabel jj, JButton jButton3, JTextField jTextField3){
+    this.v=v;
     this.jTextField1=jTextField1;
     this.jTextField2=jTextField2;
     this.jButton5=jButton5;

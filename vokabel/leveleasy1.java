@@ -41,11 +41,8 @@ public class leveleasy1 extends JFrame {
   private JTextField jTextField3 = new JTextField();
   private JButton jButton4 = new JButton();
   private JButton jButton5 = new JButton();
-  private JList jList1 = new JList();
-    private DefaultListModel jList1Model = new DefaultListModel();
-    private JScrollPane jList1ScrollPane = new JScrollPane(jList1);
   // Ende Attribute
-
+  
   
   vokabel fd = new vokabel("apple", "apfel");
   vokabel fd1 = new vokabel("pear", "birne");
@@ -81,10 +78,11 @@ public class leveleasy1 extends JFrame {
   
   zufalleasyy zlevel1= new zufalleasyy();
   
-  Timerclass timerlevel1 =new Timerclass(jTextField1,jTextField2,jButton5,jLabel1,jButton3,jTextField3);
+  
   points pointslevel1=new points(0, 0, 0);
   savefiles s= new savefiles(); 
-  
+  int i=60;
+  Timerclass timerlevel1 =new Timerclass(i,jTextField1,jTextField2,jButton5,jLabel1,jButton3,jTextField3);
   /*public void keyPressed(KeyEvent e) {
   
   int key = e.getKeyCode();
@@ -95,13 +93,14 @@ public class leveleasy1 extends JFrame {
   }
   }*/
   
-  public leveleasy1() { 
+  public leveleasy1(int i) { 
     // Frame-Initialisierung
     super();
+    this.i=i;
     s.setVisible(false);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 1056; 
-    int frameHeight = 287;
+    int frameWidth = 1046; 
+    int frameHeight = 329;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -116,7 +115,7 @@ public class leveleasy1 extends JFrame {
     jLabel1.setBounds(8, 8, 81, 17);
     jLabel1.setText("");
     cp.add(jLabel1);
-    jLabel2.setBounds(8, 96, 57, 49);
+    jLabel2.setBounds(0, 96, 57, 49);
     jLabel2.setText("English");
     cp.add(jLabel2);
     jLabel3.setBounds(0, 168, 65, 41);
@@ -208,7 +207,7 @@ public class leveleasy1 extends JFrame {
     jButton4.setVisible(false);
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) {
-        s.addsave(jLabel5.getText());
+        s.addsave(jTextField3.getText()+" =  "+ jLabel5.getText());
         
         jButton4.setVisible(true);
         jButton5.setVisible(true);
@@ -222,9 +221,10 @@ public class leveleasy1 extends JFrame {
     jButton4.setMargin(new Insets(2, 2, 2, 2));
     jButton4.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        s.addsave(jTextField3.getText()+" =  "+ jLabel5.getText());
+        
         s.setVisible(true);
         jButton4.setVisible(false);
+        //jButton3.setVisible(false);
       }
     });
     cp.add(jButton4);
@@ -232,15 +232,7 @@ public class leveleasy1 extends JFrame {
     jButton5.setText("New");
     jButton5.setVisible(false);
     jButton5.setMargin(new Insets(2, 2, 2, 2));
-    jButton5.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
-        jButton5_ActionPerformed(evt);
-      }
-    });
     cp.add(jButton5);
-    jList1.setModel(jList1Model);
-    jList1ScrollPane.setBounds(224, 240, 9, 9);
-    cp.add(jList1ScrollPane);
     // Ende Komponenten
     
     setVisible(true);

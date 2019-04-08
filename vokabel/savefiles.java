@@ -28,7 +28,9 @@ import javax.swing.SwingConstants;
 
 public class savefiles extends JFrame {
   // Anfang Attribute
-  private JLabel jLabel1 = new JLabel();
+  private JList jList1 = new JList();
+    private DefaultListModel jList1Model = new DefaultListModel();
+    private JScrollPane jList1ScrollPane = new JScrollPane(jList1);
   // Ende Attribute
   ArrayList<String> savefiless = new ArrayList<>();
   
@@ -49,20 +51,19 @@ public class savefiles extends JFrame {
     cp.setLayout(null);
     // Anfang Komponenten
     
-    jLabel1.setBounds(0, 16, 377, 273);
-    jLabel1.setText("text");
-    cp.add(jLabel1);
+    jList1.setModel(jList1Model);
+    jList1ScrollPane.setBounds(8, 0, 449, 297);
+    cp.add(jList1ScrollPane);
     // Ende Komponenten
     
     setVisible(true);
   } // end of public savefiles
-  public void addsave(String ss){
-    savefiless.add(ss);
-  }
+ 
   // Anfang Methoden
-  public void setjlabel1text(String sss){
-    jLabel1.setText(sss);
-    }
+  public void addsave(String sss){
+    jList1Model.addElement(sss);
+    jList1.setModel(jList1Model);
+  }
   public static void main(String[] args) {
     new savefiles();
   } // end of main
@@ -70,7 +71,7 @@ public class savefiles extends JFrame {
   public ArrayList<String> getSavefiless() {
     return savefiless;
   }
-
+  
   // Ende Methoden
 } // end of class savefiles
 
