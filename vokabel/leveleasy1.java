@@ -1,3 +1,4 @@
+import java.io.*;
 import java.awt.*;
 import java.awt.Color;
 import java.awt.event.*;
@@ -81,8 +82,8 @@ public class leveleasy1 extends JFrame {
   
   points pointslevel1=new points(0, 0, 0);
   savefiles s= new savefiles(); 
-  int i=60;
-  Timerclass timerlevel1 =new Timerclass(i,jTextField1,jTextField2,jButton5,jLabel1,jButton3,jTextField3);
+ 
+  Timerclass timerlevel1 =new Timerclass(jTextField1,jTextField2,jButton5,jLabel1,jButton3,jTextField3);
   /*public void keyPressed(KeyEvent e) {
   
   int key = e.getKeyCode();
@@ -93,10 +94,11 @@ public class leveleasy1 extends JFrame {
   }
   }*/
   
-  public leveleasy1(int i) { 
+  public leveleasy1( zufalleasyy zlevel1) { 
     // Frame-Initialisierung
     super();
-    this.i=i;
+    
+  this.zlevel1=zlevel1;
     s.setVisible(false);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 1046; 
@@ -247,7 +249,7 @@ public class leveleasy1 extends JFrame {
   // Anfang Methoden
   
   public static void main(String[] args) {
-    new leveleasy1();
+  
     
   } // end of main
   

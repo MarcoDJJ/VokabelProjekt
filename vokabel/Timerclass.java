@@ -16,14 +16,14 @@ public class Timerclass{
   int secondsPassed = 0;
   JLabel j;
   Timer t=new Timer();
-  int v = 60;
+   int v=60;
   JButton jButton3;
   JTextField jTextField3;
   int i=0;
   JButton jButton5;
   JTextField jTextField1;
     JTextField jTextField2;
-  public Timerclass(int v,JTextField jTextField1,JTextField jTextField2,JButton jButton5,JLabel jj, JButton jButton3, JTextField jTextField3){
+  public Timerclass(JTextField jTextField1,JTextField jTextField2,JButton jButton5,JLabel jj, JButton jButton3, JTextField jTextField3){
     this.v=v;
     this.jTextField1=jTextField1;
     this.jTextField2=jTextField2;

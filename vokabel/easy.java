@@ -1,8 +1,25 @@
+import java.io.*;
 import java.awt.*;
+import java.awt.Color;
 import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.Font;
+import java.text.*;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import javax.swing.event.*;
-
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.util.Random;
+import java.util.ArrayList;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.*;
 /**
  *
  * Beschreibung
@@ -41,8 +58,12 @@ public class easy extends JFrame {
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton1_ActionPerformed(evt);
-        leveleasy1 level1=new leveleasy1();
-        level1.setVisible(true);
+        vokabel vk= new vokabel("","");
+        vk.setm(1);
+        vk.setleveleasy1();
+        vk.getleveleasy1();
+        leveleasy1 le1=new leveleasy1(vk.getzlevel1());
+        
       }
     });
     cp.add(jButton1);
@@ -51,9 +72,7 @@ public class easy extends JFrame {
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        jButton2_ActionPerformed(evt);
-        leveleasy2 level2=new leveleasy2();
-        level2.setVisible(true);
+        
       }
     });
     cp.add(jButton2);
@@ -62,10 +81,7 @@ public class easy extends JFrame {
     jButton3.setMargin(new Insets(2, 2, 2, 2));
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        jButton3_ActionPerformed(evt);
-       
-        leveleasy3 level3=new leveleasy3();
-        level3.setVisible(true);
+        
       }
     });
     cp.add(jButton3);
@@ -84,17 +100,17 @@ public class easy extends JFrame {
     
     
   } // end of jButton1_ActionPerformed
-
+  
   public void jButton2_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
     
   } // end of jButton2_ActionPerformed
-
+  
   public void jButton3_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
     
   } // end of jButton3_ActionPerformed
-
+  
   // Ende Methoden
 } // end of class easy
 
