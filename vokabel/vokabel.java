@@ -44,19 +44,19 @@ import java.util.Random;
   vokabel fd29 = new vokabel("soup", "suppe");    
   // Ende Attribute
   public zufalleasyy getzlevel1(){
-    return zlevel1;}
+  return zlevel1;}
   public vokabel(String english, String deutsch){
     
     this.english=english;
     this.deutsch=deutsch;
   }
   public void setm(int mm){
-     m=mm;
-    }
+    m=mm;
+  }
   public int getm(){
-     return m;
-    }
- 
+    return m;
+  }
+  
   public static void main(String[] args) {
     
     
@@ -66,7 +66,7 @@ import java.util.Random;
   }
   
   
-
+  
   
   public String getDeutsch() {
     return deutsch;
@@ -74,17 +74,17 @@ import java.util.Random;
   public void setDeutsch(String deutschNew) {
     deutsch = deutschNew;
   }
-
+  
   public void setleveleasy1(){
     
     try (FileOutputStream fos = new FileOutputStream ("dummy.ser");
     ObjectOutputStream oos = new ObjectOutputStream (fos)) {
       for(int i=0;i<30; i++){
-       mmm="fd"+i;
+        mmm="fd"+i;
         oos.writeObject (m);
       }
       
-        
+      
     }
     catch(FileNotFoundException e)
     {
@@ -99,57 +99,57 @@ import java.util.Random;
   
   public void getleveleasy1(){
     
-     if(m==1){
+    if(m==1){
+      
+      try (FileInputStream fis = new FileInputStream ("dummy.ser");
+      ObjectInputStream ois = new ObjectInputStream (fis)) {
         
-     try (FileInputStream fis = new FileInputStream ("dummy.ser");
-    ObjectInputStream ois = new ObjectInputStream (fis)) {
-         
         zlevel1.fuegevoccnhinzu(fd0 =(vokabel)ois.readObject());
         zlevel1.fuegevoccnhinzu(fd1 =(vokabel)ois.readObject());
         zlevel1.fuegevoccnhinzu(fd2 =(vokabel)ois.readObject());
         zlevel1.fuegevoccnhinzu(fd3 =(vokabel)ois.readObject());
         zlevel1.fuegevoccnhinzu(fd4 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd5 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd6 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd7 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd8 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd9 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd10 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd11=(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd12 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd13 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd14 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd15 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd16=(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd17 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd18 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd19 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd20 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd21 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd22 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd23 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd24 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd25 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd26=(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd27 =(vokabel)ois.readObject());
-       zlevel1.fuegevoccnhinzu(fd28 =(vokabel)ois.readObject());
-      zlevel1.fuegevoccnhinzu(fd29 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd5 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd6 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd7 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd8 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd9 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd10 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd11=(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd12 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd13 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd14 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd15 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd16=(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd17 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd18 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd19 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd20 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd21 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd22 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd23 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd24 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd25 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd26=(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd27 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd28 =(vokabel)ois.readObject());
+        zlevel1.fuegevoccnhinzu(fd29 =(vokabel)ois.readObject());
+      }
+      catch(FileNotFoundException e)
+      {
+        System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+      }
+      catch(IOException e)
+      {
+        System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+      }
+      catch(ClassNotFoundException e)
+      {
+        System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+      }
     }
-    catch(FileNotFoundException e)
-    {
-      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
-    }
-    catch(IOException e)
-    {
-      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
-    }
-    catch(ClassNotFoundException e)
-    {
-      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
-    }
-     }
   }
-    }
+}
   
  
 

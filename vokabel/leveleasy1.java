@@ -82,7 +82,7 @@ public class leveleasy1 extends JFrame {
   
   points pointslevel1=new points(0, 0, 0);
   savefiles s= new savefiles(); 
- 
+  
   Timerclass timerlevel1 =new Timerclass(jTextField1,jTextField2,jButton5,jLabel1,jButton3,jTextField3);
   /*public void keyPressed(KeyEvent e) {
   
@@ -98,7 +98,7 @@ public class leveleasy1 extends JFrame {
     // Frame-Initialisierung
     super();
     
-  this.zlevel1=zlevel1;
+    this.zlevel1=zlevel1;
     s.setVisible(false);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 1046; 
@@ -164,7 +164,8 @@ public class leveleasy1 extends JFrame {
     zlevel1.fuegevoccnhinzu(fd25);
     zlevel1.fuegevoccnhinzu(fd26);
     zlevel1.fuegevoccnhinzu(fd27);
-    zlevel1.fuegevoccnhinzu(fd28);   
+    zlevel1.fuegevoccnhinzu(fd28); 
+    
     //indexof
     //remove(Object o)
     
@@ -249,7 +250,7 @@ public class leveleasy1 extends JFrame {
   // Anfang Methoden
   
   public static void main(String[] args) {
-  
+    
     
   } // end of main
   
