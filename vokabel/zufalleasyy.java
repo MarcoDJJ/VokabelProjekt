@@ -8,7 +8,7 @@ import java.util.ArrayList;
   import java.util.Random;
   import java.util.Scanner;
   import java.io.*;
-public class zufalleasyy {
+public class zufalleasyy implements Serializable {
   
   Random voc= new Random();
   int c=1;
@@ -37,7 +37,9 @@ public class zufalleasyy {
     return vocc.get(k);
   }
   
-  
+   public vokabel voccmitint(int i){
+      return vocc.get(i);
+     }
   
   
   
@@ -70,6 +72,9 @@ public class zufalleasyy {
   
   
   } */
+  public void setVocc(ArrayList<vokabel> s){
+    this.vocc=s;
+  }
   public void run(){
     vokabel fd = new vokabel("apple", "apfel");
     vokabel fd1 = new vokabel("pear", "birne");
