@@ -18,6 +18,7 @@ public class home extends JFrame {
   private JButton jButton3 = new JButton();
   private JButton jButton4 = new JButton();
   private JButton jButton5 = new JButton();
+  private JButton jButton6 = new JButton();
   // Ende Attribute
   
   public home() { 
@@ -92,6 +93,15 @@ public class home extends JFrame {
       }
     });
     cp.add(jButton5);
+    jButton6.setBounds(200, 176, 81, 33);
+    jButton6.setText("jButton6");
+    jButton6.setMargin(new Insets(2, 2, 2, 2));
+    jButton6.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        jButton6_ActionPerformed(evt);
+      }
+    });
+    cp.add(jButton6);
     // Ende Komponenten
     
     setVisible(true);
@@ -127,6 +137,11 @@ public class home extends JFrame {
     // TODO hier Quelltext einfügen
     
   } // end of jButton5_ActionPerformed
+
+  public void jButton6_ActionPerformed(ActionEvent evt) {
+    // TODO hier Quelltext einfügen
+    
+  } // end of jButton6_ActionPerformed
 
   // Ende Methoden
 } // end of class home

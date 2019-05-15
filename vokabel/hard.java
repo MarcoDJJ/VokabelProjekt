@@ -40,9 +40,8 @@ public class hard extends JFrame {
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        jButton1_ActionPerformed(evt);
-        levelhard1 level7=new levelhard1();
-        level7.setVisible(true);
+              int j=6;
+        level levell=new level(j);
       }
     });
     cp.add(jButton1);
@@ -51,9 +50,8 @@ public class hard extends JFrame {
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        jButton2_ActionPerformed(evt);
-        levelhard2 level8=new levelhard2();
-        level8.setVisible(true);
+         int j=7;
+        level levell=new level(j);
       }
     });
     cp.add(jButton2);
@@ -62,9 +60,9 @@ public class hard extends JFrame {
     jButton3.setMargin(new Insets(2, 2, 2, 2));
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        jButton3_ActionPerformed(evt);
-        levelhard3 level8=new levelhard3();
-        level8.setVisible(true);
+         int j=8;
+        level levell=new level(j);
+       
       }
     });
     cp.add(jButton3);

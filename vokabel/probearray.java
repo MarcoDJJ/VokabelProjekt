@@ -20,12 +20,12 @@ public class probearray implements Serializable{
   public static void main(String[] args) {
     ArrayList<vokabel>  z2=new ArrayList<>();
     zufalleasyy z3= new zufalleasyy();
-    try (FileInputStream fis = new FileInputStream ("C:\\Users\\md0749\\Desktop\\dummy.dat");
+    try (FileInputStream fis = new FileInputStream ("vokabelneasy.ser");
     ObjectInputStream ois = new ObjectInputStream (fis)) {
       z2= (ArrayList<vokabel>) ois.readObject();
       z3.setVocc(z2);
       for (int i=0;i<=27;i++ ) {
-         System.out.println(z3.voccmitint(i));
+         System.out.println(z3.voccmitint(i).getDeutsch());
       } // end of for         
       
     }                        

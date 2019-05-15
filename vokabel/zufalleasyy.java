@@ -8,6 +8,7 @@ import java.util.ArrayList;
   import java.util.Random;
   import java.util.Scanner;
   import java.io.*;
+import java.util.*;
 public class zufalleasyy implements Serializable {
   
   Random voc= new Random();
@@ -75,7 +76,9 @@ public class zufalleasyy implements Serializable {
   public void setVocc(ArrayList<vokabel> s){
     this.vocc=s;
   }
-  public void run(){
+  
+  public static void main(String[] args) {
+    zufalleasyy z2= new zufalleasyy();
     vokabel fd = new vokabel("apple", "apfel");
     vokabel fd1 = new vokabel("pear", "birne");
     vokabel fd2 = new vokabel("water", "wasser");
@@ -107,40 +110,40 @@ public class zufalleasyy implements Serializable {
     vokabel fd28 = new vokabel("tea", "tee");
     vokabel fd29 = new vokabel("soup", "suppe");
     
-    fuegevoccnhinzu(fd);
-    fuegevoccnhinzu(fd1);
-    fuegevoccnhinzu(fd2);
-    fuegevoccnhinzu(fd3);
-    fuegevoccnhinzu(fd4);
-    fuegevoccnhinzu(fd5);
-    fuegevoccnhinzu(fd6);
-    fuegevoccnhinzu(fd7);
-    fuegevoccnhinzu(fd8);
-    fuegevoccnhinzu(fd9);
-    fuegevoccnhinzu(fd10);
-    fuegevoccnhinzu(fd11);
-    fuegevoccnhinzu(fd12);
-    fuegevoccnhinzu(fd13);
-    fuegevoccnhinzu(fd14);
-    fuegevoccnhinzu(fd15);
-    fuegevoccnhinzu(fd16);
-    fuegevoccnhinzu(fd17);
-    fuegevoccnhinzu(fd18);
-    fuegevoccnhinzu(fd19);
-    fuegevoccnhinzu(fd20);
-    fuegevoccnhinzu(fd21);
-    fuegevoccnhinzu(fd22);
-    fuegevoccnhinzu(fd23);
-    fuegevoccnhinzu(fd24);
-    fuegevoccnhinzu(fd25);
-    fuegevoccnhinzu(fd26);
-    fuegevoccnhinzu(fd27);
-    fuegevoccnhinzu(fd28);
-    try (FileOutputStream fos = new FileOutputStream ("C:\\Users\\md0749\\Desktop\\dummy.dat");
+    z2.fuegevoccnhinzu(fd);
+    z2.fuegevoccnhinzu(fd1);
+    z2.fuegevoccnhinzu(fd2);
+    z2.fuegevoccnhinzu(fd3);
+    z2.fuegevoccnhinzu(fd4);
+    z2.fuegevoccnhinzu(fd5);
+    z2.fuegevoccnhinzu(fd6);
+    z2.fuegevoccnhinzu(fd7);
+    z2.fuegevoccnhinzu(fd8);
+    z2.fuegevoccnhinzu(fd9);
+    z2.fuegevoccnhinzu(fd10);
+    z2.fuegevoccnhinzu(fd11);
+    z2.fuegevoccnhinzu(fd12);
+    z2.fuegevoccnhinzu(fd13);
+    z2.fuegevoccnhinzu(fd14);
+    z2.fuegevoccnhinzu(fd15);
+    z2.fuegevoccnhinzu(fd16);
+    z2.fuegevoccnhinzu(fd17);
+    z2.fuegevoccnhinzu(fd18);
+    z2.fuegevoccnhinzu(fd19);
+    z2.fuegevoccnhinzu(fd20);
+    z2.fuegevoccnhinzu(fd21);
+    z2.fuegevoccnhinzu(fd22);
+    z2.fuegevoccnhinzu(fd23);
+    z2.fuegevoccnhinzu(fd24);
+    z2.fuegevoccnhinzu(fd25);
+    z2.fuegevoccnhinzu(fd26);
+    z2.fuegevoccnhinzu(fd27);
+    z2.fuegevoccnhinzu(fd28);
+    try (FileOutputStream fos = new FileOutputStream ("vokabelneasy.ser");
     ObjectOutputStream oos = new ObjectOutputStream (fos)) {
       
       
-      oos.writeObject (getVoccc());
+      oos.writeObject (z2.getVoccc());
       
       
       
@@ -153,10 +156,6 @@ public class zufalleasyy implements Serializable {
     {
       System.out.println("Fehler beim Schreiben von dummy.ser: Ein- Ausgabefehler");
     }
-  }
-  public static void main(String[] args) {
-    zufalleasyy z2= new zufalleasyy();
-    z2.run();
     
     
     // Ende Methoden

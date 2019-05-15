@@ -40,9 +40,9 @@ public class normal extends JFrame {
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        jButton1_ActionPerformed(evt);
-        levelnormal1 level4=new levelnormal1();
-        level4.setVisible(true);
+         int j=3;
+        level levell=new level(j);
+        
       }
     });    
     cp.add(jButton1);
@@ -51,9 +51,9 @@ public class normal extends JFrame {
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        jButton2_ActionPerformed(evt);
-        levelnormal2 level5=new levelnormal2();
-        level5.setVisible(true);
+         int j=4;
+        level levell=new level(j);
+       
       }
     });
     cp.add(jButton2);
@@ -62,9 +62,9 @@ public class normal extends JFrame {
     jButton3.setMargin(new Insets(2, 2, 2, 2));
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        jButton3_ActionPerformed(evt);
-        levelnormal3 level6=new levelnormal3();
-        level6.setVisible(true);
+         int j=5;
+        level levell=new level(j);
+        
       }
     });
     cp.add(jButton3);

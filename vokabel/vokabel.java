@@ -1,8 +1,9 @@
 import java.io.*;
+import java.util.*;
 import java.util.Random;
   // start attributes
   // Anfang Attribute
-public class vokabel{
+public class vokabel implements Serializable{
   
   String english;
   String deutsch;
@@ -35,7 +36,10 @@ public class vokabel{
     return deutsch;
   }
   public void setDeutsch(String deutschNew) {
-    deutsch = deutschNew;
+    this.deutsch = deutschNew;
+  }
+  public void setEnglish(String englishNew) {
+    this.english = englishNew;
   }
   public static void main(String[] args) {
     
@@ -44,13 +48,4 @@ public class vokabel{
   
 }
   
-  
-  
-  // Ende Methoden
-  
-  
-  
-  // end methods
-  
-  // end of class vokabel
   

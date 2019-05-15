@@ -57,12 +57,8 @@ public class easy extends JFrame {
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        jButton1_ActionPerformed(evt);
-        vokabel vk= new vokabel("","");
-        vk.setm(1);
-        vk.setleveleasy1();
-        vk.getleveleasy1();
-        leveleasy1 le1=new leveleasy1(vk.getzlevel1());
+        int j=0;
+        level levell=new level(j);
         
       }
     });
@@ -72,7 +68,8 @@ public class easy extends JFrame {
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        
+          int j=1;
+        level levell=new level(j);
       }
     });
     cp.add(jButton2);
@@ -81,7 +78,8 @@ public class easy extends JFrame {
     jButton3.setMargin(new Insets(2, 2, 2, 2));
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        
+            int j=2;
+        level levell=new level(j);
       }
     });
     cp.add(jButton3);
