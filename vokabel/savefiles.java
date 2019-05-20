@@ -17,7 +17,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.event.*;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
-
+import java.io.*;
+import java.util.*;
 /**
  *
  * Beschreibung
@@ -26,11 +27,11 @@ import javax.swing.SwingConstants;
  * @author 
  */
 
-public class savefiles extends JFrame {
+public class savefiles extends JFrame implements Serializable{
   // Anfang Attribute
-  private JList jList1 = new JList();
-    private DefaultListModel jList1Model = new DefaultListModel();
-    private JScrollPane jList1ScrollPane = new JScrollPane(jList1);
+   JList jList1 = new JList();
+     DefaultListModel jList1Model = new DefaultListModel();
+     JScrollPane jList1ScrollPane = new JScrollPane(jList1);
   // Ende Attribute
   ArrayList<String> savefiless = new ArrayList<>();
   
@@ -58,7 +59,12 @@ public class savefiles extends JFrame {
     
     setVisible(true);
   } // end of public savefiles
- 
+  public JList getJList(){
+     return jList1;
+    }
+  public void setJList(JList jl){
+    this.jList1=jl;
+    }
   // Anfang Methoden
   public void addsave(String sss){
     jList1Model.addElement(sss);

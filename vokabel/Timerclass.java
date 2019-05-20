@@ -16,7 +16,7 @@ public class Timerclass{
   int secondsPassed = 0;
   JLabel j;
   Timer t=new Timer();
-   int v=60;
+   int v=3;
   JButton jButton3;
   JTextField jTextField3;
   int i=0;

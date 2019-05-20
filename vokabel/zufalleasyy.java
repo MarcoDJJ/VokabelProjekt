@@ -78,7 +78,7 @@ public class zufalleasyy implements Serializable {
   }
   
   public static void main(String[] args) {
-    zufalleasyy z2= new zufalleasyy();
+    /*zufalleasyy z2= new zufalleasyy();
     vokabel fd = new vokabel("apple", "apfel");
     vokabel fd1 = new vokabel("pear", "birne");
     vokabel fd2 = new vokabel("water", "wasser");
@@ -159,6 +159,6 @@ public class zufalleasyy implements Serializable {
     
     
     // Ende Methoden
-    
+      */
   }
 }

@@ -17,10 +17,11 @@ public class normal extends JFrame {
   private JButton jButton2 = new JButton();
   private JButton jButton3 = new JButton();
   // Ende Attribute
-  
-  public normal() { 
+  boolean bl=true;
+  public normal(boolean bl) { 
     // Frame-Initialisierung
     super();
+    this.bl=bl;
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 300;
     int frameHeight = 300;
@@ -40,8 +41,8 @@ public class normal extends JFrame {
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-         int j=3;
-        level levell=new level(j);
+         
+        level levell=new level(3,bl);
         
       }
     });    
@@ -51,8 +52,8 @@ public class normal extends JFrame {
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-         int j=4;
-        level levell=new level(j);
+       
+        level levell=new level(4,bl);
        
       }
     });
@@ -62,8 +63,8 @@ public class normal extends JFrame {
     jButton3.setMargin(new Insets(2, 2, 2, 2));
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-         int j=5;
-        level levell=new level(j);
+         
+        level levell=new level(5,bl);
         
       }
     });
@@ -76,7 +77,7 @@ public class normal extends JFrame {
   // Anfang Methoden
   
   public static void main(String[] args) {
-    new normal();
+    
   } // end of main
   
   public void jButton1_ActionPerformed(ActionEvent evt) {

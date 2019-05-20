@@ -19,6 +19,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import java.util.*;
 /**
  *
  * Beschreibung
@@ -27,7 +29,7 @@ import java.util.Scanner;
  * @author 
  */
 
-public class level extends JFrame {
+public class level extends JFrame implements Serializable {
   // Anfang Attribute
   private JLabel jLabel1 = new JLabel();
   private JLabel jLabel2 = new JLabel();
@@ -47,13 +49,13 @@ public class level extends JFrame {
   
   
   
-  
+  boolean bl=true;
   zufalleasyy zlevel1= new zufalleasyy();
   
-   int j=0;
+  int j=0;
   points pointslevel1=new points(0, 0, 0);
   savefiles s= new savefiles(); 
- 
+
   Timerclass timerlevel1 =new Timerclass(jTextField1,jTextField2,jButton5,jLabel1,jButton3,jTextField3);
   /*public void keyPressed(KeyEvent e) {
   
@@ -65,15 +67,15 @@ public class level extends JFrame {
   }
   }*/
   
-  public level(int j) { 
+  public level(int j,boolean bl) { 
     // Frame-Initialisierung
     super();
-    
-     this.j=j;
+    this.bl=bl;
+    this.j=j;
     s.setVisible(false);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 1046; 
-    int frameHeight = 329;
+    int frameWidth = 1055; 
+    int frameHeight = 326;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -150,55 +152,70 @@ public class level extends JFrame {
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) {
         s.addsave(jTextField3.getText()+" =  "+ jLabel5.getText());
-        
+        try (FileOutputStream fos = new FileOutputStream ("savefile.ser");
+        ObjectOutputStream oos = new ObjectOutputStream (fos)) {
+          
+          
+          oos.writeObject (s.getJList());
+          
+          
+          
+        }
+        catch(FileNotFoundException e)
+        {
+          System.out.println("Fehler beim Schreiben von dummy.ser: Datei nicht gefunden");
+        }
+        catch(IOException e)
+        {
+          System.out.println("Fehler beim Schreiben von dummy.ser: Ein- Ausgabefehler");
+        }
         jButton4.setVisible(true);
-        jButton5.setVisible(true);
-      }
-    });
-    cp.add(jButton3);
-    jTextField3.setBounds(704, 200, 225, 41);
-    cp.add(jTextField3);
-    jButton4.setBounds(616, 152, 145, 33);
-    jButton4.setText("go to your save files");
-    jButton4.setMargin(new Insets(2, 2, 2, 2));
-    jButton4.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
+          jButton5.setVisible(true);
+          }
+          });
+          cp.add(jButton3);
+          jTextField3.setBounds(704, 200, 225, 41);
+          cp.add(jTextField3);
+        jButton4.setBounds(616, 152, 145, 33);
+        jButton4.setText("go to your save files");
+        jButton4.setMargin(new Insets(2, 2, 2, 2));
+          jButton4.addActionListener(new ActionListener() { 
+        public void actionPerformed(ActionEvent evt) { 
         
-        s.setVisible(true);
-        jButton4.setVisible(false);
-        //jButton3.setVisible(false);
+       
+          s.setVisible(true);
+          jButton4.setVisible(false);
+          //jButton3.setVisible(false);
+        }
+        });
+        cp.add(jButton4);
+          jButton5.setBounds(248, 40, 105, 33);
+        jButton5.setText("New");
+        jButton5.setVisible(false);
+        jButton5.setMargin(new Insets(2, 2, 2, 2));
+          cp.add(jButton5);
+        // Ende Komponenten
+        
+        setVisible(true);
+          //}
+        /*else{
+        jButton1.setVisible(false);
+        jButton2.setVisible(false);
+        } */
       }
-    });
-    cp.add(jButton4);
-    jButton5.setBounds(248, 40, 105, 33);
-    jButton5.setText("New");
-    jButton5.setVisible(false);
-    jButton5.setMargin(new Insets(2, 2, 2, 2));
-    cp.add(jButton5);
-    // Ende Komponenten
+    // end of public level
     
-    setVisible(true);
-    //}
-    /*else{
-    jButton1.setVisible(false);
-    jButton2.setVisible(false);
-    } */
-  }
-  // end of public level
-  
-  // Anfang Methoden
-  
-  public static void main(String[] args) {
-     int j=0;
-      level l= new level(j);
-                                   
-  } // end of main
-  
-  public void jButton1_ActionPerformed(ActionEvent evt) {
+    // Anfang Methoden
+    
+    public static void main(String[] args) {
+    
+    } // end of main
+    
+    public void jButton1_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
     
-  } // end of jButton1_ActionPerformed
-  
+    } // end of jButton1_ActionPerformed
+    
   public void jButton2_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
     
@@ -207,18 +224,18 @@ public class level extends JFrame {
   public void jButton3_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
     
-  } // end of jButton3_ActionPerformed
+    } // end of jButton3_ActionPerformed
   
   public void jButton4_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einfügen
+  // TODO hier Quelltext einfügen
     
-  } // end of jButton4_ActionPerformed
+    } // end of jButton4_ActionPerformed
   
   public void jButton5_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einfügen
+  // TODO hier Quelltext einfügen
     
-  } // end of jButton5_ActionPerformed
+    } // end of jButton5_ActionPerformed
   
   // Ende Methoden
-} // end of class level
+  } // end of class level
     

@@ -17,10 +17,11 @@ public class hard extends JFrame {
   private JButton jButton2 = new JButton();
   private JButton jButton3 = new JButton();
   // Ende Attribute
-  
-  public hard() { 
+  boolean bl=true;
+  public hard(boolean bl) { 
     // Frame-Initialisierung
     super();
+    this.bl=bl;
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 300;
     int frameHeight = 300;
@@ -40,8 +41,8 @@ public class hard extends JFrame {
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-              int j=6;
-        level levell=new level(j);
+        
+        level levell=new level(6,bl);
       }
     });
     cp.add(jButton1);
@@ -50,8 +51,8 @@ public class hard extends JFrame {
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-         int j=7;
-        level levell=new level(j);
+         
+        level levell=new level(7,bl);
       }
     });
     cp.add(jButton2);
@@ -60,8 +61,8 @@ public class hard extends JFrame {
     jButton3.setMargin(new Insets(2, 2, 2, 2));
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-         int j=8;
-        level levell=new level(j);
+
+        level levell=new level(8,bl);
        
       }
     });
@@ -74,7 +75,7 @@ public class hard extends JFrame {
   // Anfang Methoden
   
   public static void main(String[] args) {
-    new hard();
+  
   } // end of main
   
   public void jButton1_ActionPerformed(ActionEvent evt) {

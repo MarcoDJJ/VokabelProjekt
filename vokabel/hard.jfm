@@ -1,6 +1,6 @@
 object hard: TFGUIForm
-  Left = 323
-  Top = 698
+  Left = 629
+  Top = 129
   BorderIcons = [biSystemMenu]
   Caption = 'hard'
   ClientHeight = 261

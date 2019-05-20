@@ -1,7 +1,26 @@
+import java.io.*;
 import java.awt.*;
+import java.awt.Color;
 import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.Font;
+import java.text.*;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import javax.swing.event.*;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.util.Random;
+import java.util.ArrayList;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import java.util.*;
 
 /**
  *
@@ -19,14 +38,17 @@ public class home extends JFrame {
   private JButton jButton4 = new JButton();
   private JButton jButton5 = new JButton();
   private JButton jButton6 = new JButton();
+  
+  private JLabel jLabel1 = new JLabel();
+  boolean bl=true;
   // Ende Attribute
   
   public home() { 
     // Frame-Initialisierung
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 300; 
-    int frameHeight = 300;
+    int frameWidth = 596; 
+    int frameHeight = 334;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -44,7 +66,7 @@ public class home extends JFrame {
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton1_ActionPerformed(evt);
-        easy easy1=new easy();
+        easy easy1=new easy(bl);
          easy1.setVisible(true);
       }
     });
@@ -55,7 +77,7 @@ public class home extends JFrame {
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton2_ActionPerformed(evt);
-        normal level2=new normal();
+        normal level2=new normal(bl);
          level2.setVisible(true);
       }
     });
@@ -66,7 +88,7 @@ public class home extends JFrame {
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton3_ActionPerformed(evt);
-        hard level3=new hard();
+        hard level3=new hard(bl);
          level3.setVisible(true);
       }
     });
@@ -87,21 +109,29 @@ public class home extends JFrame {
     jButton5.setMargin(new Insets(2, 2, 2, 2));
     jButton5.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        jButton5_ActionPerformed(evt);
-        settings setting= new settings();
-         setting.setVisible(true);
+        
       }
     });
     cp.add(jButton5);
-    jButton6.setBounds(200, 176, 81, 33);
+    jButton6.setBounds(320, 64, 81, 33);
     jButton6.setText("jButton6");
     jButton6.setMargin(new Insets(2, 2, 2, 2));
     jButton6.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        jButton6_ActionPerformed(evt);
+        if(bl==true){
+           bl=false;
+          jLabel1.setText("Ask in German and answer in Engish");
+          }
+        else {
+          bl=true;
+          jLabel1.setText("Ask in English and answer in German");
+        } // end of if-else
       }
     });
     cp.add(jButton6);
+    jLabel1.setBounds(256, 16, 233, 33);
+    jLabel1.setText("Ask in English and answer in German");
+    cp.add(jLabel1);
     // Ende Komponenten
     
     setVisible(true);
@@ -142,6 +172,11 @@ public class home extends JFrame {
     // TODO hier Quelltext einfügen
     
   } // end of jButton6_ActionPerformed
+
+  public void jButton7_ActionPerformed(ActionEvent evt) {
+    // TODO hier Quelltext einfügen
+    
+  } // end of jButton7_ActionPerformed
 
   // Ende Methoden
 } // end of class home

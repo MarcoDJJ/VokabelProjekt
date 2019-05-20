@@ -45,44 +45,15 @@ public class leveleasy1 extends JFrame {
   // Ende Attribute
   
   
-  vokabel fd = new vokabel("apple", "apfel");
-  vokabel fd1 = new vokabel("pear", "birne");
-  vokabel fd2 = new vokabel("water", "wasser");
-  vokabel fd3 = new vokabel("watermelon", "wassermelone");
-  vokabel fd4 = new vokabel("pepper", "pfeffer");
-  vokabel fd5 = new vokabel("salt", "salz");
-  vokabel fd6 = new vokabel("egg", "ei");
-  vokabel fd7 = new vokabel("banane", "banane");
-  vokabel fd8 = new vokabel("oil", "oel");
-  vokabel fd9 = new vokabel("cheese", "kaese");
-  vokabel fd10 = new vokabel("bread", "brot");
-  vokabel fd11 = new vokabel("orange", "orange");
-  vokabel fd12 = new vokabel("cherry", "kirsche");
-  vokabel fd13 = new vokabel("beer", "bier");
-  vokabel fd14 = new vokabel("wine", "wein");
-  vokabel fd15 = new vokabel("rice", "rice");
-  vokabel fd16 = new vokabel("juice", "saft");
-  vokabel fd17 = new vokabel("milk", "milch");
-  vokabel fd18 = new vokabel("meat", "fleisch");
-  vokabel fd19 = new vokabel("tomato", "tomate");
-  vokabel fd20 = new vokabel("potato", "kartoffel");
-  vokabel fd21 = new vokabel("carrot", "karotte");
-  vokabel fd22 = new vokabel("broccoli", "brokkoli");
-  vokabel fd23 = new vokabel("cucumber", "gurke");
-  vokabel fd24 = new vokabel("chicken", "huhn");
-  vokabel fd25 = new vokabel("hamburger", "hamburger");
-  vokabel fd26 = new vokabel("biscuits", "kaekse");
-  vokabel fd27 = new vokabel("coffee", "kaffee");
-  vokabel fd28 = new vokabel("tea", "tee");
-  vokabel fd29 = new vokabel("soup", "suppe");
+  
   
   
   zufalleasyy zlevel1= new zufalleasyy();
   
-  
+   int j=0;
   points pointslevel1=new points(0, 0, 0);
   savefiles s= new savefiles(); 
-  
+  ArrayList<vokabel>  z2=new ArrayList<>();
   Timerclass timerlevel1 =new Timerclass(jTextField1,jTextField2,jButton5,jLabel1,jButton3,jTextField3);
   /*public void keyPressed(KeyEvent e) {
   
@@ -94,11 +65,11 @@ public class leveleasy1 extends JFrame {
   }
   }*/
   
-  public leveleasy1( zufalleasyy zlevel1) { 
+  public leveleasy1(int j) { 
     // Frame-Initialisierung
     super();
     
-    this.zlevel1=zlevel1;
+     this.j=j;
     s.setVisible(false);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 1046; 
@@ -132,39 +103,156 @@ public class leveleasy1 extends JFrame {
     
     
     
+    if(j==0){
+       try (FileInputStream fis = new FileInputStream ("vokabelneasy.ser");
+    ObjectInputStream ois = new ObjectInputStream (fis)) {
+      z2= (ArrayList<vokabel>) ois.readObject();
+      zlevel1.setVocc(z2);
+           
+      
+    }                        
+    catch(FileNotFoundException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+    }
+    catch(IOException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+    }
+    catch(ClassNotFoundException e)
+    {
+      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+    }
+      }
+     if(j==1){
+       try (FileInputStream fis = new FileInputStream ("vokabelneasy1.ser");
+    ObjectInputStream ois = new ObjectInputStream (fis)) {
+      z2= (ArrayList<vokabel>) ois.readObject();
+      zlevel1.setVocc(z2);
+           
+      
+    }                        
+    catch(FileNotFoundException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+    }
+    catch(IOException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+    }
+    catch(ClassNotFoundException e)
+    {
+      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+    }
+      }
+    if(j==2){
+       try (FileInputStream fis = new FileInputStream ("vokabelneasy2.ser");
+    ObjectInputStream ois = new ObjectInputStream (fis)) {
+      z2= (ArrayList<vokabel>) ois.readObject();
+      zlevel1.setVocc(z2);
+           
+      
+    }                        
+    catch(FileNotFoundException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+    }
+    catch(IOException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+    }
+    catch(ClassNotFoundException e)
+    {
+      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+    }
+      }                                                                 
+    if(j==3){
+       try (FileInputStream fis = new FileInputStream ("vokabelnnormal1.ser");
+    ObjectInputStream ois = new ObjectInputStream (fis)) {
+      z2= (ArrayList<vokabel>) ois.readObject();
+      zlevel1.setVocc(z2);
+           
+      
+    }                        
+    catch(FileNotFoundException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+    }
+    catch(IOException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+    }
+    catch(ClassNotFoundException e)
+    {
+      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+    }
+      }
+    if(j==4){
+       try (FileInputStream fis = new FileInputStream ("vokabelnnormal2.ser");
+    ObjectInputStream ois = new ObjectInputStream (fis)) {
+      z2= (ArrayList<vokabel>) ois.readObject();
+      zlevel1.setVocc(z2);
+           
+      
+    }                        
+    catch(FileNotFoundException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+    }
+    catch(IOException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+    }
+    catch(ClassNotFoundException e)
+    {
+      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+    }
+      }
+    if(j==5){
+       try (FileInputStream fis = new FileInputStream ("vokabelnnormal3.ser");
+    ObjectInputStream ois = new ObjectInputStream (fis)) {
+      z2= (ArrayList<vokabel>) ois.readObject();
+      zlevel1.setVocc(z2);
+           
+      
+    }                        
+    catch(FileNotFoundException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+    }
+    catch(IOException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+    }
+    catch(ClassNotFoundException e)
+    {
+      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+    }
+      }
+    if(j==6){
+       try (FileInputStream fis = new FileInputStream ("vokabelnhard1.ser");
+    ObjectInputStream ois = new ObjectInputStream (fis)) {
+      z2= (ArrayList<vokabel>) ois.readObject();
+      zlevel1.setVocc(z2);
+           
+      
+    }                        
+    catch(FileNotFoundException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+    }
+    catch(IOException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+    }
+    catch(ClassNotFoundException e)
+    {
+      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+    }
+      }
     
+      
     
-    
-    
-    zlevel1.fuegevoccnhinzu(fd);
-    zlevel1.fuegevoccnhinzu(fd1);
-    zlevel1.fuegevoccnhinzu(fd2);
-    zlevel1.fuegevoccnhinzu(fd3);
-    zlevel1.fuegevoccnhinzu(fd4);
-    zlevel1.fuegevoccnhinzu(fd5);
-    zlevel1.fuegevoccnhinzu(fd6);
-    zlevel1.fuegevoccnhinzu(fd7);
-    zlevel1.fuegevoccnhinzu(fd8);
-    zlevel1.fuegevoccnhinzu(fd9);
-    zlevel1.fuegevoccnhinzu(fd10);
-    zlevel1.fuegevoccnhinzu(fd11);
-    zlevel1.fuegevoccnhinzu(fd12);
-    zlevel1.fuegevoccnhinzu(fd13);
-    zlevel1.fuegevoccnhinzu(fd14);
-    zlevel1.fuegevoccnhinzu(fd15);
-    zlevel1.fuegevoccnhinzu(fd16);
-    zlevel1.fuegevoccnhinzu(fd17);
-    zlevel1.fuegevoccnhinzu(fd18);
-    zlevel1.fuegevoccnhinzu(fd19);
-    zlevel1.fuegevoccnhinzu(fd20);
-    zlevel1.fuegevoccnhinzu(fd21);
-    zlevel1.fuegevoccnhinzu(fd22);
-    zlevel1.fuegevoccnhinzu(fd23);
-    zlevel1.fuegevoccnhinzu(fd24);
-    zlevel1.fuegevoccnhinzu(fd25);
-    zlevel1.fuegevoccnhinzu(fd26);
-    zlevel1.fuegevoccnhinzu(fd27);
-    zlevel1.fuegevoccnhinzu(fd28); 
     
     //indexof
     //remove(Object o)
@@ -181,7 +269,7 @@ public class leveleasy1 extends JFrame {
     jButton2.setText("Verify");
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     
-    jButton5.addActionListener(new newbutton(jTextField1,jTextField3,jButton4,jButton3,jButton5,jLabel1,timerlevel1,jLabel5,pointslevel1,jButton1,zlevel1,fd,fd1,fd2,fd3,fd4,fd5,fd6,fd7,fd8,fd9,fd10,fd11,fd12,fd13,fd14,fd15,fd16,fd17,fd18,fd19,fd20,fd21,fd22,fd23,fd24,fd25,fd26,fd27,fd28,fd29));
+    jButton5.addActionListener(new newbutton(jTextField1,jTextField3,jButton4,jButton3,jButton5,jLabel1,timerlevel1,jLabel5,pointslevel1,jButton1,zlevel1));
     jButton1.addActionListener(new startbutton(jTextField1, timerlevel1, zlevel1,jButton1));
     jButton2.addActionListener(new verifybutton(zlevel1, jLabel4, jTextField1, jTextField2, pointslevel1, jLabel5, timerlevel1,jButton1,jButton2));
     /*jButton1.addActionListener(new ActionListener() { 
@@ -250,8 +338,9 @@ public class leveleasy1 extends JFrame {
   // Anfang Methoden
   
   public static void main(String[] args) {
-    
-    
+     int j=0;
+      leveleasy1 l= new leveleasy1(j);
+                                   
   } // end of main
   
   public void jButton1_ActionPerformed(ActionEvent evt) {

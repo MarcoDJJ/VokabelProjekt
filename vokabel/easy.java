@@ -33,11 +33,13 @@ public class easy extends JFrame {
   private JButton jButton1 = new JButton();
   private JButton jButton2 = new JButton();
   private JButton jButton3 = new JButton();
+  boolean bl=true;
   // Ende Attribute
   
-  public easy() { 
+  public easy(boolean bl) { 
     // Frame-Initialisierung
     super();
+    this.bl=bl;
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 300;
     int frameHeight = 300;
@@ -57,8 +59,8 @@ public class easy extends JFrame {
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        int j=0;
-        level levell=new level(j);
+        
+        level levell=new level(0,bl);
         
       }
     });
@@ -68,8 +70,8 @@ public class easy extends JFrame {
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-          int j=1;
-        level levell=new level(j);
+         
+        level levell=new level(1,bl);
       }
     });
     cp.add(jButton2);
@@ -78,8 +80,8 @@ public class easy extends JFrame {
     jButton3.setMargin(new Insets(2, 2, 2, 2));
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-            int j=2;
-        level levell=new level(j);
+           
+        level levell=new level(2,bl);
       }
     });
     cp.add(jButton3);
@@ -91,7 +93,7 @@ public class easy extends JFrame {
   // Anfang Methoden
   
   public static void main(String[] args) {
-    new easy();
+    
   } // end of main
   
   public void jButton1_ActionPerformed(ActionEvent evt) {
