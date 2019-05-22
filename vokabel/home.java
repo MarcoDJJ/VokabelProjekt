@@ -36,11 +36,10 @@ public class home extends JFrame {
   private JButton jButton2 = new JButton();
   private JButton jButton3 = new JButton();
   private JButton jButton4 = new JButton();
-  private JButton jButton5 = new JButton();
-  private JButton jButton6 = new JButton();
   
-  private JLabel jLabel1 = new JLabel();
   boolean bl=true;
+  
+  private JButton jButton7 = new JButton();
   // Ende Attribute
   
   public home() { 
@@ -59,6 +58,27 @@ public class home extends JFrame {
     Container cp = getContentPane();
     cp.setLayout(null);
     // Anfang Komponenten
+    
+    try (FileInputStream fis = new FileInputStream ("language.ser");
+    ObjectInputStream ois = new ObjectInputStream (fis)) {
+      bl= (boolean) ois.readObject();
+      
+           
+      
+    }                        
+    catch(FileNotFoundException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+    }
+    catch(IOException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+    }
+    catch(ClassNotFoundException e)
+    {
+      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+    }
+    
     
     jButton1.setBounds(80, 16, 113, 41);
     jButton1.setText("Easy");
@@ -99,39 +119,27 @@ public class home extends JFrame {
     jButton4.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton4_ActionPerformed(evt);
-        personalized level4= new personalized();
+        personalized level4= new personalized(bl);
          level4.setVisible(true);
       }
     });
     cp.add(jButton4);
-    jButton5.setBounds(200, 216, 81, 41);
-    jButton5.setText("Settings");
-    jButton5.setMargin(new Insets(2, 2, 2, 2));
-    jButton5.addActionListener(new ActionListener() { 
+    jButton7.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
+        settings sss=new settings();
         
       }
     });
-    cp.add(jButton5);
-    jButton6.setBounds(320, 64, 81, 33);
-    jButton6.setText("jButton6");
-    jButton6.setMargin(new Insets(2, 2, 2, 2));
-    jButton6.addActionListener(new ActionListener() { 
+      
+    jButton7.setBounds(240, 200, 161, 33);
+    jButton7.setText("Settings");
+    jButton7.setMargin(new Insets(2, 2, 2, 2));
+    jButton7.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        if(bl==true){
-           bl=false;
-          jLabel1.setText("Ask in German and answer in Engish");
-          }
-        else {
-          bl=true;
-          jLabel1.setText("Ask in English and answer in German");
-        } // end of if-else
+        settings sss=new settings();
       }
     });
-    cp.add(jButton6);
-    jLabel1.setBounds(256, 16, 233, 33);
-    jLabel1.setText("Ask in English and answer in German");
-    cp.add(jLabel1);
+    cp.add(jButton7);
     // Ende Komponenten
     
     setVisible(true);
@@ -162,16 +170,6 @@ public class home extends JFrame {
     // TODO hier Quelltext einfügen
     
   } // end of jButton4_ActionPerformed
-
-  public void jButton5_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einfügen
-    
-  } // end of jButton5_ActionPerformed
-
-  public void jButton6_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einfügen
-    
-  } // end of jButton6_ActionPerformed
 
   public void jButton7_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen

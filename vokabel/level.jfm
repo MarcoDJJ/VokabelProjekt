@@ -1,9 +1,9 @@
 object level: TFGUIForm
-  Left = 123
-  Top = 159
+  Left = 8
+  Top = 262
   BorderIcons = [biSystemMenu]
   Caption = 'level'
-  ClientHeight = 287
+  ClientHeight = 272
   ClientWidth = 1039
   Color = clBtnFace
   ParentFont = True

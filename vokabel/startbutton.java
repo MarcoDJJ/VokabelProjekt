@@ -41,11 +41,7 @@ public class startbutton implements ActionListener {
     
    zlevel1=zlevel2; }
    public void actionPerformed(ActionEvent e){
-    readzufalleasyy read= new readzufalleasyy(zlevel1,j);
-    t.setText(zlevel1.getVocc().getEnglish());
-          timerlevel1.start();
-    jButton1.setVisible(false);
-    timerlevel1.setI();
+   
     
   
   }

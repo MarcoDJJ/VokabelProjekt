@@ -16,13 +16,14 @@ public class Timerclass{
   int secondsPassed = 0;
   JLabel j;
   Timer t=new Timer();
-   int v=3;
+   int v=10;
   JButton jButton3;
   JTextField jTextField3;
   int i=0;
   JButton jButton5;
   JTextField jTextField1;
     JTextField jTextField2;
+
   public Timerclass(JTextField jTextField1,JTextField jTextField2,JButton jButton5,JLabel jj, JButton jButton3, JTextField jTextField3){
     this.v=v;
     this.jTextField1=jTextField1;
@@ -31,6 +32,7 @@ public class Timerclass{
      this.j=jj;
      this.jButton3=jButton3;
     this.jTextField3=jTextField3;
+ 
     }
   // Anfang Methoden
   TimerTask task = new TimerTask() {
@@ -38,6 +40,7 @@ public class Timerclass{
       if(secondsPassed<v){
       secondsPassed++;}
       else {
+    
         jButton3.setVisible(true);
         jTextField3.setVisible(true);
         jButton5.setVisible(true);

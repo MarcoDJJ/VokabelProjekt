@@ -12,13 +12,13 @@ import java.util.*;
 public class zufalleasyy implements Serializable {
   
   Random voc= new Random();
-  int c=1;
-  int y= voc.nextInt(c);
-  int k=y;
+  
+  
+  
   
   ArrayList<vokabel> vocc = new ArrayList<>();
-  
-    
+  int y=1;
+  int k=y;  
     
  
   // Ende Attribute
@@ -27,7 +27,7 @@ public class zufalleasyy implements Serializable {
     vocc.add(neu);
   }
   public vokabel getVocc() {      
-    y= voc.nextInt(c++);
+    y= voc.nextInt(vocc.size());
     this.k=y;
     return vocc.get(y);  
   }

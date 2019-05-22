@@ -1,16 +1,15 @@
 object settings: TFGUIForm
-  Left = 270
-  Top = 474
+  Left = 857
+  Top = 468
   BorderIcons = [biSystemMenu]
   Caption = 'settings'
-  ClientHeight = 261
-  ClientWidth = 653
+  ClientHeight = 265
+  ClientWidth = 510
   Color = clBtnFace
   ParentFont = True
   FormStyle = fsStayOnTop
   OldCreateOrder = True
   Position = poDesigned
-  ShowHint = True
   Visible = True
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
@@ -23,10 +22,10 @@ object settings: TFGUIForm
   TextHeight = 13
   object jButton1: TJButton
     Tag = 4
-    Left = 16
-    Top = 72
+    Left = 32
+    Top = 80
     Width = 105
-    Height = 33
+    Height = 41
     Hint = 'jButton1'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -67,10 +66,10 @@ object settings: TFGUIForm
   end
   object jSlider1: TJSlider
     Tag = 15
-    Left = 8
-    Top = 120
-    Width = 393
-    Height = 57
+    Left = 32
+    Top = 8
+    Width = 281
+    Height = 49
     Hint = 'jSlider1'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -79,8 +78,7 @@ object settings: TFGUIForm
     Font.Style = [fsBold]
     Foreground = 13416611
     Background = 15658734
-    Maximum = 600
-    MajorTickSpacing = 100
+    Maximum = 300
     PaintLabels = True
     PaintTicks = True
     PaintTrack = True
@@ -91,10 +89,10 @@ object settings: TFGUIForm
   end
   object jLabel1: TJLabel
     Tag = 1
-    Left = 144
-    Top = 64
-    Width = 297
-    Height = 49
+    Left = 168
+    Top = 80
+    Width = 265
+    Height = 41
     Hint = 'jLabel1'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -114,10 +112,10 @@ object settings: TFGUIForm
   end
   object jButton2: TJButton
     Tag = 4
-    Left = 8
-    Top = 208
-    Width = 65
-    Height = 33
+    Left = 32
+    Top = 160
+    Width = 113
+    Height = 41
     Hint = 'jButton2'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -155,5 +153,28 @@ object settings: TFGUIForm
     Border.MatteLeft = 0
     Border.MatteBottom = 0
     Border.MatteRight = 0
+  end
+  object jLabel2: TJLabel
+    Tag = 1
+    Left = 160
+    Top = 160
+    Width = 265
+    Height = 49
+    Hint = 'jLabel2'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = [fsBold]
+    Foreground = 3355443
+    Background = clBtnFace
+    Text = 'text'
+    HorizontalAlignment = LEFT
+    VerticalAlignment = CENTER
+    HorizontalTextPosition = RIGHT
+    VerticalTextPosition = CENTER
+    IconTextGap = 4
+    DisplayedMnemonic = 0
+    DisplayedMnemonicIndex = 0
   end
 end
