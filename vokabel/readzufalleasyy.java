@@ -56,7 +56,7 @@ public class readzufalleasyy {
     }
       }
     
-      /*
+     
      if(j==1){
        try (FileInputStream fis = new FileInputStream ("vokabelneasy1.ser");
     ObjectInputStream ois = new ObjectInputStream (fis)) {
@@ -78,8 +78,9 @@ public class readzufalleasyy {
       System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
     }
       }
+    
     if(j==2){
-       try (FileInputStream fis = new FileInputStream ("vokabelneasy2.ser");
+       try (FileInputStream fis = new FileInputStream ("vokabelnnormal1.ser");
     ObjectInputStream ois = new ObjectInputStream (fis)) {
       z2= (ArrayList<vokabel>) ois.readObject();
       zlevel1.setVocc(z2);
@@ -100,27 +101,6 @@ public class readzufalleasyy {
     }
       }                                                                 
     if(j==3){
-       try (FileInputStream fis = new FileInputStream ("vokabelnnormal1.ser");
-    ObjectInputStream ois = new ObjectInputStream (fis)) {
-      z2= (ArrayList<vokabel>) ois.readObject();
-      zlevel1.setVocc(z2);
-           
-      
-    }                        
-    catch(FileNotFoundException e)
-    {
-      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
-    }
-    catch(IOException e)
-    {
-      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
-    }
-    catch(ClassNotFoundException e)
-    {
-      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
-    }
-      }
-    if(j==4){
        try (FileInputStream fis = new FileInputStream ("vokabelnnormal2.ser");
     ObjectInputStream ois = new ObjectInputStream (fis)) {
       z2= (ArrayList<vokabel>) ois.readObject();
@@ -141,28 +121,7 @@ public class readzufalleasyy {
       System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
     }
       }
-    if(j==5){
-       try (FileInputStream fis = new FileInputStream ("vokabelnnormal3.ser");
-    ObjectInputStream ois = new ObjectInputStream (fis)) {
-      z2= (ArrayList<vokabel>) ois.readObject();
-      zlevel1.setVocc(z2);
-           
-      
-    }                        
-    catch(FileNotFoundException e)
-    {
-      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
-    }
-    catch(IOException e)
-    {
-      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
-    }
-    catch(ClassNotFoundException e)
-    {
-      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
-    }
-      }
-    if(j==6){
+    if(j==4){
        try (FileInputStream fis = new FileInputStream ("vokabelnhard1.ser");
     ObjectInputStream ois = new ObjectInputStream (fis)) {
       z2= (ArrayList<vokabel>) ois.readObject();
@@ -183,30 +142,8 @@ public class readzufalleasyy {
       System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
     }
       }
-    
-    if(j==7){
+    if(j==5){
        try (FileInputStream fis = new FileInputStream ("vokabelnhard2.ser");
-    ObjectInputStream ois = new ObjectInputStream (fis)) {
-      z2= (ArrayList<vokabel>) ois.readObject();
-      zlevel1.setVocc(z2);
-           
-      
-    }                        
-    catch(FileNotFoundException e)
-    {
-      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
-    }
-    catch(IOException e)
-    {
-      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
-    }
-    catch(ClassNotFoundException e)
-    {
-      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
-    }
-      }  
-    if(j==8){
-       try (FileInputStream fis = new FileInputStream ("vokabelnhard3.ser");
     ObjectInputStream ois = new ObjectInputStream (fis)) {
       z2= (ArrayList<vokabel>) ois.readObject();
       zlevel1.setVocc(z2);
@@ -228,7 +165,11 @@ public class readzufalleasyy {
       }
     
     
-    */
+     
+    
+    
+    
+    
       }
   
   public static void main(String[] args) {

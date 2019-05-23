@@ -32,7 +32,6 @@ public class easy extends JFrame {
   // Anfang Attribute
   private JButton jButton1 = new JButton();
   private JButton jButton2 = new JButton();
-  private JButton jButton3 = new JButton();
   boolean bl=true;
   // Ende Attribute
   
@@ -55,7 +54,7 @@ public class easy extends JFrame {
     // Anfang Komponenten
     
     jButton1.setBounds(80, 96, 113, 41);
-    jButton1.setText("leveleasy1");
+    jButton1.setText("Food");
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
@@ -66,7 +65,7 @@ public class easy extends JFrame {
     });
     cp.add(jButton1);
     jButton2.setBounds(80, 144, 113, 41);
-    jButton2.setText("leveleasy2");
+    jButton2.setText("Animals");
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
@@ -75,16 +74,8 @@ public class easy extends JFrame {
       }
     });
     cp.add(jButton2);
-    jButton3.setBounds(80, 192, 113, 41);
-    jButton3.setText("leveleasy3");
-    jButton3.setMargin(new Insets(2, 2, 2, 2));
-    jButton3.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
-           
-        level levell=new level(2,bl);
-      }
-    });
-    cp.add(jButton3);
+      
+    
     // Ende Komponenten
     
     setVisible(true);
@@ -105,11 +96,6 @@ public class easy extends JFrame {
     // TODO hier Quelltext einfügen
     
   } // end of jButton2_ActionPerformed
-  
-  public void jButton3_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einfügen
-    
-  } // end of jButton3_ActionPerformed
   
   // Ende Methoden
 } // end of class easy

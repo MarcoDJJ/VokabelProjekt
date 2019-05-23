@@ -1,9 +1,9 @@
 object personalized: TFGUIForm
-  Left = 204
-  Top = 427
+  Left = 68
+  Top = 154
   BorderIcons = [biSystemMenu]
   Caption = 'level'
-  ClientHeight = 318
+  ClientHeight = 468
   ClientWidth = 1312
   Color = clBtnFace
   ParentFont = True
@@ -24,10 +24,10 @@ object personalized: TFGUIForm
   TextHeight = 13
   object jLabel1: TJLabel
     Tag = 1
-    Left = 8
-    Top = 8
-    Width = 81
-    Height = 17
+    Left = 592
+    Top = 96
+    Width = 89
+    Height = 41
     Hint = 'jLabel1'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -48,9 +48,9 @@ object personalized: TFGUIForm
   object jLabel2: TJLabel
     Tag = 1
     Left = 0
-    Top = 96
-    Width = 57
-    Height = 49
+    Top = 240
+    Width = 89
+    Height = 41
     Hint = 'jLabel2'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -72,7 +72,7 @@ object personalized: TFGUIForm
     Tag = 1
     Left = 0
     Top = 168
-    Width = 65
+    Width = 89
     Height = 41
     Hint = 'jLabel3'
     Font.Charset = DEFAULT_CHARSET
@@ -93,8 +93,8 @@ object personalized: TFGUIForm
   end
   object jButton1: TJButton
     Tag = 4
-    Left = 656
-    Top = 8
+    Left = 600
+    Top = 104
     Width = 73
     Height = 33
     Hint = 'jButton1'
@@ -138,7 +138,7 @@ object personalized: TFGUIForm
   object jTextField1: TJTextField
     Tag = 2
     Left = 96
-    Top = 96
+    Top = 176
     Width = 121
     Height = 33
     Cursor = crIBeam
@@ -157,9 +157,9 @@ object personalized: TFGUIForm
   object jTextField2: TJTextField
     Tag = 2
     Left = 96
-    Top = 160
-    Width = 113
-    Height = 33
+    Top = 240
+    Width = 121
+    Height = 41
     Cursor = crIBeam
     Hint = 'jTextField2'
     Font.Charset = DEFAULT_CHARSET
@@ -176,7 +176,7 @@ object personalized: TFGUIForm
   object jButton2: TJButton
     Tag = 4
     Left = 96
-    Top = 40
+    Top = 112
     Width = 65
     Height = 33
     Hint = 'jButton2'
@@ -219,8 +219,8 @@ object personalized: TFGUIForm
   end
   object jLabel4: TJLabel
     Tag = 1
-    Left = 96
-    Top = 216
+    Left = 120
+    Top = 328
     Width = 113
     Height = 33
     Hint = 'jLabel4'
@@ -242,8 +242,8 @@ object personalized: TFGUIForm
   end
   object jLabel5: TJLabel
     Tag = 1
-    Left = 256
-    Top = 200
+    Left = 248
+    Top = 328
     Width = 417
     Height = 49
     Hint = 'jLabel5'
@@ -265,10 +265,10 @@ object personalized: TFGUIForm
   end
   object jButton3: TJButton
     Tag = 4
-    Left = 280
-    Top = 160
-    Width = 185
-    Height = 33
+    Left = 312
+    Top = 264
+    Width = 177
+    Height = 41
     Hint = 'jButton3'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -309,8 +309,8 @@ object personalized: TFGUIForm
   end
   object jTextField3: TJTextField
     Tag = 2
-    Left = 704
-    Top = 200
+    Left = 760
+    Top = 328
     Width = 225
     Height = 41
     Cursor = crIBeam
@@ -328,10 +328,10 @@ object personalized: TFGUIForm
   end
   object jButton4: TJButton
     Tag = 4
-    Left = 616
-    Top = 152
-    Width = 145
-    Height = 33
+    Left = 512
+    Top = 264
+    Width = 177
+    Height = 41
     Hint = 'jButton4'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -373,7 +373,7 @@ object personalized: TFGUIForm
   object jLabel6: TJLabel
     Tag = 1
     Left = 976
-    Top = 144
+    Top = 208
     Width = 121
     Height = 41
     Hint = 'jLabel6'
@@ -396,7 +396,7 @@ object personalized: TFGUIForm
   object jLabel7: TJLabel
     Tag = 1
     Left = 976
-    Top = 72
+    Top = 144
     Width = 129
     Height = 41
     Hint = 'jLabel7'
@@ -419,7 +419,7 @@ object personalized: TFGUIForm
   object jTextField4: TJTextField
     Tag = 2
     Left = 1136
-    Top = 144
+    Top = 208
     Width = 153
     Height = 49
     Cursor = crIBeam
@@ -438,7 +438,7 @@ object personalized: TFGUIForm
   object jTextField5: TJTextField
     Tag = 2
     Left = 1136
-    Top = 72
+    Top = 144
     Width = 161
     Height = 41
     Cursor = crIBeam
@@ -457,7 +457,7 @@ object personalized: TFGUIForm
   object jButton6: TJButton
     Tag = 4
     Left = 1136
-    Top = 8
+    Top = 88
     Width = 97
     Height = 33
     Hint = 'jButton6'
@@ -501,7 +501,7 @@ object personalized: TFGUIForm
   object jButton7: TJButton
     Tag = 4
     Left = 576
-    Top = 264
+    Top = 400
     Width = 161
     Height = 41
     Hint = 'jButton7'
@@ -541,5 +541,28 @@ object personalized: TFGUIForm
     Border.MatteLeft = 0
     Border.MatteBottom = 0
     Border.MatteRight = 0
+  end
+  object jLabel8: TJLabel
+    Tag = 1
+    Left = 272
+    Top = 8
+    Width = 713
+    Height = 73
+    Hint = 'jLabel8'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -36
+    Font.Name = 'Calibri'
+    Font.Style = [fsBold]
+    Foreground = clWhite
+    Background = clBtnFace
+    Text = 'text'
+    HorizontalAlignment = CENTER
+    VerticalAlignment = CENTER
+    HorizontalTextPosition = RIGHT
+    VerticalTextPosition = CENTER
+    IconTextGap = 4
+    DisplayedMnemonic = 0
+    DisplayedMnemonicIndex = 0
   end
 end

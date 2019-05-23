@@ -77,7 +77,7 @@ public class addzufalleasyy implements Serializable {
     }
     if(i==2){
       
-    try (FileOutputStream fos = new FileOutputStream ("vokabelneasy2.ser");
+    try (FileOutputStream fos = new FileOutputStream ("vokabelnnormal1.ser");
     ObjectOutputStream oos = new ObjectOutputStream (fos)) {
       
       
@@ -97,7 +97,7 @@ public class addzufalleasyy implements Serializable {
     }
     if(i==3){
       
-    try (FileOutputStream fos = new FileOutputStream ("vokabelnnormal1.ser");
+    try (FileOutputStream fos = new FileOutputStream ("vokabelnnormal2.ser");
     ObjectOutputStream oos = new ObjectOutputStream (fos)) {
       
       
@@ -117,7 +117,7 @@ public class addzufalleasyy implements Serializable {
     }
     if(i==4){
       
-    try (FileOutputStream fos = new FileOutputStream ("vokabelnnormal2.ser");
+    try (FileOutputStream fos = new FileOutputStream ("vokabelnnhard1.ser");
     ObjectOutputStream oos = new ObjectOutputStream (fos)) {
       
       
@@ -137,47 +137,6 @@ public class addzufalleasyy implements Serializable {
     }
     if(i==5){
       
-    try (FileOutputStream fos = new FileOutputStream ("vokabelnnormal3.ser");
-    ObjectOutputStream oos = new ObjectOutputStream (fos)) {
-      
-      
-      oos.writeObject(z2.getVoccc());
-      
-      
-      
-    }
-    catch(FileNotFoundException e)
-    {
-      System.out.println("Fehler beim Schreiben von dummy.ser: Datei nicht gefunden");
-    }
-    catch(IOException e)
-    {
-      System.out.println("Fehler beim Schreiben von dummy.ser: Ein- Ausgabefehler");
-    }
-    }
-    if(i==6){
-      
-    try (FileOutputStream fos = new FileOutputStream ("vokabelnhard1.ser");
-    ObjectOutputStream oos = new ObjectOutputStream (fos)) {
-      
-      
-      oos.writeObject(z2.getVoccc());
-      
-      
-      
-    }
-    catch(FileNotFoundException e)
-    {
-      System.out.println("Fehler beim Schreiben von dummy.ser: Datei nicht gefunden");
-    }
-    catch(IOException e)
-    {
-      System.out.println("Fehler beim Schreiben von dummy.ser: Ein- Ausgabefehler");
-    }
-    }
-   
-    if(i==7){
-      
     try (FileOutputStream fos = new FileOutputStream ("vokabelnhard2.ser");
     ObjectOutputStream oos = new ObjectOutputStream (fos)) {
       
@@ -196,26 +155,7 @@ public class addzufalleasyy implements Serializable {
       System.out.println("Fehler beim Schreiben von dummy.ser: Ein- Ausgabefehler");
     }
     }
-    if(i==8){
-      
-    try (FileOutputStream fos = new FileOutputStream ("vokabelnhard3.ser");
-    ObjectOutputStream oos = new ObjectOutputStream (fos)) {
-      
-      
-      oos.writeObject(z2.getVoccc());
-      
-      
-      
-    }
-    catch(FileNotFoundException e)
-    {
-      System.out.println("Fehler beim Schreiben von dummy.ser: Datei nicht gefunden");
-    }
-    catch(IOException e)
-    {
-      System.out.println("Fehler beim Schreiben von dummy.ser: Ein- Ausgabefehler");
-    }
-    }
+    
     }
   public static void main(String[] args) {
   

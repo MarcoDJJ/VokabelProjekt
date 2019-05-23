@@ -44,6 +44,7 @@ public class level extends JFrame implements Serializable {
   private JTextField jTextField3 = new JTextField();
   private JButton jButton4 = new JButton();
   private JButton jButton5 = new JButton();
+  private JLabel jLabel6 = new JLabel();
   // Ende Attribute
   
   
@@ -77,7 +78,7 @@ public class level extends JFrame implements Serializable {
     s.setVisible(false);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 1055; 
-    int frameHeight = 311;
+    int frameHeight = 310;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -89,7 +90,7 @@ public class level extends JFrame implements Serializable {
     cp.setLayout(null);
     // Anfang Komponenten
     
-    jLabel1.setBounds(8, 8, 81, 17);
+    jLabel1.setBounds(0, 16, 81, 17);
     jLabel1.setText("");
     cp.add(jLabel1);
     jLabel2.setBounds(0, 96, 57, 49);
@@ -98,7 +99,7 @@ public class level extends JFrame implements Serializable {
     jLabel3.setBounds(0, 168, 65, 41);
     
     cp.add(jLabel3);
-    jButton1.setBounds(0, 40, 73, 33);
+    jButton1.setBounds(0, 48, 73, 33);
     jButton1.setText("Start");
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     try (FileInputStream fis = new FileInputStream ("timer.ser");
@@ -120,6 +121,25 @@ public class level extends JFrame implements Serializable {
       System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
     }
     
+    if(j==0){
+      jLabel6.setText("Food");
+      }
+    if(j==1){
+        jLabel6.setText("Animals");
+      }
+    if(j==2){
+       jLabel6.setText("Sport");
+      }
+    if(j==3){
+        jLabel6.setText("Politic");
+      }
+    if(j==4){
+        jLabel6.setText("ln2");
+      }
+    if(j==5){
+        jLabel6.setText("ln3");
+      }
+     
     
     
     
@@ -132,12 +152,13 @@ public class level extends JFrame implements Serializable {
     //if(timerlevel1.getSecondsPassed()<60){
     
     
+    jButton1.setBackground(Color.YELLOW);
     cp.add(jButton1);
     jTextField1.setBounds(96, 96, 121, 33);
     cp.add(jTextField1);
     jTextField2.setBounds(96, 160, 113, 33);
     cp.add(jTextField2);
-    jButton2.setBounds(96, 40, 65, 33);
+    jButton2.setBounds(96, 48, 65, 33);
     jButton2.setText("Verify");
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     
@@ -154,6 +175,7 @@ public class level extends JFrame implements Serializable {
     
     
     
+    jButton2.setBackground(Color.GREEN);
     cp.add(jButton2);
     jLabel4.setBounds(96, 216, 113, 33);
     jLabel4.setText("");
@@ -198,7 +220,7 @@ public class level extends JFrame implements Serializable {
           
           
         }
-        timerlevel1.setI();
+        //timerlevel1.setI();
         jButton1.setVisible(false);
       }
     });
@@ -211,7 +233,7 @@ public class level extends JFrame implements Serializable {
             jLabel4.setText("Gut Gemacht!");
             zlevel1.getVoccc().remove(zlevel1.getK());
             
-            jTextField2.setText(null);
+            
             pointslevel1.addppoint();
             jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answers and "+pointslevel1.getNegativepoints()+ " wrong answers");
             //zlevel1.getVoccc().remove(zlevel1.getK());
@@ -223,7 +245,7 @@ public class level extends JFrame implements Serializable {
             
             pointslevel1.addnpoint();
             jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
-            jTextField2.setText(null); 
+            
             
           }
             jTextField1.setText(zlevel1.getVocc().getEnglish());
@@ -232,7 +254,7 @@ public class level extends JFrame implements Serializable {
                if(jTextField2.getText().equals(zlevel1.ynow().getEnglish())){
             jLabel4.setText("Gut Gemacht!");
             zlevel1.getVoccc().remove(zlevel1.getK());
-            jTextField2.setText(null);
+           
             pointslevel1.addppoint();
             jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answers and "+pointslevel1.getNegativepoints()+ " wrong answers");
             //zlevel1.getVoccc().remove(zlevel1.getK());
@@ -243,10 +265,11 @@ public class level extends JFrame implements Serializable {
             zlevel1.getVoccc().remove(zlevel1.getK());
             pointslevel1.addnpoint();
             jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
-            jTextField2.setText(null); 
+             
             
           }
-             jTextField1.setText(zlevel1.getVocc().getDeutsch());
+              jTextField2.setText(null);
+              jTextField1.setText(zlevel1.getVocc().getDeutsch());
             }
           // end of if-else
         }
@@ -297,6 +320,7 @@ public class level extends JFrame implements Serializable {
         jLabel1.setText("");
         jButton3.setVisible(false);
         jButton4.setVisible(false);
+        jButton2.setVisible(true);
         jTextField1.setText(zlevel1.getVocc().getEnglish());
         
         jTextField3.setVisible(false);
@@ -318,12 +342,20 @@ public class level extends JFrame implements Serializable {
     jButton4.setMargin(new Insets(2, 2, 2, 2));
     
     cp.add(jButton4);
-    jButton5.setBounds(248, 40, 105, 33);
+    jButton5.setBounds(248, 48, 105, 33);
     jButton5.setText("New");
     jButton5.setVisible(false);
     jButton5.setMargin(new Insets(2, 2, 2, 2));
+    jButton5.setBackground(Color.BLUE);
     cp.add(jButton5);
     
+    cp.setBackground(Color.BLACK);
+    jLabel6.setBounds(416, 8, 209, 48);
+    
+    jLabel6.setHorizontalAlignment(SwingConstants.CENTER);
+    jLabel6.setFont(new Font("Calibri", Font.BOLD, 36));
+    jLabel6.setForeground(Color.WHITE);
+    cp.add(jLabel6);
     // Ende Komponenten
     
     setVisible(true);

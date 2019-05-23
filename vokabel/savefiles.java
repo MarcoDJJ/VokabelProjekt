@@ -57,7 +57,7 @@ public class savefiles extends JFrame implements Serializable{
     cp.add(jList1ScrollPane);
     // Ende Komponenten
     
-    setVisible(true);
+    setVisible(false);
   } // end of public savefiles
   public JList getJList(){
      return jList1;
@@ -71,7 +71,7 @@ public class savefiles extends JFrame implements Serializable{
     jList1.setModel(jList1Model);
   }
   public static void main(String[] args) {
-    new savefiles();
+    
   } // end of main
   
   public ArrayList<String> getSavefiless() {

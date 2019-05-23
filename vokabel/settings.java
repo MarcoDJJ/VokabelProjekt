@@ -38,6 +38,8 @@ public class settings extends JFrame implements Serializable {
   private JButton jButton2 = new JButton();
   private JLabel jLabel2 = new JLabel();
   boolean bl;
+  private JButton jButton3 = new JButton();
+  private JLabel jLabel3 = new JLabel();
   // Ende Attribute
   
   public settings() { 
@@ -45,7 +47,7 @@ public class settings extends JFrame implements Serializable {
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 526; 
-    int frameHeight = 304;
+    int frameHeight = 409;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -57,7 +59,7 @@ public class settings extends JFrame implements Serializable {
     cp.setLayout(null);
     // Anfang Komponenten
     
-    jButton1.setBounds(32, 80, 105, 41);
+    jButton1.setBounds(24, 184, 113, 41);
     jButton1.setText("Set the timer");
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton1.addActionListener(new ActionListener() { 
@@ -97,18 +99,23 @@ public class settings extends JFrame implements Serializable {
     }
       }
     });
+    jButton1.setBackground(Color.WHITE);
+    jButton1.setFont(new Font("Calibri", Font.BOLD, 16));
     cp.add(jButton1);
-    jSlider1.setBounds(32, 8, 281, 49);
+    jSlider1.setBounds(152, 184, 281, 49);
     jSlider1.setMinorTickSpacing(10);
     jSlider1.setMajorTickSpacing(50);
     jSlider1.setPaintTicks(true);
     jSlider1.setPaintLabels(true);
     jSlider1.setMaximum(300);
+    jSlider1.setBackground(Color.WHITE);
     cp.add(jSlider1);
-    jLabel1.setBounds(168, 80, 265, 41);
+    jLabel1.setBounds(24, 240, 265, 41);
     jLabel1.setText(null);
+    jLabel1.setFont(new Font("Calibri", Font.BOLD, 16));
+    jLabel1.setForeground(Color.WHITE);
     cp.add(jLabel1);
-    jButton2.setBounds(32, 160, 113, 41);
+    jButton2.setBounds(24, 296, 113, 41);
     jButton2.setText("Change");
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     
@@ -186,10 +193,32 @@ public class settings extends JFrame implements Serializable {
     }
           }
     });
+    jButton2.setBackground(Color.WHITE);
+    jButton2.setFont(new Font("Calibri", Font.BOLD, 16));
     cp.add(jButton2);
-    jLabel2.setBounds(160, 160, 265, 49);
+    jLabel2.setBounds(168, 288, 265, 49);
     
+    jLabel2.setFont(new Font("Calibri", Font.BOLD, 16));
+    jLabel2.setForeground(Color.WHITE);
     cp.add(jLabel2);
+    jButton3.setBounds(24, 120, 209, 41);
+    jButton3.setText("Add a couple of vocables");
+    jButton3.setMargin(new Insets(2, 2, 2, 2));
+    jButton3.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        addvocable add=new addvocable();
+      }
+    });
+    jButton3.setBackground(Color.WHITE);
+    jButton3.setFont(new Font("Calibri", Font.BOLD, 16));
+    cp.add(jButton3);
+    jLabel3.setBounds(104, 8, 297, 65);
+    jLabel3.setText("Settings");
+    jLabel3.setHorizontalAlignment(SwingConstants.CENTER);
+    jLabel3.setFont(new Font("Calibri", Font.BOLD, 36));
+    jLabel3.setForeground(Color.WHITE);
+    cp.add(jLabel3);
+    cp.setBackground(Color.BLACK);
     // Ende Komponenten
     
     setVisible(true);
@@ -198,7 +227,7 @@ public class settings extends JFrame implements Serializable {
   // Anfang Methoden
   
   public static void main(String[] args) {
-    new settings();
+
   } // end of main
   
   public void jButton1_ActionPerformed(ActionEvent evt) {
@@ -210,6 +239,11 @@ public class settings extends JFrame implements Serializable {
     // TODO hier Quelltext einfügen
     
   } // end of jButton2_ActionPerformed
+
+  public void jButton3_ActionPerformed(ActionEvent evt) {
+    // TODO hier Quelltext einfügen
+    
+  } // end of jButton3_ActionPerformed
 
   // Ende Methoden
 } // end of class settings

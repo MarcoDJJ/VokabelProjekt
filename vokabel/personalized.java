@@ -50,6 +50,7 @@ public class personalized extends JFrame implements Serializable {
   private JTextField jTextField5 = new JTextField();
   private JButton jButton6 = new JButton();
   private JButton jButton7 = new JButton();
+  private JLabel jLabel8 = new JLabel();
   // Ende Attribute
   
   
@@ -83,7 +84,7 @@ public class personalized extends JFrame implements Serializable {
     s.setVisible(false);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 1328; 
-    int frameHeight = 357;
+    int frameHeight = 507;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -95,16 +96,16 @@ public class personalized extends JFrame implements Serializable {
     cp.setLayout(null);
     // Anfang Komponenten
     
-    jLabel1.setBounds(8, 8, 81, 17);
+    jLabel1.setBounds(592, 96, 89, 41);
     jLabel1.setText("");
     cp.add(jLabel1);
-    jLabel2.setBounds(0, 96, 57, 49);
+    jLabel2.setBounds(0, 240, 89, 41);
     
     cp.add(jLabel2);
-    jLabel3.setBounds(0, 168, 65, 41);
+    jLabel3.setBounds(0, 168, 89, 41);
     
     cp.add(jLabel3);
-    jButton1.setBounds(656, 8, 73, 33);
+    jButton1.setBounds(600, 104, 73, 33);
     jButton1.setText("Start");
     jButton1.setMargin(new Insets(2, 2, 2, 2));
     jButton7.setVisible(false);
@@ -122,11 +123,11 @@ public class personalized extends JFrame implements Serializable {
     
     
     cp.add(jButton1);
-    jTextField1.setBounds(96, 96, 121, 33);
+    jTextField1.setBounds(96, 176, 121, 33);
     cp.add(jTextField1);
-    jTextField2.setBounds(96, 160, 113, 33);
+    jTextField2.setBounds(96, 240, 121, 41);
     cp.add(jTextField2);
-    jButton2.setBounds(96, 40, 65, 33);
+    jButton2.setBounds(96, 112, 65, 33);
     jButton2.setText("Verify");
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     
@@ -144,20 +145,19 @@ public class personalized extends JFrame implements Serializable {
     
     
     cp.add(jButton2);
-    jLabel4.setBounds(96, 216, 113, 33);
+    jLabel4.setBounds(120, 328, 113, 33);
     jLabel4.setText("");
     cp.add(jLabel4);
-    jLabel5.setBounds(256, 200, 417, 49);
+    jLabel5.setBounds(248, 328, 417, 49);
     jLabel5.setText("You scored " +pointslevel1.getPositivepoints()+ " correct answers and " +pointslevel1.getNegativepoints()+" wrong answers");
     cp.add(jLabel5);
-    jButton3.setBounds(280, 160, 185, 33);
+    jButton3.setBounds(312, 264, 177, 41);
     jButton3.setText("save your results");
     jButton3.setMargin(new Insets(2, 2, 2, 2));
     jTextField3.setText("write a title for your save file");
     jTextField3.setVisible(false);
     jButton3.setVisible(false);
     jButton4.setVisible(false);
-    
     
     jButton2.setVisible(false);
     jLabel2.setVisible(false);
@@ -188,6 +188,8 @@ public class personalized extends JFrame implements Serializable {
         jTextField4.setVisible(false);
         jButton6.setVisible(false);
         jButton7.setVisible(true);
+        jButton4.setVisible(false);
+        jTextField3.setVisible(false);
         if(bl==true){
           
           jTextField1.setText(zlevel1.getVocc().getEnglish());
@@ -280,6 +282,7 @@ public class personalized extends JFrame implements Serializable {
         jButton4.setVisible(true);
         jButton5.setVisible(true);
         jButton3.setVisible(false);
+        
         pointslevel1.setpp(0);
         pointslevel1.setpn(0);
         jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
@@ -316,9 +319,9 @@ public class personalized extends JFrame implements Serializable {
    
     
     cp.add(jButton3);
-    jTextField3.setBounds(704, 200, 225, 41);
+    jTextField3.setBounds(760, 328, 225, 41);
     cp.add(jTextField3);
-    jButton4.setBounds(616, 152, 145, 33);
+    jButton4.setBounds(512, 264, 177, 41);
     jButton4.setText("go to your save files");
     jButton4.setMargin(new Insets(2, 2, 2, 2));
     
@@ -329,17 +332,17 @@ public class personalized extends JFrame implements Serializable {
     jButton5.setMargin(new Insets(2, 2, 2, 2));
     cp.add(jButton5);
     
-    jLabel6.setBounds(976, 144, 121, 41);
+    jLabel6.setBounds(976, 208, 121, 41);
     jLabel6.setText("Deutsch");
     cp.add(jLabel6);
-    jLabel7.setBounds(976, 72, 129, 41);
+    jLabel7.setBounds(976, 144, 129, 41);
     jLabel7.setText("English");
     cp.add(jLabel7);
-    jTextField4.setBounds(1136, 144, 153, 49);
+    jTextField4.setBounds(1136, 208, 153, 49);
     cp.add(jTextField4);
-    jTextField5.setBounds(1136, 72, 161, 41);
+    jTextField5.setBounds(1136, 144, 161, 41);
     cp.add(jTextField5);
-    jButton6.setBounds(1136, 8, 97, 33);
+    jButton6.setBounds(1136, 88, 97, 33);
     jButton6.setText("Add vocable");
     jButton6.setMargin(new Insets(2, 2, 2, 2));
     jButton6.addActionListener(new ActionListener() { 
@@ -352,7 +355,7 @@ public class personalized extends JFrame implements Serializable {
       }
     });
     cp.add(jButton6);
-    jButton7.setBounds(576, 264, 161, 41);
+    jButton7.setBounds(576, 400, 161, 41);
     jButton7.setText("Finish");
     jButton7.setMargin(new Insets(2, 2, 2, 2));
     jButton7.addActionListener(new ActionListener() { 
@@ -372,9 +375,16 @@ public class personalized extends JFrame implements Serializable {
         jTextField1.setText(null);
         jTextField2.setText(null);
         jButton7.setVisible(false);
+        jTextField3.setVisible(true);
       }
     });
     cp.add(jButton7);
+    jLabel8.setBounds(272, 8, 713, 73);
+    jLabel8.setText("Personalized");
+    jLabel8.setHorizontalAlignment(SwingConstants.CENTER);
+    jLabel8.setFont(new Font("Calibri", Font.BOLD, 36));
+    jLabel8.setForeground(Color.WHITE);
+    cp.add(jLabel8);
     // Ende Komponenten
     
     setVisible(true);

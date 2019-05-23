@@ -15,7 +15,6 @@ public class hard extends JFrame {
   // Anfang Attribute
   private JButton jButton1 = new JButton();
   private JButton jButton2 = new JButton();
-  private JButton jButton3 = new JButton();
   // Ende Attribute
   boolean bl=true;
   public hard(boolean bl) { 
@@ -42,7 +41,7 @@ public class hard extends JFrame {
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         
-        level levell=new level(6,bl);
+        level levell=new level(4,bl);
       }
     });
     cp.add(jButton1);
@@ -52,21 +51,11 @@ public class hard extends JFrame {
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
          
-        level levell=new level(7,bl);
+        level levell=new level(5,bl);
       }
     });
     cp.add(jButton2);
-    jButton3.setBounds(80, 152, 89, 49);
-    jButton3.setText("levelhard3");
-    jButton3.setMargin(new Insets(2, 2, 2, 2));
-    jButton3.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
-
-        level levell=new level(8,bl);
-       
-      }
-    });
-    cp.add(jButton3);
+      
     // Ende Komponenten
     
     setVisible(true);
@@ -87,11 +76,6 @@ public class hard extends JFrame {
     // TODO hier Quelltext einfügen
     
   } // end of jButton2_ActionPerformed
-
-  public void jButton3_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einfügen
-    
-  } // end of jButton3_ActionPerformed
 
   // Ende Methoden
 } // end of class hard
