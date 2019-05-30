@@ -156,9 +156,9 @@ public class zufalleasyy implements Serializable {
     {
       System.out.println("Fehler beim Schreiben von dummy.ser: Ein- Ausgabefehler");
     }
-    
+     */
     
     // Ende Methoden
-      */
+      
   }
 }

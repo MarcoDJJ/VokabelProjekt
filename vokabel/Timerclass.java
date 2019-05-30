@@ -23,8 +23,8 @@ public class Timerclass{
   JButton jButton5;
   JTextField jTextField1;
     JTextField jTextField2;
-
-  public Timerclass(JTextField jTextField1,JTextField jTextField2,JButton jButton5,JLabel jj, JButton jButton3, JTextField jTextField3){
+   JButton jButton4;
+  public Timerclass(JTextField jTextField1,JTextField jTextField2,JButton jButton5,JLabel jj, JButton jButton3, JTextField jTextField3,JButton jButton4){
     this.v=v;
     this.jTextField1=jTextField1;
     this.jTextField2=jTextField2;
@@ -32,6 +32,7 @@ public class Timerclass{
      this.j=jj;
      this.jButton3=jButton3;
     this.jTextField3=jTextField3;
+  this.jButton4=jButton4;
  
     }
   // Anfang Methoden
@@ -40,7 +41,7 @@ public class Timerclass{
       if(secondsPassed<v){
       secondsPassed++;}
       else {
-    
+    jButton4.setVisible(true);
         jButton3.setVisible(true);
         jTextField3.setVisible(true);
         jButton5.setVisible(true);

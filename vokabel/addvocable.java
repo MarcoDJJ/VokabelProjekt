@@ -30,7 +30,7 @@ import java.util.*;
 
 public class addvocable extends JFrame implements Serializable {
   // Anfang Attribute
-
+  
   private JLabel jLabel1 = new JLabel();
   private JLabel jLabel2 = new JLabel();
   private JTextField jTextField1 = new JTextField();
@@ -62,7 +62,7 @@ public class addvocable extends JFrame implements Serializable {
     cp.setLayout(null);
     // Anfang Komponenten
     
-   
+    
     
     jLabel1.setBounds(128, 96, 81, 41);
     jLabel1.setText("Deutsch");
@@ -81,17 +81,13 @@ public class addvocable extends JFrame implements Serializable {
     jButton2.setBounds(264, 96, 113, 49);
     jButton2.setText("Food");
     jButton2.setMargin(new Insets(2, 2, 2, 2));
-    jButton2.addActionListener(new ActionListener() { 
+    
+     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        readzufalleasyy r=new readzufalleasyy(zlevel1,0);
-        vokabel v=new vokabel(jTextField1.getText(),jTextField2.getText());
-        zlevel1.fuegevoccnhinzu(v);
-        addzufalleasyy add= new addzufalleasyy(0,zlevel1);
-        jTextField2.setText(null);
-      jTextField1.setText(null);
-        
+        addAlistener a=new addAlistener(0,zlevel1,jTextField1,jTextField2);
       }
-    });
+    }); 
+     
     jButton2.setBackground(Color.GREEN);
     jButton2.setFont(new Font("Calibri", Font.BOLD, 16));
     cp.add(jButton2);
@@ -100,12 +96,7 @@ public class addvocable extends JFrame implements Serializable {
     jButton3.setMargin(new Insets(2, 2, 2, 2));
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        readzufalleasyy r=new readzufalleasyy(zlevel1,1);
-        vokabel v=new vokabel(jTextField1.getText(),jTextField2.getText());
-        zlevel1.fuegevoccnhinzu(v);
-        addzufalleasyy add= new addzufalleasyy(1,zlevel1);
-        jTextField2.setText(null);
-      jTextField1.setText(null);
+        addAlistener a=new addAlistener(1,zlevel1,jTextField1,jTextField2);
       }
     });
     jButton3.setBackground(Color.GREEN);
@@ -116,12 +107,7 @@ public class addvocable extends JFrame implements Serializable {
     jButton4.setMargin(new Insets(2, 2, 2, 2));
     jButton4.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        readzufalleasyy r=new readzufalleasyy(zlevel1,2);
-        vokabel v=new vokabel(jTextField1.getText(),jTextField2.getText());
-        zlevel1.fuegevoccnhinzu(v);
-        addzufalleasyy add= new addzufalleasyy(2,zlevel1);
-        jTextField2.setText(null);
-      jTextField1.setText(null);
+        addAlistener a=new addAlistener(2,zlevel1,jTextField1,jTextField2);
       }
     });
     jButton4.setBackground(Color.BLUE);
@@ -132,12 +118,7 @@ public class addvocable extends JFrame implements Serializable {
     jButton5.setMargin(new Insets(2, 2, 2, 2));
     jButton5.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        readzufalleasyy r=new readzufalleasyy(zlevel1,3);
-        vokabel v=new vokabel(jTextField1.getText(),jTextField2.getText());
-        zlevel1.fuegevoccnhinzu(v);
-        addzufalleasyy add= new addzufalleasyy(3,zlevel1);
-        jTextField2.setText(null);
-      jTextField1.setText(null);
+        addAlistener a=new addAlistener(3,zlevel1,jTextField1,jTextField2);
       }
     });
     jButton5.setBackground(Color.BLUE);
@@ -148,12 +129,7 @@ public class addvocable extends JFrame implements Serializable {
     jButton6.setMargin(new Insets(2, 2, 2, 2));
     jButton6.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        readzufalleasyy r=new readzufalleasyy(zlevel1,4);
-        vokabel v=new vokabel(jTextField1.getText(),jTextField2.getText());
-        zlevel1.fuegevoccnhinzu(v);
-        addzufalleasyy add= new addzufalleasyy(4,zlevel1);
-        jTextField2.setText(null);
-      jTextField1.setText(null);
+        addAlistener a=new addAlistener(4,zlevel1,jTextField1,jTextField2);
       }
     });
     jButton6.setBackground(Color.RED);
@@ -164,27 +140,22 @@ public class addvocable extends JFrame implements Serializable {
     jButton7.setMargin(new Insets(2, 2, 2, 2));
     jButton7.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        readzufalleasyy r=new readzufalleasyy(zlevel1,5);
-        vokabel v=new vokabel(jTextField1.getText(),jTextField2.getText());
-        zlevel1.fuegevoccnhinzu(v);
-        addzufalleasyy add= new addzufalleasyy(5,zlevel1);
-        jTextField2.setText(null);
-      jTextField1.setText(null);
+        addAlistener a=new addAlistener(5,zlevel1,jTextField1,jTextField2);
       }
     });
     jButton7.setBackground(Color.RED);
     jButton7.setFont(new Font("Calibri", Font.BOLD, 16));
     cp.add(jButton7);
-      
-      
-      
+    
+    
+    
     jLabel3.setBounds(160, 16, 393, 48);
     jLabel3.setText("Add a couple of vocables");
     jLabel3.setFont(new Font("Calibri", Font.BOLD, 36));
     jLabel3.setForeground(Color.WHITE);
     jLabel3.setHorizontalAlignment(SwingConstants.CENTER);
     cp.add(jLabel3);
-    cp.setBackground(Color.BLACK);
+    cp.setBackground(new Color(0x404040));
     // Ende Komponenten
     
     setVisible(true);
@@ -195,7 +166,34 @@ public class addvocable extends JFrame implements Serializable {
   public static void main(String[] args) {
     
   } // end of main
-  
+  public class addAlistener extends JFrame{
+    
+    int i; 
+    zufalleasyy zlevel1;
+    JTextField jTextField1; 
+    JTextField jTextField2;       
+        public addAlistener(int i, zufalleasyy zlevel1,JTextField jTextField1, JTextField jTextField2){
+        this.jTextField1=jTextField1;
+        this.jTextField2=jTextField2;
+        this.zlevel1=zlevel1;
+        this.i=i;
+         if(jTextField2.getText().equals("") || jTextField1.getText().equals("") || jTextField2.getText().equals(null) || jTextField1.getText().equals(null)){
+          
+          System.out.println("It is not possible to insert the entered couple of vocables"); 
+        }
+        else{
+         readzufalleasyy r=new readzufalleasyy(zlevel1,i);
+        vokabel v=new vokabel(jTextField1.getText(),jTextField2.getText());
+        zlevel1.fuegevoccnhinzu(v);
+        addzufalleasyy add= new addzufalleasyy(i,zlevel1); 
+        }                                  
+        
+        jTextField2.setText(null);
+        jTextField1.setText(null);
+         }
+    
+    
+          }
   public void jButton1_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
     

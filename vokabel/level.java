@@ -19,7 +19,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.nio.file.*; 
 import java.util.*;
 /**
  *
@@ -57,7 +57,7 @@ public class level extends JFrame implements Serializable {
   points pointslevel1=new points(0, 0, 0);
   savefiles s= new savefiles(); 
    int t1=60;
-  Timerclass timerlevel1 =new Timerclass(jTextField1,jTextField2,jButton5,jLabel1,jButton3,jTextField3);
+  Timerclass timerlevel1 =new Timerclass(jTextField1,jTextField2,jButton5,jLabel1,jButton3,jTextField3,jButton4);
   /*public void keyPressed(KeyEvent e) {
   
   int key = e.getKeyCode();
@@ -78,26 +78,33 @@ public class level extends JFrame implements Serializable {
     s.setVisible(false);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 1055; 
-    int frameHeight = 310;
+    int frameHeight = 311;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
     int y = (d.height - getSize().height) / 2;
     setLocation(x, y);
-    setTitle("leveleasy1");
+    setTitle("level");
     setResizable(false);
     Container cp = getContentPane();
     cp.setLayout(null);
     // Anfang Komponenten
     
-    jLabel1.setBounds(0, 16, 81, 17);
+    jLabel1.setBounds(8, 16, 81, 23);
     jLabel1.setText("");
+    jLabel1.setHorizontalAlignment(SwingConstants.CENTER);
+    jLabel1.setFont(new Font("Calibri", Font.BOLD, 16));
+    jLabel1.setForeground(Color.WHITE);
     cp.add(jLabel1);
-    jLabel2.setBounds(0, 96, 57, 49);
+    jLabel2.setBounds(0, 96, 57, 33);
     
+    jLabel2.setFont(new Font("Calibri", Font.BOLD, 16));
+    jLabel2.setForeground(Color.WHITE);
     cp.add(jLabel2);
-    jLabel3.setBounds(0, 168, 65, 41);
+    jLabel3.setBounds(0, 160, 65, 33);
     
+    jLabel3.setFont(new Font("Calibri", Font.BOLD, 16));
+    jLabel3.setForeground(Color.WHITE);
     cp.add(jLabel3);
     jButton1.setBounds(0, 48, 73, 33);
     jButton1.setText("Start");
@@ -152,13 +159,14 @@ public class level extends JFrame implements Serializable {
     //if(timerlevel1.getSecondsPassed()<60){
     
     
-    jButton1.setBackground(Color.YELLOW);
+    jButton1.setBackground(new Color(0xEEEEEE));
+    jButton1.setFont(new Font("Calibri", Font.BOLD, 16));
     cp.add(jButton1);
     jTextField1.setBounds(96, 96, 121, 33);
     cp.add(jTextField1);
-    jTextField2.setBounds(96, 160, 113, 33);
+    jTextField2.setBounds(96, 160, 121, 33);
     cp.add(jTextField2);
-    jButton2.setBounds(96, 48, 65, 33);
+    jButton2.setBounds(96, 48, 81, 33);
     jButton2.setText("Verify");
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     
@@ -175,13 +183,18 @@ public class level extends JFrame implements Serializable {
     
     
     
-    jButton2.setBackground(Color.GREEN);
+    jButton2.setBackground(new Color(0xEEEEEE));
+    jButton2.setFont(new Font("Calibri", Font.BOLD, 16));
     cp.add(jButton2);
     jLabel4.setBounds(96, 216, 113, 33);
     jLabel4.setText("");
+    jLabel4.setFont(new Font("Calibri", Font.BOLD, 16));
+    jLabel4.setForeground(Color.WHITE);
     cp.add(jLabel4);
-    jLabel5.setBounds(256, 200, 417, 49);
+    jLabel5.setBounds(256, 208, 417, 49);
     jLabel5.setText("You scored " +pointslevel1.getPositivepoints()+ " correct answers and " +pointslevel1.getNegativepoints()+" wrong answers");
+    jLabel5.setFont(new Font("Calibri", Font.BOLD, 16));
+    jLabel5.setForeground(Color.WHITE);
     cp.add(jLabel5);
     jButton3.setBounds(280, 160, 185, 33);
     jButton3.setText("save your results");
@@ -215,7 +228,7 @@ public class level extends JFrame implements Serializable {
         }
         else{
           jTextField1.setText(zlevel1.getVocc().getDeutsch());
-          timerlevel1.start();
+          
           
           
           
@@ -268,7 +281,7 @@ public class level extends JFrame implements Serializable {
              
             
           }
-              jTextField2.setText(null);
+              
               jTextField1.setText(zlevel1.getVocc().getDeutsch());
             }
           // end of if-else
@@ -277,35 +290,20 @@ public class level extends JFrame implements Serializable {
           jButton1.setVisible(false);
           jButton2.setVisible(false);
         } 
+        jTextField2.setText(null);
       }
     });
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) {
         s.addsave(jTextField3.getText()+" =  "+ jLabel5.getText());
-        try (FileOutputStream fos = new FileOutputStream ("savefile.ser");
-        ObjectOutputStream oos = new ObjectOutputStream (fos)) {
-          
-          
-          oos.writeObject (s.getJList());
-          
-          
-          
-        }
-        catch(FileNotFoundException e)
-        {
-          System.out.println("Fehler beim Schreiben von dummy.ser: Datei nicht gefunden");
-        }
-        catch(IOException e)
-        {
-          System.out.println("Fehler beim Schreiben von dummy.ser: Ein- Ausgabefehler");
-        }
+        
+        
         jButton4.setVisible(true);
         jButton5.setVisible(true);
       }
     });
     jButton4.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        
         
         s.setVisible(true);
         jButton4.setVisible(false);
@@ -334,22 +332,25 @@ public class level extends JFrame implements Serializable {
     
    
     
+    jButton3.setFont(new Font("Calibri", Font.BOLD, 16));
     cp.add(jButton3);
     jTextField3.setBounds(704, 200, 225, 41);
     cp.add(jTextField3);
-    jButton4.setBounds(616, 152, 145, 33);
+    jButton4.setBounds(704, 152, 201, 33);
     jButton4.setText("go to your save files");
     jButton4.setMargin(new Insets(2, 2, 2, 2));
     
+    jButton4.setFont(new Font("Calibri", Font.BOLD, 16));
     cp.add(jButton4);
     jButton5.setBounds(248, 48, 105, 33);
     jButton5.setText("New");
     jButton5.setVisible(false);
     jButton5.setMargin(new Insets(2, 2, 2, 2));
-    jButton5.setBackground(Color.BLUE);
+    jButton5.setBackground(new Color(0xEEEEEE));
+    jButton5.setFont(new Font("Dialog", Font.BOLD, 16));
     cp.add(jButton5);
     
-    cp.setBackground(Color.BLACK);
+    cp.setBackground(new Color(0x404040));
     jLabel6.setBounds(416, 8, 209, 48);
     
     jLabel6.setHorizontalAlignment(SwingConstants.CENTER);

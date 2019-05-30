@@ -5,7 +5,7 @@ object settings: TFGUIForm
   Caption = 'settings'
   ClientHeight = 370
   ClientWidth = 510
-  Color = clBlack
+  Color = 4210752
   ParentFont = True
   FormStyle = fsStayOnTop
   OldCreateOrder = True
@@ -18,7 +18,7 @@ object settings: TFGUIForm
   FrameType = 5
   Resizable = False
   Undecorated = False
-  Background = clBlack
+  Background = 4210752
   PixelsPerInch = 96
   TextHeight = 13
   object jButton1: TJButton

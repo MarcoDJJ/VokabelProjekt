@@ -43,7 +43,7 @@ public class home extends JFrame {
   private JButton jButton4 = new JButton();
   
   boolean bl=true;
-  
+  int i=1;
   private JButton jButton7 = new JButton();
   private JLabel jLabel1 = new JLabel();
   private JLabel jLabel2 = new JLabel();
@@ -67,25 +67,7 @@ public class home extends JFrame {
     cp.setLayout(null);
     // Anfang Komponenten
     
-    try (FileInputStream fis = new FileInputStream ("language.ser");
-    ObjectInputStream ois = new ObjectInputStream (fis)) {
-      bl= (boolean) ois.readObject();
-      
-      
-      
-    }                        
-    catch(FileNotFoundException e)
-    {
-      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
-    }
-    catch(IOException e)
-    {
-      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
-    }
-    catch(ClassNotFoundException e)
-    {
-      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
-    }
+    
     
     
     jButton1.setBounds(56, 96, 113, 41);
@@ -94,8 +76,9 @@ public class home extends JFrame {
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton1_ActionPerformed(evt);
-        easy easy1=new easy(bl);
-        easy1.setVisible(true);
+        easy easy1=new easy(bl,1);
+        
+        
       }
     });
     jButton1.setBackground(Color.GREEN);
@@ -108,8 +91,8 @@ public class home extends JFrame {
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton2_ActionPerformed(evt);
-        normal level2=new normal(bl);
-        level2.setVisible(true);
+        easy lvl=new easy(bl,2);
+        
       }
     });
     jButton2.setBackground(Color.BLUE);
@@ -122,8 +105,8 @@ public class home extends JFrame {
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton3_ActionPerformed(evt);
-        hard level3=new hard(bl);
-        level3.setVisible(true);
+        easy lvl=new easy(bl,3);
+        
       }
     });
     jButton3.setBackground(Color.RED);
@@ -137,7 +120,7 @@ public class home extends JFrame {
       public void actionPerformed(ActionEvent evt) { 
         jButton4_ActionPerformed(evt);
         personalized level4= new personalized(bl);
-        level4.setVisible(true);
+        
       }
     });
     jButton4.setBackground(Color.YELLOW);
@@ -152,6 +135,7 @@ public class home extends JFrame {
     jButton7.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         settings sss=new settings();
+        
       }
     });
     
@@ -165,7 +149,7 @@ public class home extends JFrame {
     
     
     cp.add(jButton7);
-    cp.setBackground(Color.BLACK);
+    cp.setBackground(new Color(0x404040));
     jLabel1.setBounds(112, 8, 273, 65);
     jLabel1.setText("Vocabulary Game");
     jLabel1.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -202,6 +186,27 @@ public class home extends JFrame {
     // Ende Komponenten
     
     setVisible(true);
+    while(i==1){
+       try (FileInputStream fis = new FileInputStream ("language.ser");
+    ObjectInputStream ois = new ObjectInputStream (fis)) {
+      bl= (boolean) ois.readObject();
+      
+      
+      
+    }                        
+    catch(FileNotFoundException e)
+    {
+      System.out.println("");
+    }
+    catch(IOException e)
+    {
+      System.out.println("");
+    }
+    catch(ClassNotFoundException e)
+    {
+      System.out.println("");
+    }
+      }
   } // end of public home
   
   // Anfang Methoden

@@ -70,6 +70,12 @@ public class savefiles extends JFrame implements Serializable{
     jList1Model.addElement(sss);
     jList1.setModel(jList1Model);
   }
+  public DefaultListModel getjlistmodel(){
+     return jList1Model;
+    } 
+    public void setjlistmodel(DefaultListModel jlm){
+      this.jList1Model=jlm;
+       }
   public static void main(String[] args) {
     
   } // end of main

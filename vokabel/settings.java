@@ -66,37 +66,37 @@ public class settings extends JFrame implements Serializable {
       public void actionPerformed(ActionEvent evt) { 
         try
         { 
-            Files.deleteIfExists(Paths.get("timer.ser")); 
+          Files.deleteIfExists(Paths.get("timer.ser")); 
         } 
         catch(NoSuchFileException e) 
         { 
-            System.out.println("No such file/directory exists"); 
+          System.out.println("No such file/directory exists"); 
         } 
         catch(DirectoryNotEmptyException e) 
         { 
-            System.out.println("Directory is not empty."); 
+          System.out.println("Directory is not empty."); 
         } 
         catch(IOException e) 
         { 
-            System.out.println("Invalid permissions."); 
+          System.out.println("Invalid permissions."); 
         } 
         try (FileOutputStream fos = new FileOutputStream ("timer.ser");
-    ObjectOutputStream oos = new ObjectOutputStream (fos)) {
-      
-      
+        ObjectOutputStream oos = new ObjectOutputStream (fos)) {
+          
+          
           oos.writeObject (jSlider1.getValue());
           jLabel1.setText("The timer has been set at "+ jSlider1.getValue() + " seconds");
-      
-      
-    }
-    catch(FileNotFoundException e)
-    {
-      System.out.println("Fehler beim Schreiben von dummy.ser: Datei nicht gefunden");
-    }
-    catch(IOException e)
-    {
-      System.out.println("Fehler beim Schreiben von dummy.ser: Ein- Ausgabefehler");
-    }
+          
+          
+        }
+        catch(FileNotFoundException e)
+        {
+          System.out.println("Fehler beim Schreiben von dummy.ser: Datei nicht gefunden");
+        }
+        catch(IOException e)
+        {
+          System.out.println("Fehler beim Schreiben von dummy.ser: Ein- Ausgabefehler");
+        }
       }
     });
     jButton1.setBackground(Color.WHITE);
@@ -119,11 +119,11 @@ public class settings extends JFrame implements Serializable {
     jButton2.setText("Change");
     jButton2.setMargin(new Insets(2, 2, 2, 2));
     
-     try (FileInputStream fis = new FileInputStream ("language.ser");
+    try (FileInputStream fis = new FileInputStream ("language.ser");
     ObjectInputStream ois = new ObjectInputStream (fis)) {
       bl= (boolean) ois.readObject();
       
-           
+      
       
     }                        
     catch(FileNotFoundException e)
@@ -139,59 +139,59 @@ public class settings extends JFrame implements Serializable {
       System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
     } 
     if(bl==true){
-           jLabel2.setText("Ask in English and answer in German");
-         
-          }
-        else {
-                jLabel2.setText("Ask in German and answer in Engish");
-         
-          }    
+      jLabel2.setText("Ask in English and answer in German");
+      
+    }
+    else {
+      jLabel2.setText("Ask in German and answer in English");
+      
+    }    
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         if(bl==true){
-           bl=false;
+          bl=false;
           jLabel2.setText("Ask in German and answer in English");
-          }
+        }
         else {
           bl=true;
           jLabel2.setText("Ask in English and answer in German");
-          }
-          try
+        }
+        try
         { 
-            Files.deleteIfExists(Paths.get("language.ser")); 
+          Files.deleteIfExists(Paths.get("language.ser")); 
         } 
         catch(NoSuchFileException e) 
         { 
-            System.out.println("No such file/directory exists"); 
+          System.out.println("No such file/directory exists"); 
         } 
         catch(DirectoryNotEmptyException e) 
         { 
-            System.out.println("Directory is not empty."); 
+          System.out.println("Directory is not empty."); 
         } 
         catch(IOException e) 
         { 
-            System.out.println("Invalid permissions."); 
+          System.out.println(""); 
         } 
-       
+        
         
         try (FileOutputStream fos = new FileOutputStream ("language.ser");
-    ObjectOutputStream oos = new ObjectOutputStream (fos)) {
-      
-      
-      oos.writeObject (bl);
-      
-      
-      
-    }
-    catch(FileNotFoundException e)
-    {
-      System.out.println("Fehler beim Schreiben von dummy.ser: Datei nicht gefunden");
-    }
-    catch(IOException e)
-    {
-      System.out.println("Fehler beim Schreiben von dummy.ser: Ein- Ausgabefehler");
-    }
-          }
+        ObjectOutputStream oos = new ObjectOutputStream (fos)) {
+          
+          
+          oos.writeObject (bl);
+          
+          
+          
+        }
+        catch(FileNotFoundException e)
+        {
+          System.out.println("Fehler beim Schreiben von dummy.ser: Datei nicht gefunden");
+        }
+        catch(IOException e)
+        {
+          System.out.println("Fehler beim Schreiben von dummy.ser: Ein- Ausgabefehler");
+        }
+      }
     });
     jButton2.setBackground(Color.WHITE);
     jButton2.setFont(new Font("Calibri", Font.BOLD, 16));
@@ -218,28 +218,28 @@ public class settings extends JFrame implements Serializable {
     jLabel3.setFont(new Font("Calibri", Font.BOLD, 36));
     jLabel3.setForeground(Color.WHITE);
     cp.add(jLabel3);
-    cp.setBackground(Color.BLACK);
+    cp.setBackground(new Color(0x404040));
     // Ende Komponenten
     
     setVisible(true);
   } // end of public settings
-    
+  
   // Anfang Methoden
   
   public static void main(String[] args) {
-
+    
   } // end of main
   
   public void jButton1_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
     
   } // end of jButton1_ActionPerformed
-
+  
   public void jButton2_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
     
   } // end of jButton2_ActionPerformed
-
+  
   public void jButton3_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
     
