@@ -64,11 +64,29 @@ public class personalized extends JFrame implements Serializable {
   
   
 
-  public personalized(boolean bl) { 
+  public personalized() { 
     // Frame-Initialisierung
     super();
-    this.bl=bl;
-  
+   
+    try (FileInputStream fis = new FileInputStream ("language.ser");
+    ObjectInputStream ois = new ObjectInputStream (fis)) {
+      this.bl= (boolean) ois.readObject();
+      
+      
+      
+    }                        
+    catch(FileNotFoundException e)
+    {
+      System.out.println("");
+    }
+    catch(IOException e)
+    {
+      System.out.println("");
+    }
+    catch(ClassNotFoundException e)
+    {
+      System.out.println("");
+    }
     
      try (FileInputStream fis = new FileInputStream ("savefiles.ser");
         ObjectInputStream ois = new ObjectInputStream (fis)) {
@@ -201,7 +219,7 @@ public class personalized extends JFrame implements Serializable {
         jTextField3.setVisible(false);
         jButton3.setVisible(false);
         
-        if(bl==true){
+        if(bl==false){
           
           jTextField1.setText(zlevel1.getVocc().getEnglish());
           
@@ -222,7 +240,7 @@ public class personalized extends JFrame implements Serializable {
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) {
         
-        if(bl==true){
+        if(bl==false){
           
           if(jTextField2.getText().equals(zlevel1.ynow().getDeutsch())){
             jLabel4.setText("Well done!");
@@ -374,14 +392,14 @@ public class personalized extends JFrame implements Serializable {
     jLabel7.setFont(new Font("Calibri", Font.BOLD, 16));
     jLabel7.setForeground(Color.WHITE);
     cp.add(jLabel7);
-    jTextField4.setBounds(1136, 208, 153, 49);
+    jTextField4.setBounds(1136, 144, 161, 41);
     jTextField4.setFont(new Font("Calibri", Font.PLAIN, 16));
     cp.add(jTextField4);
-    jTextField5.setBounds(1136, 144, 161, 41);
+    jTextField5.setBounds(1136, 208, 161, 41);
     jTextField5.setFont(new Font("Calibri", Font.PLAIN, 16));
     cp.add(jTextField5);
     jButton6.setBounds(1136, 88, 97, 33);
-    jButton6.setText("Add vocable");
+    jButton6.setText("Add voc");
     jButton6.setMargin(new Insets(2, 2, 2, 2));
     jButton6.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 

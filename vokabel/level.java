@@ -53,7 +53,7 @@ public class level extends JFrame implements Serializable {
   boolean bl=true;
   zufalleasyy zlevel1= new zufalleasyy();
   boolean b=bl;
-  int j=0;
+  int j;
   points pointslevel1=new points(0, 0, 0);
   savefiles s= new savefiles(); 
   int t1=60;
@@ -110,11 +110,11 @@ public class level extends JFrame implements Serializable {
     }                        
     catch(FileNotFoundException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+      System.out.println("Fehler beim Lesen von timer.ser: Datei nicht gefunden");
     }
     catch(IOException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+      System.out.println("Fehler beim Lesen von timer.ser: Ein- Ausgabefehler");
     }
     catch(ClassNotFoundException e)
     {
@@ -151,11 +151,11 @@ public class level extends JFrame implements Serializable {
     }                        
     catch(FileNotFoundException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+      System.out.println("Fehler beim Lesen von savefiles.ser: Datei nicht gefunden");
     }
     catch(IOException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+      System.out.println("Fehler beim Lesen von savefiles.ser: Ein- Ausgabefehler");
     }
     catch(ClassNotFoundException e)
     {
@@ -205,7 +205,7 @@ public class level extends JFrame implements Serializable {
     jLabel4.setForeground(Color.WHITE);
     cp.add(jLabel4);
     jLabel5.setBounds(256, 208, 417, 49);
-    jLabel5.setText("You scored " +pointslevel1.getPositivepoints()+ " correct answers and " +pointslevel1.getNegativepoints()+" wrong answers");
+    jLabel5.setText("You scored " +pointslevel1.getPositivepoints()+ " correct answer/-s and " +pointslevel1.getNegativepoints()+" wrong answer/-s");
     jLabel5.setFont(new Font("Calibri", Font.BOLD, 16));
     jLabel5.setForeground(Color.WHITE);
     cp.add(jLabel5);

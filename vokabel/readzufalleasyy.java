@@ -124,7 +124,7 @@ public class readzufalleasyy {
     }
       }
     if(j==4){
-       try (FileInputStream fis = new FileInputStream ("vokabelnhard1.ser");
+       try (FileInputStream fis = new FileInputStream ("vokabelnnhard1.ser");
     ObjectInputStream ois = new ObjectInputStream (fis)) {
       z2= (ArrayList<vokabel>) ois.readObject();
       zlevel1.setVocc(z2);

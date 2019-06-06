@@ -1,6 +1,6 @@
 object personalized: TFGUIForm
-  Left = 87
-  Top = 360
+  Left = 58
+  Top = 204
   BorderIcons = [biSystemMenu]
   Caption = 'level'
   ClientHeight = 465
@@ -395,9 +395,9 @@ object personalized: TFGUIForm
   object jTextField4: TJTextField
     Tag = 2
     Left = 1136
-    Top = 208
-    Width = 153
-    Height = 49
+    Top = 144
+    Width = 161
+    Height = 41
     Cursor = crIBeam
     Hint = 'jTextField4'
     Font.Charset = ANSI_CHARSET
@@ -414,7 +414,7 @@ object personalized: TFGUIForm
   object jTextField5: TJTextField
     Tag = 2
     Left = 1136
-    Top = 144
+    Top = 208
     Width = 161
     Height = 41
     Cursor = crIBeam

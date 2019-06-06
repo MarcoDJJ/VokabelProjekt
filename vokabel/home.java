@@ -122,7 +122,7 @@ public class home extends JFrame {
     jButton4.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton4_ActionPerformed(evt);
-        personalized level4= new personalized(bl);
+        personalized level4= new personalized();
         
       }
     });
@@ -172,13 +172,13 @@ public class home extends JFrame {
     jButton5.setMargin(new Insets(2, 2, 2, 2));
     jButton5.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        /*File file = new File("tutorial.pdf");            
+        File file = new File("tutorial.pdf");            
         try {
           
           Desktop.getDesktop().open(file);          //Es öffnet ein PDF mit einem Tutorial des Spiels
         }catch (IOException exception){
           exception.printStackTrace();
-        } */
+        }
         
         
         

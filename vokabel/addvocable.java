@@ -125,7 +125,7 @@ public class addvocable extends JFrame implements Serializable {
     jButton5.setFont(new Font("Calibri", Font.BOLD, 16));
     cp.add(jButton5);
     jButton6.setBounds(536, 96, 113, 49);
-    jButton6.setText("jButton6");
+    jButton6.setText("Economic");
     jButton6.setMargin(new Insets(2, 2, 2, 2));
     jButton6.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
@@ -136,7 +136,7 @@ public class addvocable extends JFrame implements Serializable {
     jButton6.setFont(new Font("Calibri", Font.BOLD, 16));
     cp.add(jButton6);
     jButton7.setBounds(536, 160, 113, 49);
-    jButton7.setText("jButton7");
+    jButton7.setText("Physics");
     jButton7.setMargin(new Insets(2, 2, 2, 2));
     jButton7.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 

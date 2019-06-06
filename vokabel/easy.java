@@ -77,8 +77,8 @@ public class easy extends JFrame {
     }
     if(l==3){
       jLabel1.setText("Hard");
-      jButton1.setText("lvlhard1");
-      jButton2.setText("lvlhard2");
+      jButton1.setText("Economic");
+      jButton2.setText("Physics");
       jButton1.setBackground(Color.RED);  
       jButton2.setBackground(Color.RED);
     }
