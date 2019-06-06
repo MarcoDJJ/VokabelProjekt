@@ -138,7 +138,7 @@ object level: TFGUIForm
     Tag = 2
     Left = 96
     Top = 96
-    Width = 121
+    Width = 145
     Height = 33
     Cursor = crIBeam
     Hint = 'jTextField1'
@@ -157,7 +157,7 @@ object level: TFGUIForm
     Tag = 2
     Left = 96
     Top = 160
-    Width = 121
+    Width = 145
     Height = 33
     Cursor = crIBeam
     Hint = 'jTextField2'

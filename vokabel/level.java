@@ -174,9 +174,9 @@ public class level extends JFrame implements Serializable {
     jButton1.setBackground(new Color(0xEEEEEE));
     jButton1.setFont(new Font("Calibri", Font.BOLD, 16));
     cp.add(jButton1);
-    jTextField1.setBounds(96, 96, 121, 33);
+    jTextField1.setBounds(96, 96, 145, 33);
     cp.add(jTextField1);
-    jTextField2.setBounds(96, 160, 121, 33);
+    jTextField2.setBounds(96, 160, 145, 33);
     cp.add(jTextField2);
     jButton2.setBounds(96, 48, 81, 33);
     jButton2.setText("Verify");
