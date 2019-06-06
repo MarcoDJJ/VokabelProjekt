@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.nio.file.*; 
 import java.util.*;
+;
 /**
  *
  * Beschreibung
@@ -43,30 +44,21 @@ public class level extends JFrame implements Serializable {
   private JButton jButton3 = new JButton();
   private JTextField jTextField3 = new JTextField();
   private JButton jButton4 = new JButton();
-  private JButton jButton5 = new JButton();
   private JLabel jLabel6 = new JLabel();
   // Ende Attribute
   
+  int kk=0;
   
-  
-  
+  DefaultListModel jl;
   boolean bl=true;
   zufalleasyy zlevel1= new zufalleasyy();
   boolean b=bl;
   int j=0;
   points pointslevel1=new points(0, 0, 0);
   savefiles s= new savefiles(); 
-   int t1=60;
-  Timerclass timerlevel1 =new Timerclass(jTextField1,jTextField2,jButton5,jLabel1,jButton3,jTextField3,jButton4);
-  /*public void keyPressed(KeyEvent e) {
+  int t1=60;
+  Timerclass timerlevel1 =new Timerclass(jButton2,jButton1,jTextField1,jTextField2,jLabel1,jButton3,jTextField3,jButton4);
   
-  int key = e.getKeyCode();
-  
-  if(key == KeyEvent.VK_D){
-  
-  stop();
-  }
-  }*/
   
   public level(int j,boolean bl) { 
     // Frame-Initialisierung
@@ -109,6 +101,7 @@ public class level extends JFrame implements Serializable {
     jButton1.setBounds(0, 48, 73, 33);
     jButton1.setText("Start");
     jButton1.setMargin(new Insets(2, 2, 2, 2));
+    //Der Timer wird auf den Wert eingestellt, den der Player in den Einstellungen festgelegt hat
     try (FileInputStream fis = new FileInputStream ("timer.ser");
     ObjectInputStream ois = new ObjectInputStream (fis)) {
       t1= (int) ois.readObject();
@@ -130,25 +123,44 @@ public class level extends JFrame implements Serializable {
     
     if(j==0){
       jLabel6.setText("Food");
-      }
+    }
     if(j==1){
-        jLabel6.setText("Animals");
-      }
+      jLabel6.setText("Animals");
+    }
     if(j==2){
-       jLabel6.setText("Sport");
-      }
+      jLabel6.setText("Sport");
+    }
     if(j==3){
-        jLabel6.setText("Politic");
-      }
+      jLabel6.setText("Politic");
+    }
     if(j==4){
-        jLabel6.setText("ln2");
-      }
+      jLabel6.setText("ln2");
+    }
     if(j==5){
-        jLabel6.setText("ln3");
-      }
-     
+      jLabel6.setText("ln3");
+    }
     
     
+    //Die saved files werden gelesen
+    try (FileInputStream fis = new FileInputStream ("savefiles.ser");
+    ObjectInputStream ois = new ObjectInputStream (fis)) {
+      jl= (DefaultListModel) ois.readObject();
+      s.setgleichjlistmodel(jl);
+      
+      
+    }                        
+    catch(FileNotFoundException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+    }
+    catch(IOException e)
+    {
+      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+    }
+    catch(ClassNotFoundException e)
+    {
+      System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+    }
     
     
     
@@ -185,6 +197,7 @@ public class level extends JFrame implements Serializable {
     
     jButton2.setBackground(new Color(0xEEEEEE));
     jButton2.setFont(new Font("Calibri", Font.BOLD, 16));
+    jButton2.setVisible(false);
     cp.add(jButton2);
     jLabel4.setBounds(96, 216, 113, 33);
     jLabel4.setText("");
@@ -197,14 +210,14 @@ public class level extends JFrame implements Serializable {
     jLabel5.setForeground(Color.WHITE);
     cp.add(jLabel5);
     jButton3.setBounds(280, 160, 185, 33);
-    jButton3.setText("save your results");
+    jButton3.setText("save your result");
     jButton3.setMargin(new Insets(2, 2, 2, 2));
     jTextField3.setText("write a title for your save file");
     jTextField3.setVisible(false);
     jButton3.setVisible(false);
     jButton4.setVisible(false);
     
-    
+    //die namen der Jlabels ändern sich je nach gewählter Sprache
     if(bl==true){
       jLabel2.setText("English");
       jLabel3.setText("Deutsch"); 
@@ -212,13 +225,28 @@ public class level extends JFrame implements Serializable {
     else{
       jLabel2.setText("Deutsch");
       jLabel3.setText("English");
-    
+      
     }
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) {
+        jButton2.setVisible(true);
+        jButton3.setVisible(false);
+        jButton4.setVisible(false);
+        jButton2.setVisible(true);
+        jButton1.setVisible(false);
+        jTextField3.setVisible(false);
+        timerlevel1.setsp(0);
+        jLabel1.setText("");
+        pointslevel1.setpp(0);
+        pointslevel1.setpn(0);
+        jLabel5.setText("You scored " +pointslevel1.getPositivepoints()+ " correct answer/-s and " +pointslevel1.getNegativepoints()+" wrong answer/-s");
         
         readzufalleasyy read= new readzufalleasyy(zlevel1,j);
-        timerlevel1.start();
+        if(kk==0){
+          
+          timerlevel1.start();
+          kk=1;
+        }
         if(bl==true){
           
           jTextField1.setText(zlevel1.getVocc().getEnglish());
@@ -234,60 +262,66 @@ public class level extends JFrame implements Serializable {
           
         }
         //timerlevel1.setI();
-        jButton1.setVisible(false);
+        
+        
+        jButton2.setVisible(true);
       }
     });
+    
+    
+    
     jButton2.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) {
+        //Das Jbutton überprüft die angegebenen Informationen. Es ist möglich, die Antworten zu überprüfen, bis der Timer abgelaufen ist
         if(timerlevel1.getTimerNow()<timerlevel1.getV()){
           if(bl==true){
             
-          if(jTextField2.getText().equals(zlevel1.ynow().getDeutsch())){
-            jLabel4.setText("Gut Gemacht!");
-            zlevel1.getVoccc().remove(zlevel1.getK());
+            if(jTextField2.getText().equals(zlevel1.ynow().getDeutsch())){
+              jLabel4.setText("Well done!");
+              zlevel1.getVoccc().remove(zlevel1.getK());
+              
+              
+              pointslevel1.addppoint();
+              jLabel5.setText("You scored " +pointslevel1.getPositivepoints()+ " correct answer/-s and " +pointslevel1.getNegativepoints()+" wrong answer/-s");
+              //zlevel1.getVoccc().remove(zlevel1.getK());
+            }
             
-            
-            pointslevel1.addppoint();
-            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answers and "+pointslevel1.getNegativepoints()+ " wrong answers");
-            //zlevel1.getVoccc().remove(zlevel1.getK());
-          }
-          
-          else{ 
-            jLabel4.setText("Falsch");
-            zlevel1.getVoccc().remove(zlevel1.getK());
-            
-            pointslevel1.addnpoint();
-            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
-            
-            
-          }
+            else{ 
+              jLabel4.setText("Wrong answer");
+              zlevel1.getVoccc().remove(zlevel1.getK());
+              
+              pointslevel1.addnpoint();
+              jLabel5.setText("You scored " +pointslevel1.getPositivepoints()+ " correct answer/-s and " +pointslevel1.getNegativepoints()+" wrong answer/-s");
+              
+              
+            }
             jTextField1.setText(zlevel1.getVocc().getEnglish());
           }
           else{
-               if(jTextField2.getText().equals(zlevel1.ynow().getEnglish())){
-            jLabel4.setText("Gut Gemacht!");
-            zlevel1.getVoccc().remove(zlevel1.getK());
-           
-            pointslevel1.addppoint();
-            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answers and "+pointslevel1.getNegativepoints()+ " wrong answers");
-            //zlevel1.getVoccc().remove(zlevel1.getK());
-          }
-          
-          else{ 
-            jLabel4.setText("Falsch");
-            zlevel1.getVoccc().remove(zlevel1.getK());
-            pointslevel1.addnpoint();
-            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
-             
-            
-          }
+            if(jTextField2.getText().equals(zlevel1.ynow().getEnglish())){
+              jLabel4.setText("Well done!");
+              zlevel1.getVoccc().remove(zlevel1.getK());
               
-              jTextField1.setText(zlevel1.getVocc().getDeutsch());
+              pointslevel1.addppoint();
+              jLabel5.setText("You scored " +pointslevel1.getPositivepoints()+ " correct answer/-s and " +pointslevel1.getNegativepoints()+" wrong answer/-s");
+              //zlevel1.getVoccc().remove(zlevel1.getK());
             }
+            
+            else{ 
+              jLabel4.setText("Wrong answer");
+              zlevel1.getVoccc().remove(zlevel1.getK());
+              pointslevel1.addnpoint();
+              jLabel5.setText("You scored " +pointslevel1.getPositivepoints()+ " correct answer/-s and " +pointslevel1.getNegativepoints()+" wrong answer/-s");
+              
+              
+            }
+            
+            jTextField1.setText(zlevel1.getVocc().getDeutsch());
+          }
           // end of if-else
         }
         else{ 
-          jButton1.setVisible(false);
+          zlevel1.getVoccc().clear();
           jButton2.setVisible(false);
         } 
         jTextField2.setText(null);
@@ -295,42 +329,64 @@ public class level extends JFrame implements Serializable {
     });
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) {
-        s.addsave(jTextField3.getText()+" =  "+ jLabel5.getText());
         
+        //Fügt die "save file" hinzu und speichert es in einer Datei
+        s.addelement(jTextField3.getText()+" =  "+ jLabel5.getText()+" "+"with the group of words belonging to"+" "+jLabel6.getText());
         
+        try (FileOutputStream fos = new FileOutputStream ("savefiles.ser");
+        ObjectOutputStream oos = new ObjectOutputStream (fos)) {
+          
+          
+          oos.writeObject(s.getjlist());
+          
+          
+          
+        }
+        catch(FileNotFoundException e)
+        {
+          System.out.println("Fehler beim Schreiben von savefiles.ser: Datei nicht gefunden");
+        }
+        catch(IOException e)
+        {
+          System.out.println("Fehler beim Schreiben von savefiles.ser: Ein- Ausgabefehler");
+        }
+        
+       
         jButton4.setVisible(true);
-        jButton5.setVisible(true);
       }
     });
     jButton4.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
+        //zeigt die "saved files" des players
+        try (FileInputStream fis = new FileInputStream ("savefiles.ser");
+        ObjectInputStream ois = new ObjectInputStream (fis)) {
+          jl= (DefaultListModel) ois.readObject();
+          s.addjList1Model(jl);
+          
+          
+        }                        
+        catch(FileNotFoundException e)
+        {
+          System.out.println("Fehler beim Lesen von savefiles.ser: Datei nicht gefunden");
+        }
+        catch(IOException e)
+        {
+          System.out.println("Fehler beim Lesen von savefiles.ser: Ein- Ausgabefehler");
+        }
+        catch(ClassNotFoundException e)
+        {
+          System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+        }
+        
         
         s.setVisible(true);
-        jButton4.setVisible(false);
+        
         //jButton3.setVisible(false);
       }
     });
-    jButton5.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) {
-        readzufalleasyy read2= new readzufalleasyy(zlevel1,j);
-        jButton5.setVisible(false);
-        timerlevel1.setsp(0);
-        jLabel1.setText("");
-        jButton3.setVisible(false);
-        jButton4.setVisible(false);
-        jButton2.setVisible(true);
-        jTextField1.setText(zlevel1.getVocc().getEnglish());
-        
-        jTextField3.setVisible(false);
-        
-        
-        pointslevel1.setpp(0);
-        pointslevel1.setpn(0);
-        jLabel5.setText("You scored " +pointslevel1.getPositivepoints()+ " correct answers and " +pointslevel1.getNegativepoints()+" wrong answers");
-      }
-    });
     
-   
+    
+    
     
     jButton3.setFont(new Font("Calibri", Font.BOLD, 16));
     cp.add(jButton3);
@@ -342,13 +398,6 @@ public class level extends JFrame implements Serializable {
     
     jButton4.setFont(new Font("Calibri", Font.BOLD, 16));
     cp.add(jButton4);
-    jButton5.setBounds(248, 48, 105, 33);
-    jButton5.setText("New");
-    jButton5.setVisible(false);
-    jButton5.setMargin(new Insets(2, 2, 2, 2));
-    jButton5.setBackground(new Color(0xEEEEEE));
-    jButton5.setFont(new Font("Dialog", Font.BOLD, 16));
-    cp.add(jButton5);
     
     cp.setBackground(new Color(0x404040));
     jLabel6.setBounds(416, 8, 209, 48);
@@ -360,15 +409,14 @@ public class level extends JFrame implements Serializable {
     // Ende Komponenten
     
     setVisible(true);
-    //}
-    /*else{
-    jButton1.setVisible(false);
-    jButton2.setVisible(false);
-    } */
+    
+    
   }
   // end of public level
-  
+   
     // Anfang Methoden
+
+    
     
   public static void main(String[] args) {
     
@@ -393,11 +441,6 @@ public class level extends JFrame implements Serializable {
     // TODO hier Quelltext einfügen
     
   } // end of jButton4_ActionPerformed
-  
-  public void jButton5_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einfügen
-    
-  } // end of jButton5_ActionPerformed
   
   // Ende Methoden
 } // end of class level

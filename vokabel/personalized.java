@@ -54,36 +54,46 @@ public class personalized extends JFrame implements Serializable {
   
   
   
-  
+  DefaultListModel jl;
   boolean bl;
   zufalleasyy zlevel1= new zufalleasyy();
-  boolean b=bl;
+
   int j=0;
   points pointslevel1=new points(0, 0, 0);
   savefiles s= new savefiles(); 
   
   
-  /*public void keyPressed(KeyEvent e) {
-  
-  int key = e.getKeyCode();
-  
-  if(key == KeyEvent.VK_D){
-  
-  stop();
-  }
-  }*/
-  
+
   public personalized(boolean bl) { 
     // Frame-Initialisierung
     super();
     this.bl=bl;
-    b=bl;
+  
     
+     try (FileInputStream fis = new FileInputStream ("savefiles.ser");
+        ObjectInputStream ois = new ObjectInputStream (fis)) {
+          jl= (DefaultListModel) ois.readObject();
+          s.setgleichjlistmodel(jl);
+          
+          
+        }                        
+        catch(FileNotFoundException e)
+        {
+          System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+        }
+        catch(IOException e)
+        {
+          System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+        }
+        catch(ClassNotFoundException e)
+        {
+          System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+        }
     
     s.setVisible(false);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 1328; 
-    int frameHeight = 507;
+    int frameWidth = 1391; 
+    int frameHeight = 504;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -215,21 +225,21 @@ public class personalized extends JFrame implements Serializable {
         if(bl==true){
           
           if(jTextField2.getText().equals(zlevel1.ynow().getDeutsch())){
-            jLabel4.setText("Gut Gemacht!");
+            jLabel4.setText("Well done!");
             
             
             jTextField2.setText(null);
             pointslevel1.addppoint();
-            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answers and "+pointslevel1.getNegativepoints()+ " wrong answers");
+            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answer/-s and "+pointslevel1.getNegativepoints()+ " wrong answer/-s");
             //zlevel1.getVoccc().remove(zlevel1.getK());
           }
           
           else{ 
-            jLabel4.setText("Falsch");
+            jLabel4.setText("Wrong answer");
             
             
             pointslevel1.addnpoint();
-            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
+            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answer/-s and "+pointslevel1.getNegativepoints() + " wrong answer/-s");
             jTextField2.setText(null); 
             
           }
@@ -237,19 +247,19 @@ public class personalized extends JFrame implements Serializable {
         }
         else{
           if(jTextField2.getText().equals(zlevel1.ynow().getEnglish())){
-            jLabel4.setText("Gut Gemacht!");
+            jLabel4.setText("Well done!");
             
             jTextField2.setText(null);
             pointslevel1.addppoint();
-            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answers and "+pointslevel1.getNegativepoints()+ " wrong answers");
+            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints()+" correct answer/-s and "+pointslevel1.getNegativepoints()+ " wrong answer/-s");
             //zlevel1.getVoccc().remove(zlevel1.getK());
           }
           
           else{ 
-            jLabel4.setText("Falsch");
+            jLabel4.setText("Wrong answer");
             
             pointslevel1.addnpoint();
-            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
+            jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answer/-s and "+pointslevel1.getNegativepoints() + " wrong answer/-s");
             jTextField2.setText(null); 
             
           }
@@ -262,23 +272,24 @@ public class personalized extends JFrame implements Serializable {
     });
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) {
-        s.addsave(jTextField3.getText()+" =  "+ jLabel5.getText());
-        try (FileOutputStream fos = new FileOutputStream ("savefile.ser");
+         s.addelement(jTextField3.getText()+" =  "+ jLabel5.getText()+" "+"with the group of words that you created");
+        
+        try (FileOutputStream fos = new FileOutputStream ("savefiles.ser");
         ObjectOutputStream oos = new ObjectOutputStream (fos)) {
           
           
-          oos.writeObject (s.getJList());
+          oos.writeObject(s.getjlist());
           
           
           
         }
         catch(FileNotFoundException e)
         {
-          System.out.println("Fehler beim Schreiben von dummy.ser: Datei nicht gefunden");
+          System.out.println("Fehler beim Schreiben von savefiles.ser: Datei nicht gefunden");
         }
         catch(IOException e)
         {
-          System.out.println("Fehler beim Schreiben von dummy.ser: Ein- Ausgabefehler");
+          System.out.println("Fehler beim Schreiben von savefiles.ser: Ein- Ausgabefehler");
         }
         jButton4.setVisible(true);
         jButton5.setVisible(true);
@@ -286,16 +297,34 @@ public class personalized extends JFrame implements Serializable {
         
         pointslevel1.setpp(0);
         pointslevel1.setpn(0);
-        jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answers and "+pointslevel1.getNegativepoints() + " wrong answers");
+        jLabel5.setText("You scored "+ pointslevel1.getPositivepoints() +" correct answer/-s and "+pointslevel1.getNegativepoints() + " wrong answer/-s");
       }
     });
     jButton4.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        
+        try (FileInputStream fis = new FileInputStream ("savefiles.ser");
+        ObjectInputStream ois = new ObjectInputStream (fis)) {
+          jl= (DefaultListModel) ois.readObject();
+          s.addjList1Model(jl);
+          
+          
+        }                        
+        catch(FileNotFoundException e)
+        {
+          System.out.println("Fehler beim Lesen von savefiles.ser: Datei nicht gefunden");
+        }
+        catch(IOException e)
+        {
+          System.out.println("Fehler beim Lesen von savefiles.ser: Ein- Ausgabefehler");
+        }
+        catch(ClassNotFoundException e)
+        {
+          System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+        }
         
         s.setVisible(true);
-        jButton4.setVisible(false);
-        //jButton3.setVisible(false);
+       
+       
       }
     });
     jButton5.addActionListener(new ActionListener() { 

@@ -35,6 +35,7 @@ public class addzufalleasyy implements Serializable {
     
     this.z2=z2;
     this.i=i;
+    //Da es im Programm verschiedene Arten von Vokabeln gibt, müssen diese in verschiedene Ordner eingefügt werden. Die sortierung der Vokabeln erfolgt über das angegebene Zahl
     if(i==0){
       
     try (FileOutputStream fos = new FileOutputStream ("vokabelneasy.ser");

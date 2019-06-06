@@ -39,6 +39,7 @@ public class easy extends JFrame {
   
   public easy(boolean bl,int l) { 
     // Frame-Initialisierung
+    //Easy ist eine Klasse, in der Sie auswählen können, mit welchen Wörtern Sie üben möchten.
     super();
     this.bl=bl;
     this.l=l;
@@ -50,7 +51,7 @@ public class easy extends JFrame {
     int x = (d.width - getSize().width) / 2;
     int y = (d.height - getSize().height) / 2;
     setLocation(x, y);
-    setTitle("easy");
+    setTitle("Choose the group of vocs");
     setResizable(false);
     Container cp = getContentPane();
     cp.setLayout(null);
@@ -59,6 +60,7 @@ public class easy extends JFrame {
     jButton1.setBounds(88, 88, 113, 41);
     
     jButton1.setMargin(new Insets(2, 2, 2, 2));
+    //Abhängig von der von Home geerbten Zahl werden die angeforderten Wortgruppen geändert
     if(l==1){
       jLabel1.setText("Easy");
       jButton1.setText("Food");

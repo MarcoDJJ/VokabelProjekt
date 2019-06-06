@@ -172,20 +172,20 @@ public class addvocable extends JFrame implements Serializable {
     zufalleasyy zlevel1;
     JTextField jTextField1; 
     JTextField jTextField2;       
-        public addAlistener(int i, zufalleasyy zlevel1,JTextField jTextField1, JTextField jTextField2){
+        public addAlistener(int i, zufalleasyy zlevel1,JTextField jTextField1, JTextField jTextField2){  //Hier werden die Wörter in einem bestimmten Ordner gespeichert. Der Ordner wird anhand der eingegebenen Nummer ausgewählt
         this.jTextField1=jTextField1;
         this.jTextField2=jTextField2;
         this.zlevel1=zlevel1;
         this.i=i;
-         if(jTextField2.getText().equals("") || jTextField1.getText().equals("") || jTextField2.getText().equals(null) || jTextField1.getText().equals(null)){
+         if(jTextField2.getText().equals("") || jTextField1.getText().equals("") || jTextField2.getText().equals(null) || jTextField1.getText().equals(null)){    //Falls der Spieler nichts schreibt, wird das Vokabel nicht gespeichert
           
           System.out.println("It is not possible to insert the entered couple of vocables"); 
         }
         else{
-         readzufalleasyy r=new readzufalleasyy(zlevel1,i);
+         readzufalleasyy r=new readzufalleasyy(zlevel1,i); //readzufalleasyy ist eine Klasse, die eine Datei liest, die die Vokabeln enthält, und sie in die ihr zugewiesene Arrayliste einfügt
         vokabel v=new vokabel(jTextField1.getText(),jTextField2.getText());
         zlevel1.fuegevoccnhinzu(v);
-        addzufalleasyy add= new addzufalleasyy(i,zlevel1); 
+        addzufalleasyy add= new addzufalleasyy(i,zlevel1); // addzufalleasyy ist eine Klasse, die die neue Vokabeln in einer bestimmten Datei speichert
         }                                  
         
         jTextField2.setText(null);

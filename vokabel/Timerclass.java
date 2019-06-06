@@ -16,39 +16,50 @@ public class Timerclass{
   int secondsPassed = 0;
   JLabel j;
   Timer t=new Timer();
-   int v=10;
+  int v=10;
   JButton jButton3;
   JTextField jTextField3;
   int i=0;
-  JButton jButton5;
+
   JTextField jTextField1;
-    JTextField jTextField2;
-   JButton jButton4;
-  public Timerclass(JTextField jTextField1,JTextField jTextField2,JButton jButton5,JLabel jj, JButton jButton3, JTextField jTextField3,JButton jButton4){
+  JTextField jTextField2;
+  JButton jButton4;
+  JButton jButton1;
+  JButton jButton2;
+  public Timerclass(JButton jButton2,JButton jButton1,JTextField jTextField1,JTextField jTextField2,JLabel jj, JButton jButton3, JTextField jTextField3,JButton jButton4){
+    this.jButton2=jButton2;
+    this.jButton1=jButton1;
     this.v=v;
     this.jTextField1=jTextField1;
     this.jTextField2=jTextField2;
-    this.jButton5=jButton5;
-     this.j=jj;
-     this.jButton3=jButton3;
+    
+    this.j=jj;
+    this.jButton3=jButton3;
     this.jTextField3=jTextField3;
-  this.jButton4=jButton4;
- 
-    }
+    this.jButton4=jButton4;
+    
+  }
   // Anfang Methoden
   TimerTask task = new TimerTask() {
     public void run(){
       if(secondsPassed<v){
-      secondsPassed++;}
+      secondsPassed++;
+
+      }
       else {
+         jButton2.setVisible(false);
+        jButton1.setVisible(true);
     jButton4.setVisible(true);
         jButton3.setVisible(true);
         jTextField3.setVisible(true);
-        jButton5.setVisible(true);
+       
         jTextField1.setText(null);
         jTextField2.setText(null);
+     
+        
       } 
       j.setText(secondsPassed + " ");
+    
     }
   
     };

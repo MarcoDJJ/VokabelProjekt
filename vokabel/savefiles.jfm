@@ -1,10 +1,10 @@
 object savefiles: TFGUIForm
-  Left = 349
-  Top = 494
+  Left = 337
+  Top = 35
   BorderIcons = [biSystemMenu]
   Caption = 'savefiles'
-  ClientHeight = 319
-  ClientWidth = 466
+  ClientHeight = 297
+  ClientWidth = 825
   Color = clBtnFace
   ParentFont = True
   FormStyle = fsStayOnTop
@@ -23,9 +23,9 @@ object savefiles: TFGUIForm
   TextHeight = 13
   object jList1: TJList
     Tag = 8
-    Left = 8
+    Left = 0
     Top = 0
-    Width = 449
+    Width = 825
     Height = 297
     Hint = 'jList1'
     Font.Charset = DEFAULT_CHARSET

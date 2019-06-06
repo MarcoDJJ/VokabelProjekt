@@ -1,10 +1,10 @@
 object personalized: TFGUIForm
-  Left = 83
-  Top = 171
+  Left = 87
+  Top = 360
   BorderIcons = [biSystemMenu]
   Caption = 'level'
-  ClientHeight = 468
-  ClientWidth = 1312
+  ClientHeight = 465
+  ClientWidth = 1375
   Color = 4210752
   ParentFont = True
   FormStyle = fsStayOnTop

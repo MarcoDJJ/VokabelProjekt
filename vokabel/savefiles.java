@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.Font;
 import java.text.*;
-import java.util.ArrayList;
+
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Timer;
@@ -19,6 +19,9 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.io.*;
 import java.util.*;
+
+import java.lang.Object;
+import javax.swing.AbstractListModel;
 /**
  *
  * Beschreibung
@@ -33,14 +36,14 @@ public class savefiles extends JFrame implements Serializable{
      DefaultListModel jList1Model = new DefaultListModel();
      JScrollPane jList1ScrollPane = new JScrollPane(jList1);
   // Ende Attribute
-  ArrayList<String> savefiless = new ArrayList<>();
+  
   
   public savefiles() { 
     // Frame-Initialisierung
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 482; 
-    int frameHeight = 358;
+    int frameWidth = 841; 
+    int frameHeight = 336;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -53,36 +56,36 @@ public class savefiles extends JFrame implements Serializable{
     // Anfang Komponenten
     
     jList1.setModel(jList1Model);
-    jList1ScrollPane.setBounds(8, 0, 449, 297);
+    jList1ScrollPane.setBounds(0, 0, 825, 297);
     cp.add(jList1ScrollPane);
     // Ende Komponenten
     
     setVisible(false);
   } // end of public savefiles
-  public JList getJList(){
-     return jList1;
-    }
-  public void setJList(JList jl){
-    this.jList1=jl;
-    }
-  // Anfang Methoden
-  public void addsave(String sss){
+
+  public void addelement(String sss){
     jList1Model.addElement(sss);
-    jList1.setModel(jList1Model);
-  }
-  public DefaultListModel getjlistmodel(){
-     return jList1Model;
-    } 
-    public void setjlistmodel(DefaultListModel jlm){
-      this.jList1Model=jlm;
-       }
+     }
+  public void setgleichjlistmodel(DefaultListModel j){
+    this.jList1Model=j;
+    }
+  
+  public Object getjlist(){
+    return jList1Model;
+    
+    }
+  public void addjList1Model(DefaultListModel jList1Model){
+    jList1.setModel(jList1Model); 
+    
+    }
+  
+
+  
   public static void main(String[] args) {
     
   } // end of main
   
-  public ArrayList<String> getSavefiless() {
-    return savefiless;
-  }
+  
   
   // Ende Methoden
 } // end of class savefiles

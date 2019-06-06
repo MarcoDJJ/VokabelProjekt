@@ -7,8 +7,8 @@ public class vokabel implements Serializable{
   
   String english;
   String deutsch;
-  int m;
-  String mmm;
+  
+
   
   
   
@@ -17,21 +17,9 @@ public class vokabel implements Serializable{
     this.english=english;
     this.deutsch=deutsch;
   }
-  public void setm(int mm){
-    m=mm;
-  }
-  public int getm(){
-    return m;
-  }
-  
-  
   public String getEnglish() {
     return english;
   }
-  
-  
-  
-  
   public String getDeutsch() {
     return deutsch;
   }

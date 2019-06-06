@@ -27,6 +27,7 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.*;
+
 public class readzufalleasyy {
     zufalleasyy zlevel1=new zufalleasyy();
      ArrayList<vokabel>  z2=new ArrayList<>();
@@ -34,6 +35,7 @@ public class readzufalleasyy {
     public readzufalleasyy(zufalleasyy zlevel1, int j){
        this.zlevel1=zlevel1;
     this.j=j;
+    //Das Programm entscheidet anhand des angegebenen Zahl, welche Datei gelesen werden soll
     if(j==0){
        try (FileInputStream fis = new FileInputStream ("vokabelneasy.ser");
     ObjectInputStream ois = new ObjectInputStream (fis)) {
@@ -44,11 +46,11 @@ public class readzufalleasyy {
     }                        
     catch(FileNotFoundException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+      System.out.println("Fehler beim Lesen von vokabelneasy.ser: Datei nicht gefunden");
     }
     catch(IOException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+      System.out.println("Fehler beim Lesen von vokabelneasy.ser: Ein- Ausgabefehler");
     }
     catch(ClassNotFoundException e)
     {
@@ -67,11 +69,11 @@ public class readzufalleasyy {
     }                        
     catch(FileNotFoundException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+      System.out.println("Fehler beim Lesen von vokabelneasy1.ser: Datei nicht gefunden");
     }
     catch(IOException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+      System.out.println("Fehler beim Lesen von vokabelneasy1.ser: Ein- Ausgabefehler");
     }
     catch(ClassNotFoundException e)
     {
@@ -89,11 +91,11 @@ public class readzufalleasyy {
     }                        
     catch(FileNotFoundException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+      System.out.println("Fehler beim Lesen von vokabelnnormal1.ser: Datei nicht gefunden");
     }
     catch(IOException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+      System.out.println("Fehler beim Lesen von vokabelnnormal1.ser: Ein- Ausgabefehler");
     }
     catch(ClassNotFoundException e)
     {
@@ -110,11 +112,11 @@ public class readzufalleasyy {
     }                        
     catch(FileNotFoundException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+      System.out.println("Fehler beim Lesen von vokabelnnormal2.ser: Datei nicht gefunden");
     }
     catch(IOException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+      System.out.println("Fehler beim Lesen von vokabelnnormal2.ser: Ein- Ausgabefehler");
     }
     catch(ClassNotFoundException e)
     {
@@ -131,11 +133,11 @@ public class readzufalleasyy {
     }                        
     catch(FileNotFoundException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+      System.out.println("Fehler beim Lesen von vokabelnhard1.ser: Datei nicht gefunden");
     }
     catch(IOException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+      System.out.println("Fehler beim Lesen von vokabelnhard1.ser: Ein- Ausgabefehler");
     }
     catch(ClassNotFoundException e)
     {
@@ -152,11 +154,11 @@ public class readzufalleasyy {
     }                        
     catch(FileNotFoundException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Datei nicht gefunden");
+      System.out.println("Fehler beim Lesen von vokabelnhard2.ser: Datei nicht gefunden");
     }
     catch(IOException e)
     {
-      System.out.println("Fehler beim Lesen von dummy.ser: Ein- Ausgabefehler");
+      System.out.println("Fehler beim Lesen von vokabelnhard2.ser: Ein- Ausgabefehler");
     }
     catch(ClassNotFoundException e)
     {

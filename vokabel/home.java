@@ -11,7 +11,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
-import javax.swing.event.*;
+import javax.swing.event.*;                          
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.util.Random;
@@ -48,6 +48,7 @@ public class home extends JFrame {
   private JLabel jLabel1 = new JLabel();
   private JLabel jLabel2 = new JLabel();
   private JButton jButton5 = new JButton();
+  private JButton jButton6 = new JButton();
   // Ende Attribute
   
   public home() { 
@@ -73,11 +74,13 @@ public class home extends JFrame {
     jButton1.setBounds(56, 96, 113, 41);
     jButton1.setText("Easy");
     jButton1.setMargin(new Insets(2, 2, 2, 2));
+    
+      
     jButton1.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
         jButton1_ActionPerformed(evt);
-        easy easy1=new easy(bl,1);
-        
+        easy easy1=new easy(bl,1);  //von der eingegebenen Zahl ändert sich der Schwierigkeitsgrad (easy, normal und hard)
+                                    //bl ist ein boolean, mit dem die Sprache ändern können, in der das Programm nach Vokabeln fragt
         
       }
     });
@@ -169,10 +172,10 @@ public class home extends JFrame {
     jButton5.setMargin(new Insets(2, 2, 2, 2));
     jButton5.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        /*File file = new File("tutorial.pdf");
+        /*File file = new File("tutorial.pdf");            
         try {
           
-          Desktop.getDesktop().open(file);
+          Desktop.getDesktop().open(file);          //Es öffnet ein PDF mit einem Tutorial des Spiels
         }catch (IOException exception){
           exception.printStackTrace();
         } */
@@ -183,10 +186,43 @@ public class home extends JFrame {
       }
     });
     cp.add(jButton5);
+    jButton6.setBounds(208, 240, 105, 33);
+    jButton6.setText("Saved files");
+    jButton6.setMargin(new Insets(2, 2, 2, 2));
+    jButton6.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        DefaultListModel jl;
+        savefiles s=new savefiles();
+        
+        try (FileInputStream fis = new FileInputStream ("savefiles.ser");
+        ObjectInputStream ois = new ObjectInputStream (fis)) {
+          jl= (DefaultListModel) ois.readObject();
+          s.addjList1Model(jl);
+          
+          
+        }                        
+        catch(FileNotFoundException e)
+        {
+          System.out.println("Fehler beim Lesen von savefiles.ser: Datei nicht gefunden");
+        }
+        catch(IOException e)
+        {
+          System.out.println("Fehler beim Lesen von savefiles.ser: Ein- Ausgabefehler");
+        }
+        catch(ClassNotFoundException e)
+        {
+          System.out.println("Fehler beim Erzeugen des Objekts: Klasse nicht gefunden.");
+        }
+        s.setVisible(true);
+      }
+    });
+    jButton6.setBackground(Color.MAGENTA);
+    jButton6.setFont(new Font("Calibri", Font.BOLD, 16));
+    cp.add(jButton6);
     // Ende Komponenten
     
     setVisible(true);
-    while(i==1){
+    while(i==1){          //um das programm nicht jedes mal neu zu starten, um die sprache zu wechseln, läuft diese while-schleife endlos weiter. Es wird immer geprüft, in welcher Sprache das Programm nach Vokabeln fragen muss
        try (FileInputStream fis = new FileInputStream ("language.ser");
     ObjectInputStream ois = new ObjectInputStream (fis)) {
       bl= (boolean) ois.readObject();
@@ -245,6 +281,11 @@ public class home extends JFrame {
     
   } // end of jButton5_ActionPerformed
   
+  public void jButton6_ActionPerformed(ActionEvent evt) {
+    // TODO hier Quelltext einfügen
+    
+  } // end of jButton6_ActionPerformed
+
   // Ende Methoden
 } // end of class home
 
